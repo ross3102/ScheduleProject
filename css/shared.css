@@ -1,0 +1,12 @@
+.material-icons:hover {
+    cursor: pointer;
+}
+
+.modal-content {
+    text-align: center;
+}
+
+.title {
+    font-weight: 200;
+    text-align: center;
+}
