@@ -21,7 +21,7 @@
     cursor: pointer;
 }
 
-.material-icons, span, input[type="checkbox"], label {
+.material-icons, span, input[type="checkbox"], label, .collapsible-header * {
     vertical-align: middle;
 }
 
@@ -31,4 +31,8 @@
 
 .numTasks {
     float: right;
+}
+
+.modal {
+    overflow: visible;
 }

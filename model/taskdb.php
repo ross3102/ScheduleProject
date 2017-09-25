@@ -23,7 +23,7 @@ function get_category_by_id($category_id) {
 function get_task_by_id($task_id) {
     global $db;
 
-    $query = "select task_id, task_name, DATE_FORMAT(task_date, '%b %d, %Y') as task_date, task_completed
+    $query = "select task_id, task_name, DATE_FORMAT(task_date, '%b %d, %Y') as task_date, task_completed, category_id
     from task_list_task
     where task_id = :task_id";
 
@@ -66,7 +66,7 @@ function get_tasks_by_category_id($category_id) {
     $query = "select task_id, task_name, DATE_FORMAT(task_date, '%b %d, %Y') as task_date, task_completed
               from task_list_task
               where category_id = :category_id
-              order by task_id";
+              order by task_date";
     try {
         $statement = $db->prepare($query);
         $statement->bindValue(':category_id', $category_id);
@@ -147,7 +147,7 @@ function delete_category($category_id) {
 
     $query = "delete from task_list_task
               where category_id = :category_id;
-              delete from category
+              delete from task_list_category
               where category_id = :category_id";
 
     try {
@@ -189,6 +189,25 @@ function complete($task_id, $task_completed) {
         $statement = $db->prepare($query);
         $statement->bindValue(':task_completed', $task_completed);
         $statement->bindValue(':task_id', $task_id);
+        $statement->execute();
+        $statement->closeCursor();
+    } catch (PDOException $e) {
+        echo ($e);
+        exit();
+    }
+}
+
+function collapse($category_id, $category_active) {
+    global $db;
+
+    $query = "update task_list_category
+              set category_active = :category_active
+              where category_id = :category_id";
+
+    try {
+        $statement = $db->prepare($query);
+        $statement->bindValue(':category_active', $category_active);
+        $statement->bindValue(':category_id', $category_id);
         $statement->execute();
         $statement->closeCursor();
     } catch (PDOException $e) {

@@ -28,7 +28,7 @@ writeHeader($head);
     </div>
 
     <div class="modal" id="newTask">
-        <form action="." method="post">
+        <form action="." method="post" autocomplete="on">
             <div class="modal-content">
                 <input type="hidden" name="action" value="add_task">
                 <div class="row">
@@ -62,9 +62,19 @@ writeHeader($head);
             <?php foreach ($categories as $category) {
                 $category_id = $category["category_id"];
                 $category_name = $category["category_name"];
+                $category_active = $category["category_active"] ? "active": "";
                 $tasks = get_tasks_by_category_id($category_id);?>
-                <li>
-                    <div class="collapsible-header"><div class="category-header-inner"><?php echo $category_name ?><span class="numTasks"><?php echo get_total_tasks($category_id) ?></span></div></div>
+                <li class="collapsibleItem" id="C<?php echo $category_id ?>">
+                    <div class="collapsible-header <?php echo $category_active ?>">
+                        <div class="category-header-inner">
+                            <?php echo $category_name ?>
+                            <span class="numTasks"><?php echo get_total_tasks($category_id) ?>
+                                <i class="material-icons tooltipped" data-tooltip="Delete Category" onclick="
+                                        event.stopPropagation();
+                                        confirmDeleteCategory('<?php echo $category_name ?>', <?php echo $category_id ?>);"
+                                >delete</i></span>
+                        </div>
+                    </div>
                     <div class="collapsible-body">
                         <ul class="collection">
                             <?php foreach ($tasks as $task) {
@@ -74,8 +84,12 @@ writeHeader($head);
                                 $task_completed = $task["task_completed"];
                                 $color = ($task_completed ? "grey": "black") . "-text"?>
                                 <li class="collection-item">
-                                    <span class="secondary-content <?php echo $color . " " . $task_id; ?>"><?php echo $task_date ?></span>
-                                    <input id="C<?php echo $task_id ?>" type="checkbox" <?php if ($task_completed == 1) echo "checked" ?>><label for="C<?php echo $task_id ?>"><span class="<?php echo $color . " " . $task_id ?>"><?php echo $task_name ?></span></label>
+                                    <span class="secondary-content <?php echo $color . " " . $task_id; ?>"><?php echo $task_date ?>
+                                        <i class="material-icons" onclick="
+                                                event.stopPropagation();
+                                                confirmDeleteTask('<?php echo $task_name ?>', <?php echo $task_id ?>, '<?php echo $category_name ?>')"
+                                        >delete</i></span>
+                                    <input id="CB<?php echo $task_id ?>" type="checkbox" <?php if ($task_completed == 1) echo "checked" ?>><label for="CB<?php echo $task_id ?>"><span class="<?php echo $color . " " . $task_id ?>"><?php echo $task_name ?></span></label>
                                 </li>
                             <?php } ?>
                         </ul>
@@ -94,8 +108,35 @@ writeHeader($head);
         $(".modal").modal();
     });
 
+    $(".collapsibleItem").click(function() {
+        var category_id = $(this).attr("id").slice(1);
+        var active;
+        if ($(this).hasClass("active")) active = 0;
+        else                            active = 1;
+        var url = './index.php?action=collapse&category_id=' + category_id + '&category_active=' + active;
+        var request = new XMLHttpRequest();
+        request.open('GET', url, true);
+        request.send();
+    });
+
+    function delTask(task_id) {
+        location.href='./index.php?action=delete_task&task_id=' + task_id;
+    }
+
+    function delCategory(category_id) {
+        location.href='./index.php?action=delete_category&category_id=' + category_id;
+    }
+
+    function confirmDeleteTask(task_name, task_id, category_name) {
+        Materialize.toast('<span>Delete ' + task_name + ' from ' + category_name + '?</span><button class="btn-flat toast-action" onclick="delTask(' + task_id + ')">Confirm</button>', 10000);
+    }
+
+    function confirmDeleteCategory(category_name, category_id) {
+        Materialize.toast('<span>Delete category: ' + category_name + '?<span><button class="btn-flat toast-action" onclick="delCategory(' + category_id + ')">Confirm</button>', 10000);
+    }
+
     $("input[type=checkbox]").change(function() {
-        var task_id = $(this).attr("id").slice(1);
+        var task_id = $(this).attr("id").slice(2);
         var task_completed;
         if ($(this).is(':checked')) {
             task_completed = 1;

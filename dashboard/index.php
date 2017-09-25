@@ -32,7 +32,7 @@ writeHeader($head);
         <?php
             create_dashboard_item("schedules", "Manage Schedules",
                 "Run or edit existing schedules or create a new one!", "view_list");
-            create_dashboard_item("work", "Task Lists",
+            create_dashboard_item("work", "Task List",
                 "Write down upcoming tasks or assignments", "view_agenda")
         ?>
     </div>

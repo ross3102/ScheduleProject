@@ -47,6 +47,10 @@ switch ($action) {
         complete($task_id, $task_completed);
         header("Location: .");
         break;
+    case 'collapse':
+        $category_id = filter_input(INPUT_GET, "category_id");
+        $category_active = filter_input(INPUT_GET, "category_active");
+        collapse($category_id, $category_active);
     default:
         echo ('Unknown action: ' . $action);
         exit();
