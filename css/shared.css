@@ -2,6 +2,10 @@
     cursor: pointer;
 }
 
+.material-icons {
+    vertical-align: middle;
+}
+
 .modal-content {
     text-align: center;
 }

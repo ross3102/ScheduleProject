@@ -59,7 +59,7 @@ function writeHeader($head='') {
         <nav class="green">
             <div class="container">
                 <div class="nav-wrapper">
-                    <a href="/' . $web_root . '/dashboard" class="brand-logo">BCA Work Manager</a>
+                    <a href="/' . $web_root . '/dashboard" class="brand-logo">Website Title</a>
                     <a data-activates="sidenav" class="button-collapse"><i class="material-icons">menu</i></a>
                     <ul class="right hide-on-med-and-down">
                         <li><a href="/' . $web_root . '/dashboard">Dashboard</a></li>

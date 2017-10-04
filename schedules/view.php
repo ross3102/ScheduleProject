@@ -3,7 +3,7 @@
     <h3 class="title">Your Schedules</h3>
     <div class="center-align">
         <a href="#add_schedule" class="waves-effect waves-light btn modal-trigger">Add Schedule</a>
-        <a href="#build_schedule" class="waves-effect waves-light btn modal-trigger">Build Schedule</a>
+        <a href="./index.php?action=show_build_schedule" class="waves-effect waves-light btn">Build Schedule</a>
     </div>
 
     <div class="modal" id="add_schedule">

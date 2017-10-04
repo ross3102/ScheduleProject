@@ -99,6 +99,23 @@ function get_total_duration($schedule_id) {
     }
 }
 
+function last_insert() {
+    global $db;
+
+    $query = "SELECT LAST_INSERT_ID()";
+
+    try {
+        $statement = $db->prepare($query);
+        $statement->execute();
+        $result = $statement->fetch();
+        $statement->closeCursor();
+        return $result[0];
+    } catch (PDOException $e) {
+        echo ($e);
+        exit();
+    }
+}
+
 function add_schedule($user_id, $schedule_name) {
     global $db;
 
@@ -111,6 +128,7 @@ function add_schedule($user_id, $schedule_name) {
         $statement->bindValue(':schedule_name', $schedule_name);
         $statement->execute();
         $statement->closeCursor();
+        return last_insert();
     } catch (PDOException $e) {
         echo ($e);
         exit();

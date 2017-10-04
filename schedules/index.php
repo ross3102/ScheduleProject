@@ -44,6 +44,9 @@ switch ($action) {
     case 'run':
         header("Location: ./run/index.php?schedule_id=" . filter_input(INPUT_GET, "schedule_id"));
         break;
+    case 'show_build_schedule':
+        header("Location: ./build/index.php");
+        break;
     default:
         echo ('Unknown action: ' . $action);
         exit();
