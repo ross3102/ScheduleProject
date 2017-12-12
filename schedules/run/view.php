@@ -1,13 +1,21 @@
 <?php
 $head = "<script src='../../js/Timer/countdown-timer.js'></script>";
 writeHeader($head) ?>
-\<div class="container">
+<div class="container">
     <h3 class="title"><?php echo $schedule["schedule_name"] ?></h3>
-    <div class="center-align">
-        <div class="timer"></div>
-        <a href=".." class="waves-effect waves-light btn">Back</a>
-        <button class="waves-effect waves-light btn" id="pause" onclick="pause()">Pause</button>
-        <button class="waves-effect waves-light btn" onclick="nextAssignment(true)">Next</button>
+    <div class="row center-align">
+        <div class="col s12">
+            <div class="timer"></div>
+        </div>
+        <div class="col s12" style="margin-bottom: 5px;">
+            <a href=".." class="waves-effect waves-light btn">Back</a>
+            <button class="waves-effect waves-light btn" id="pause" onclick="pause()">Pause</button>
+            <button class="waves-effect waves-light btn" onclick="nextAssignment(true)">Next</button>
+        </div>
+        <div class="col s12">
+            <button class="waves-effect waves-light btn" onclick="alert('AFTER')">Add Item After</button>
+            <button class="waves-effect waves-light btn" onclick="alert('END')">Add Item To End</button>
+        </div>
     </div>
     <table class="centered">
         <thead>
@@ -106,17 +114,21 @@ writeHeader($head) ?>
     }
 
     function updateTimer() {
-        var today = new Date();
-        today.setHours(0,0,0,0);
-        time = new Date(today.getTime() + items[itemIndex]["item_duration"] * 1000);
-        $(".timer").html((time.getHours() - 1) % 12 + 1 + ":" + ("0" + time.getMinutes()).slice(-2) + ":" + ("0" + time.getSeconds()).slice(-2));
+        var mil = items[itemIndex]["item_duration"] * 1000;
+        var hours = parseInt(mil / (60*60*1000));
+        mil %= 60*60*1000;
+        var minutes = ("0" + parseInt(mil / (60*1000))).slice(-2);
+        mil %= 60*1000;
+        var seconds = ("0" + parseInt(mil / 1000)).slice(-2);
+        $(".timer").html(hours + ":" + minutes + ":" + seconds);
+        updateTimes(); // TODO maybe find way to do this better?
     }
 
     function updateTimes(offset=0) {
         var time = new Date();
         items.slice(itemIndex + offset).forEach(function(item) {
             time = new Date(time.getTime() + item['item_duration'] * 1000);
-            $("#" + item['item_id']).html((time.getHours() - 1) % 12 + 1 + ":" + ("0" + time.getMinutes()).slice(-2) + ":" + ("0" + time.getSeconds()).slice(-2));
+            $("#" + item['item_id']).html(time.toLocaleTimeString());
         });
     }
 
