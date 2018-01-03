@@ -3,7 +3,6 @@ $head = '<link rel="stylesheet" href="work.css">';
 writeHeader($head);
 ?>
 <div class="container">
-
     <h3 class="title">Task List</h3>
 
     <div class="btn-div center-align">
@@ -58,12 +57,14 @@ writeHeader($head);
         </form>
     </div>
     <?php if (count($categories) > 0) { ?>
-        <ul class="collapsible" data-collapsible="expandable">
+        <ul class="collapsible popout" data-collapsible="expandable">
             <?php foreach ($categories as $category) {
                 $category_id = $category["category_id"];
                 $category_name = $category["category_name"];
-                $category_active = $category["category_active"] ? "active": "";
-                $tasks = get_tasks_by_category_id($category_id);?>
+                $tasks = get_tasks_by_category_id($category_id);
+                if (count($tasks) == 0)
+                    collapse($category_id, 0);
+                $category_active = $category["category_active"] && count($tasks) > 0 ? "active": "";?>
                 <li class="collapsibleItem" id="C<?php echo $category_id ?>">
                     <div class="collapsible-header <?php echo $category_active ?>">
                         <div class="category-header-inner">
@@ -85,7 +86,7 @@ writeHeader($head);
                                 $color = ($task_completed ? "grey": "black") . "-text"?>
                                 <li class="collection-item">
                                     <span class="secondary-content <?php echo $color . " " . $task_id; ?>"><?php echo $task_date ?>
-                                        <i class="material-icons" onclick="
+                                        <i class="material-icons tooltipped" data-tooltip="Delete Task" onclick="
                                                 event.stopPropagation();
                                                 confirmDeleteTask('<?php echo $task_name ?>', <?php echo $task_id ?>, '<?php echo $category_name ?>')"
                                         >delete</i></span>
@@ -109,10 +110,18 @@ writeHeader($head);
     });
 
     $(".collapsibleItem").click(function() {
+        if ($(this).find(".collection-item")[0] == null) {
+            if (!($(this).hasClass("active")))
+                event.stopPropagation();
+            Materialize.toast("This category is empty!", 2000);
+            active = 0
+        }
+        else {
+            var active;
+            if ($(this).hasClass("active")) active = 0;
+            else active = 1;
+        }
         var category_id = $(this).attr("id").slice(1);
-        var active;
-        if ($(this).hasClass("active")) active = 0;
-        else                            active = 1;
         var url = './index.php?action=collapse&category_id=' + category_id + '&category_active=' + active;
         var request = new XMLHttpRequest();
         request.open('GET', url, true);

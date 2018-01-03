@@ -63,7 +63,7 @@ function get_categories_by_user_id($user_id) {
 function get_tasks_by_category_id($category_id) {
     global $db;
 
-    $query = "select task_id, task_name, DATE_FORMAT(task_date, '%b %d, %Y') as task_date, task_completed
+    $query = "select task_id, task_name, DATE_FORMAT(task_date, '%c/%e/%Y') as task_date, task_completed
               from task_list_task
               where category_id = :category_id
               order by task_date";
@@ -92,13 +92,8 @@ function get_total_tasks($category_id) {
         $statement->execute();
         $result = $statement->fetch();
         $statement->closeCursor();
-        $result = $result["num"];
-        if ($result == 0) {
-            return "<span style='font-style: italic; color: gray'>&lt;Empty&gt;</span>";
-        } else if ($result == 1) {
-            return $result . " Task";
-        }
-        return $result . " Tasks";
+        $result = $result["num"] . " Task" . ($result["num"] != 1 ? "s": "");
+        return $result;
     } catch (PDOException $e) {
         echo ($e);
         exit();
