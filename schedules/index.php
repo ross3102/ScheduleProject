@@ -20,7 +20,8 @@ switch ($action) {
         break;
     case 'add_schedule':
         $schedule_name = filter_input(INPUT_POST, "schedule_name");
-        add_schedule($user["user_id"], $schedule_name);
+        $schedule_desc = filter_input(INPUT_POST, "schedule_desc");
+        add_schedule($user["user_id"], $schedule_name, $schedule_desc);
         header("Location: .");
         break;
     case 'add_item':

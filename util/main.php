@@ -2,7 +2,6 @@
 
 require_once dirname(__FILE__) . "/../../config.php";
 include dirname(__FILE__) . "/../model/userdb.php";
-
 try {
     $db = new PDO($dsn, $username, $password, $options);
 } catch (PDOException $e) {
@@ -43,7 +42,7 @@ function int_to_duration($item_duration) {
 }
 
 function writeHeader($head='') {
-    global $web_root;
+    global $web_root, $app_title;
     echo '
     <html>
     <head>
@@ -52,14 +51,14 @@ function writeHeader($head='') {
         <link type="text/css" rel="stylesheet" href="/' . $web_root . '/css/shared.css">
         <script src="/' . $web_root . '/js/jq.min.js" type="text/javascript"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js" type="text/javascript"></script>
+        ' . $head . '
     </head>
     <body>
-    ' . $head . '
     <header>
         <nav class="green">
             <div class="container">
                 <div class="nav-wrapper">
-                    <a href="/' . $web_root . '/dashboard" class="brand-logo">Website Title</a>
+                    <a href="/' . $web_root . '/dashboard" class="brand-logo">' . $app_title . '</a>
                     <a data-activates="sidenav" class="button-collapse"><i class="material-icons">menu</i></a>
                     <ul class="right hide-on-med-and-down">
                         <li><a href="/' . $web_root . '/dashboard">Dashboard</a></li>
@@ -76,15 +75,31 @@ function writeHeader($head='') {
 }
 
 function writeFooter() {
+    global $app_title;
     echo '
     </main>
+    <footer class="page-footer green">
+        <div class="container">
+            <div class="row">
+                <div class="col s6">
+                <h4>' . $app_title . '</h4>
+                    <p>By Ross Newman</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                &copy; 2018 Ross Newman
+            </div>
+        </div>
+    </footer>
     </body>
     <script>
         $(document).ready(function() {
             var tool = $(".tooltipped");
             tool.attr({
                 "data-delay": 50,
-                "data-position": "right"
+                "data-position": "top"
             });
             $(".button-collapse").sideNav();
         });

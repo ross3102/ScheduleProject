@@ -1,85 +1,96 @@
-<?php writeHeader() ?>
-<div class="container">
-    <h3 class="title">Your Schedules</h3>
-    <div class="center-align">
-        <a href="#add_schedule" class="waves-effect waves-light btn modal-trigger">Add Schedule</a>
-        <a href="./index.php?action=show_build_schedule" class="waves-effect waves-light btn">Build Schedule</a>
-    </div>
+<?php
+$head = "
+<link rel='stylesheet' type='text/css' href='../css/column-flow.css'>
+";
+writeHeader($head) ?>
+    <div class="container">
+        <h3 class="title">Your Schedules</h3>
+        <div class="center-align">
+            <a href="#add_schedule" class="waves-effect waves-light btn modal-trigger">Add Schedule</a>
+            <a href="./index.php?action=show_build_schedule" class="waves-effect waves-light btn">Build Schedule</a>
+        </div>
 
-    <div class="modal" id="add_schedule">
-        <form action="." method="post">
-            <div class="modal-content">
-                <div class="container">
-                    <h3>Add Schedule</h3>
-                    <input type="hidden" name="action" value="add_schedule">
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input type="text" id="schedule_name" name="schedule_name" class="validate" required>
-                            <label for="schedule_name">Schedule Name</label>
+        <div class="modal" id="add_schedule">
+            <form action="." method="post">
+                <div class="modal-content">
+                    <div class="container">
+                        <h3>Add Schedule</h3>
+                        <input type="hidden" name="action" value="add_schedule">
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input type="text" id="schedule_name" name="schedule_name" class="validate" required>
+                                <label for="schedule_name">Schedule Name</label>
+                            </div>
+                            <div class="input-field col s12">
+                                <textarea id="schedule_desc" name="schedule_desc" class="validate materialize-textarea"></textarea>
+                                <label for="schedule_desc">Schedule Description</label>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="modal-footer">
-                <a class="modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
-                <button type="submit" class="modal-action modal-close waves-effect waves-green btn-flat">Add</button>
-            </div>
-        </form>
-    </div>
-
-    <table class="centered striped">
-        <thead>
-            <tr>
-                <th>Schedule Name</th>
-                <th>Number of Items</th>
-                <th class="hide-on-small-only">Total Duration</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
+                <div class="modal-footer">
+                    <a class="modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
+                    <button type="submit" class="modal-action modal-close waves-effect waves-green btn-flat">Add</button>
+                </div>
+            </form>
+        </div>
+        <div class="row">
+            <div class="col s12 cards-container">
             <?php foreach ($schedules as $schedule) {
                 $schedule_id = $schedule["schedule_id"];
                 $schedule_name = $schedule["schedule_name"];
+                $schedule_desc = $schedule["schedule_desc"];
                 $items = get_items_by_schedule_id($schedule_id);
                 $total_duration = get_total_duration($schedule_id)["tot"] ?>
-            <tr>
-                <td><?php echo $schedule_name ?></td>
-                <td><a class="waves-effect waves-light btn-floating modal-trigger" href="#<?php echo $schedule_id ?>"><?php echo count($items); ?></a>
+                    <div class="card sticky-action z-depth-4">
+                        <div class="card-content">
+                            <div class="activator">
+                                <span class="card-title activator"><?php echo $schedule_name ?></span>
+                                <blockquote class=activator style="border-left: 5px solid #50ae54">
+                                    <p class="activator"><?php echo $schedule_desc ?></p>
+                                </blockquote>
+                                <p class="activator"><?php echo int_to_duration($total_duration) ?></p>
+                                <p class="activator"><?php echo count($items) . " Item" . (count($items) != 1 ? "s": "") ?></p>
+                            </div>
+                        </div>
+                        <div class="card-action">
+                            <a href="#" onclick="
+                                event.stopPropagation();
+                                confirmDeleteSchedule('<?php echo $schedule_name ?>', <?php echo $schedule_id ?>);"
+                            >Delete</a>
+                            <a href="#Add<?php echo $schedule_id ?>" class="modal-trigger">Add Item</a>
+                            <a href='./index.php?action=run&schedule_id=<?php echo $schedule_id ?>'>Run</a>
 
-                    <div id="<?php echo $schedule_id ?>" class="modal modal-fixed-footer">
-                        <div class="modal-content">
-                            <div class="container">
-                                <h4><?php echo $schedule_name ?></h4>
-                                <table class="centered highlight">
+                        </div>
+                        <div class="card-reveal" style="overflow: hidden;">
+                            <span class="card-title"><?php echo $schedule_name ?><i class="material-icons right">close</i></span>
+                            <div class="reveal-content" style="overflow-y: scroll; height: 100%;">
+                                <table class="highlight">
                                     <thead>
-                                        <tr>
-                                            <th>Item Name</th>
-                                            <th>Item Duration</th>
-                                            <th></th>
-                                        </tr>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Duration</th>
+                                        <th></th>
+                                    </tr>
                                     </thead>
                                     <tbody>
-                                        <?php foreach ($items as $item) {
-                                            $item_id = $item["item_id"];
-                                            $item_name = $item["item_name"];
-                                            $item_duration = $item["item_duration"]; ?>
+                                    <?php foreach ($items as $item) {
+                                        $item_id = $item["item_id"];
+                                        $item_name = $item["item_name"];
+                                        $item_duration = $item["item_duration"]; ?>
                                         <tr>
                                             <td><?php echo $item_name ?></td>
                                             <td><?php echo int_to_duration($item_duration) ?></td>
                                             <td><i class="material-icons" onclick="
-                                                        event.stopPropagation();
-                                                        confirmDeleteItem('<?php echo $item_name ?>', <?php echo $item_id ?>, '<?php echo $schedule_name ?>')"
+                                                    event.stopPropagation();
+                                                    confirmDeleteItem('<?php echo $item_name ?>', <?php echo $item_id ?>, '<?php echo $schedule_name ?>')"
                                                 >delete</i></td>
                                         </tr>
-                                        <?php }?>
+                                    <?php }?>
                                     </tbody>
                                 </table>
+                                <br>
                             </div>
-                        </div>
-                        <div class="modal-footer">
-                            <a href="#Add<?php echo $schedule_id ?>" class="modal-action modal-close modal-trigger waves-effect waves-green btn-flat">Add Item</a>
-                            <a href="./index.php?action=run&schedule_id=<?php echo $schedule_id ?>" class="modal-action modal-close waves-effect waves-green btn-flat">Run</a>
-                            <a class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
                         </div>
                     </div>
 
@@ -108,46 +119,34 @@
                             </div>
                         </form>
                     </div>
-
-                </td>
-                <td class="hide-on-small-only"><?php echo int_to_duration($total_duration) ?></td>
-                <td>
-                    <i class="material-icons tooltipped" data-tooltip="Delete Schedule" onclick="
-                            event.stopPropagation();
-                            confirmDeleteSchedule('<?php echo $schedule_name ?>', <?php echo $schedule_id ?>);"
-                    >delete</i>
-                    &nbsp;&nbsp;&nbsp;
-                    <i onclick="location.href='./index.php?action=run&schedule_id=<?php echo $schedule_id ?>'" class="material-icons tooltipped" data-tooltip="Run Schedule">send</i>
-                </td>
-            </tr>
             <?php } ?>
-        </tbody>
-    </table>
-</div>
+            </div>
+        </div>
+    </div>
 
-<script>
-    $(document).ready(function(){
-        $('.modal').modal();
-        if ("<?php echo $modal ?>" != "") {
-            $("#<?php echo $modal ?>").modal("open");
+    <script>
+        $(document).ready(function(){
+            $('.modal').modal();
+            if ("<?php echo $modal ?>" !== "") {
+                $("#<?php echo $modal ?>").modal("open");
+            }
+        });
+
+        function delItem(item_id) {
+            location.href='./index.php?action=delete_item&item_id=' + item_id;
         }
-    });
 
-    function delItem(item_id) {
-        location.href='./index.php?action=delete_item&item_id=' + item_id;
-    }
+        function delSchedule(schedule_id) {
+            location.href='./index.php?action=delete_schedule&schedule_id=' + schedule_id;
+        }
 
-    function delSchedule(schedule_id) {
-        location.href='./index.php?action=delete_schedule&schedule_id=' + schedule_id;
-    }
+        function confirmDeleteItem(item_name, item_id, schedule_name) {
+            Materialize.toast('<span>Delete ' + item_name + ' from ' + schedule_name + '?</span><button class="btn-flat toast-action" onclick="delItem(' + item_id + ')">Confirm</button>', 10000);
+        }
 
-    function confirmDeleteItem(item_name, item_id, schedule_name) {
-        Materialize.toast('<span>Delete ' + item_name + ' from ' + schedule_name + '?</span><button class="btn-flat toast-action" onclick="delItem(' + item_id + ')">Confirm</button>', 10000);
-    }
-
-    function confirmDeleteSchedule(schedule_name, schedule_id) {
-        Materialize.toast('<span>Delete schedule: ' + schedule_name + '?<span><button class="btn-flat toast-action" onclick="delSchedule(' + schedule_id + ')">Confirm</button>', 10000);
-    }
-</script>
+        function confirmDeleteSchedule(schedule_name, schedule_id) {
+            Materialize.toast('<span>Delete schedule: ' + schedule_name + '?<span><button class="btn-flat toast-action" onclick="delSchedule(' + schedule_id + ')">Confirm</button>', 10000);
+        }
+    </script>
 
 <?php writeFooter() ?>

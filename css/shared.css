@@ -1,3 +1,13 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
 .material-icons:hover {
     cursor: pointer;
 }
@@ -13,4 +23,16 @@
 .title {
     font-weight: 200;
     text-align: center;
+}
+
+.material-tooltip {
+    max-width: 200px;
+}
+
+.card-content:hover {
+    cursor: pointer;
+}
+
+blockquote {
+    word-wrap: break-word;
 }

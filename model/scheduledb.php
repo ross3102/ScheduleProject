@@ -43,7 +43,7 @@ function get_item_by_id($item_id) {
 function get_schedules_by_user_id($user_id) {
     global $db;
 
-    $query = "select schedule_id, schedule_name
+    $query = "select schedule_id, schedule_name, schedule_desc
               from schedule
               where user_id = :user_id
               order by schedule_id";
@@ -66,7 +66,7 @@ function get_items_by_schedule_id($schedule_id) {
     $query = "select item_id, item_name, item_duration
               from item
               where schedule_id = :schedule_id
-              order by item_id";
+              order by item_index";
     try {
         $statement = $db->prepare($query);
         $statement->bindValue(':schedule_id', $schedule_id);
@@ -116,16 +116,17 @@ function last_insert() {
     }
 }
 
-function add_schedule($user_id, $schedule_name) {
+function add_schedule($user_id, $schedule_name, $schedule_desc) {
     global $db;
 
-    $query = "insert into schedule (user_id, schedule_name)
-              values (:user_id, :schedule_name)";
+    $query = "insert into schedule (user_id, schedule_name, schedule_desc)
+              values (:user_id, :schedule_name, :schedule_desc)";
 
     try {
         $statement = $db->prepare($query);
         $statement->bindValue(':user_id', $user_id);
         $statement->bindValue(':schedule_name', $schedule_name);
+        $statement->bindValue(':schedule_desc', $schedule_desc);
         $statement->execute();
         $statement->closeCursor();
         return last_insert();

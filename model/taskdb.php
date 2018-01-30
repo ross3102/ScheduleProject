@@ -103,11 +103,11 @@ function get_total_tasks($category_id) {
 function get_task_list($user_id) {
     global $db;
 
-    $query = "select task_id, task_name, DATE_FORMAT(task_date, '%b %d, %Y') as task_date, c.category_id, c.category_name
+    $query = "select task_id, task_name, DATE_FORMAT(task_date, '%b %d, %Y') as task_datef, c.category_id, c.category_name
               from task_list_task t, task_list_category c
               where t.category_id = c.category_id
               and user_id = :user_id
-              order by c.category_name, task_name";
+              order by task_date, c.category_name, task_name";
     try {
         $statement = $db->prepare($query);
         $statement->bindValue(':user_id', $user_id);

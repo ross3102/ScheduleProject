@@ -13,8 +13,7 @@
                         <tr>
                             <th></th>
                             <th>Task Name</th>
-                            <th>Task Date</th>
-                            <th>Category</th>
+                            <th>Task Duration</th>
                         </tr>
                     </thead>
                     <tbody id="builtScheduleBody"></tbody>
@@ -37,7 +36,7 @@
                             $task_name = $task["task_name"];
                             $task_id = $task["task_id"];
                             $category_name = $task["category_name"];
-                            $task_date = $task["task_date"];?>
+                            $task_date = $task["task_datef"];?>
                             <tr id="T<?php echo $task_id ?>">
                                 <td>
                                     <i class="material-icons" onclick="addToSchedule('<?php echo $task_id ?>', '<?php echo $task_name ?>', '<?php echo $category_name ?>', '<?php echo $task_date ?>')">chevron_left</i>
@@ -63,7 +62,7 @@
             }
             $("#T" + task_id).remove();
             var oc = 'removeFromSchedule(&quot;' + task_id + '&quot;, &quot;' + task_name + '&quot;, &quot;' + category_name + '&quot;, &quot;' + task_date + '&quot;)';
-            var newElement = '<tr id="T' + task_id + '" class="D' + time + '"><td><i class="material-icons" onclick="' + oc + '">chevron_right</i></td><td>' + task_name + '</td><td>' + task_date + '</td><td>' + category_name + '</td></tr>';
+            var newElement = '<tr id="T' + task_id + '" class="D' + time + '"><td><i class="material-icons" onclick="' + oc + '">chevron_right</i></td><td>' + task_name + '</td><td>' + time + '</td></tr>';
             $("#builtScheduleBody").append(newElement);
         }
 
@@ -76,12 +75,13 @@
 
         function assembleSchedule() {
             var scheduleName = prompt("Enter a name for your new schedule");
-            if (scheduleName == null || scheduleName == "") return;
+            if (scheduleName == null || scheduleName === "") return;
+            var scheduleDesc = prompt("Describe your new schedule");
             var sched = $("#builtScheduleBody").find("tr").map(function() {
                 return this.id.slice(1) + "-" + $(this).attr("class").slice(1);
             });
             sched = JSON.stringify(sched);
-            location.href = "./index.php?action=confirm_build_schedule&ids=" + sched + "&schedule_name=" + scheduleName;
+            location.href = "./index.php?action=confirm_build_schedule&ids=" + sched + "&schedule_name=" + scheduleName + "&schedule_desc=" + scheduleDesc;
         }
 
     </script>

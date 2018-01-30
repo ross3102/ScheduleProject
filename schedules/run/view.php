@@ -121,6 +121,7 @@ writeHeader($head) ?>
         mil %= 60*1000;
         var seconds = ("0" + parseInt(mil / 1000)).slice(-2);
         $(".timer").html(hours + ":" + minutes + ":" + seconds);
+        sendNotification(hours + ":" + minutes + ":" + seconds);
         updateTimes(); // TODO maybe find way to do this better?
     }
 
@@ -129,6 +130,15 @@ writeHeader($head) ?>
         items.slice(itemIndex + offset).forEach(function(item) {
             time = new Date(time.getTime() + item['item_duration'] * 1000);
             $("#" + item['item_id']).html(time.toLocaleTimeString());
+        });
+    }
+
+    function sendNotification(body) {
+        Notification.requestPermission(function (status) {  // status is "granted", if accepted by user
+            var n = new Notification("Time left", {
+                body: body
+                // icon: '/path/to/icon.png' // optional
+            });
         });
     }
 

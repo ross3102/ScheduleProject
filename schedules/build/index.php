@@ -21,7 +21,8 @@ switch ($action) {
     case 'confirm_build_schedule':
         $ids = json_decode(filter_input(INPUT_GET, "ids"));
         $schedule_name = filter_input(INPUT_GET, "schedule_name");
-        $schedule_id = add_schedule($user_id, $schedule_name);
+        $schedule_desc = filter_input(INPUT_GET, "schedule_desc");
+        $schedule_id = add_schedule($user_id, $schedule_name, $schedule_desc);
         foreach ($ids as $id) {
             if (gettype($id) == "string") {
                 $id = explode("-", $id);
