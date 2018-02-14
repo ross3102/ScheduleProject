@@ -110,6 +110,7 @@ writeHeader($head);
     });
 
     $(".collapsibleItem").click(function() {
+        var active;
         if ($(this).find(".collection-item")[0] == null) {
             if (!($(this).hasClass("active")))
                 event.stopPropagation();
@@ -117,7 +118,6 @@ writeHeader($head);
             active = 0
         }
         else {
-            var active;
             if ($(this).hasClass("active")) active = 0;
             else active = 1;
         }

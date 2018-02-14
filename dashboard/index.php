@@ -32,10 +32,15 @@ writeHeader($head);
         <?php
             create_dashboard_item("schedules", "Manage Schedules",
                 "Run or edit existing schedules or create a new one!", "view_list");
+
             create_dashboard_item("work", "Task List",
                 "Write down upcoming tasks or assignments", "view_agenda");
+
             create_dashboard_item("calendar", "Calendar",
-                "Click to see your calendar", "today")
+                "Click to see your calendar", "today");
+
+            create_dashboard_item("feedback", "Give feedback",
+                "Have a question? Comment? Concern? Feedback is always appreciated", "comment");
         ?>
     </div>
 </div>

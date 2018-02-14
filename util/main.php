@@ -85,11 +85,12 @@ function writeFooter() {
                 <h4>' . $app_title . '</h4>
                     <p>By Ross Newman</p>
                 </div>
-            </div>
-        </div>
-        <div class="footer-copyright">
-            <div class="container">
-                &copy; 2018 Ross Newman
+                <div class="col s3 offset-s3">
+                    <h5>Contact</h5>
+                    <ul>
+                        <li>Cell: 201-994-9454</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </footer>

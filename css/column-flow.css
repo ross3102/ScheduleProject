@@ -20,10 +20,10 @@
     column-count: 2;
   }
 }
-@media only screen and (min-width : 993px) {
-  .cards-container {
-    -webkit-column-count: 3;
-    -moz-column-count: 3;
-    column-count: 3;
-  }
-}
+/*@media only screen and (min-width : 993px) {*/
+  /*.cards-container {*/
+    /*-webkit-column-count: 3;*/
+    /*-moz-column-count: 3;*/
+    /*column-count: 3;*/
+  /*}*/
+/*}*/

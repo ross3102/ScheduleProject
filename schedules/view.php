@@ -77,7 +77,8 @@ writeHeader($head) ?>
                                     <?php foreach ($items as $item) {
                                         $item_id = $item["item_id"];
                                         $item_name = $item["item_name"];
-                                        $item_duration = $item["item_duration"]; ?>
+                                        $item_duration = $item["item_duration"];
+                                        $item_desc = $item["item_desc"]; ?>
                                         <tr>
                                             <td><?php echo $item_name ?></td>
                                             <td><?php echo int_to_duration($item_duration) ?></td>
@@ -85,6 +86,7 @@ writeHeader($head) ?>
                                                     event.stopPropagation();
                                                     confirmDeleteItem('<?php echo $item_name ?>', <?php echo $item_id ?>, '<?php echo $schedule_name ?>')"
                                                 >delete</i></td>
+                                            <td><i class="material-icons tooltipped" data-tooltip="<?php echo $item_desc ?>">info</i></td>
                                         </tr>
                                     <?php }?>
                                     </tbody>
@@ -110,6 +112,10 @@ writeHeader($head) ?>
                                             <input type="text" id="item_duration" name="item_duration" placeholder="HH:MM:SS" pattern="\d{1,2}:\d{2}:\d{2}" class="validate" required>
                                             <label for="item_duration" data-error="Enter a duration in the format HH:MM:SS or H:MM:SS">Item Duration</label>
                                         </div>
+                                        <div class="input-field col s12">
+                                            <textarea name="item_desc" id="item_desc" class="materialize-textarea"></textarea>
+                                            <label for="item_desc">Item Description</label>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -130,6 +136,10 @@ writeHeader($head) ?>
             if ("<?php echo $modal ?>" !== "") {
                 $("#<?php echo $modal ?>").modal("open");
             }
+        });
+
+        $(".activator").click(function () {
+            $(".tooltipped").tooltip();
         });
 
         function delItem(item_id) {

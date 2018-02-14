@@ -29,7 +29,8 @@ switch ($action) {
                 $task = get_task_by_id($id[0]);
                 $task_name = $task["task_name"];
                 $duration = $id[1];
-                add_item_to_schedule($schedule_id, $task_name, duration_to_int($duration));
+                $desc = $id[2];
+                add_item_to_schedule($schedule_id, $task_name, duration_to_int($duration), $desc);
             }
         }
         header("Location: ..");
