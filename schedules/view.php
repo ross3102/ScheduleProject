@@ -1,6 +1,9 @@
 <?php
 $head = "
-<link rel='stylesheet' type='text/css' href='../css/column-flow.css'>
+<script src=\"../js/masonry.pkgd.min.js\"></script>
+<link rel='stylesheet' href='../css/column-flow.css'>
+<link rel='stylesheet' href='../css/shared.css'>
+
 ";
 writeHeader($head) ?>
     <div class="container">
@@ -34,65 +37,73 @@ writeHeader($head) ?>
                 </div>
             </form>
         </div>
-        <div class="row">
-            <div class="col s12 cards-container">
+        <div class="grid">
+            <div class="grid-sizer"></div>
+            <div class="gutter-sizer"></div>
             <?php foreach ($schedules as $schedule) {
                 $schedule_id = $schedule["schedule_id"];
                 $schedule_name = $schedule["schedule_name"];
                 $schedule_desc = $schedule["schedule_desc"];
                 $items = get_items_by_schedule_id($schedule_id);
                 $total_duration = get_total_duration($schedule_id)["tot"] ?>
-                    <div class="card sticky-action z-depth-4">
+                    <div class="grid-item card sticky-action hoverable">
                         <div class="card-content">
                             <div class="activator">
-                                <span class="card-title activator"><?php echo $schedule_name ?></span>
+                                <span class="card-title activator">
+                                    <?php echo $schedule_name ?>
+                                    <span class="new badge activator blue"
+                                          data-badge-caption="<?php echo "Item" . (count($items) != 1 ? "s": "") ?>">
+                                        <?php echo count($items) ?>
+                                    </span>
+                                </span>
                                 <blockquote class=activator style="border-left: 5px solid #50ae54">
                                     <p class="activator"><?php echo $schedule_desc ?></p>
                                 </blockquote>
-                                <p class="activator"><?php echo int_to_duration($total_duration) ?></p>
-                                <p class="activator"><?php echo count($items) . " Item" . (count($items) != 1 ? "s": "") ?></p>
+                                <div class="divider"></div>
+                                <div class="section center-align">
+                                    <div class="timer green">
+                                        <p class="activator"><?php echo int_to_duration($total_duration) ?></p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="card-action">
                             <a href="#" onclick="
                                 event.stopPropagation();
-                                confirmDeleteSchedule('<?php echo $schedule_name ?>', <?php echo $schedule_id ?>);"
+                                confirmDeleteSchedule('<?php echo addslashes($schedule_name) ?>', <?php echo $schedule_id ?>);"
                             >Delete</a>
                             <a href="#Add<?php echo $schedule_id ?>" class="modal-trigger">Add Item</a>
                             <a href='./index.php?action=run&schedule_id=<?php echo $schedule_id ?>'>Run</a>
 
                         </div>
-                        <div class="card-reveal" style="overflow: hidden;">
-                            <span class="card-title"><?php echo $schedule_name ?><i class="material-icons right">close</i></span>
-                            <div class="reveal-content" style="overflow-y: scroll; height: 100%;">
-                                <table class="highlight">
-                                    <thead>
+                        <div class="card-reveal">
+                            <span class="card-title white" style="position: sticky; top: 0;"><?php echo $schedule_name ?><i class="material-icons right">close</i></span>
+                            <table class="highlight">
+                                <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Duration</th>
+                                    <th></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <?php foreach ($items as $item) {
+                                    $item_id = $item["item_id"];
+                                    $item_name = $item["item_name"];
+                                    $item_duration = $item["item_duration"];
+                                    $item_desc = $item["item_desc"]; ?>
                                     <tr>
-                                        <th>Name</th>
-                                        <th>Duration</th>
-                                        <th></th>
+                                        <td><?php echo $item_name ?></td>
+                                        <td><?php echo int_to_duration($item_duration) ?></td>
+                                        <td><i class="material-icons clickable" onclick="
+                                                event.stopPropagation();
+                                                confirmDeleteItem('<?php echo addslashes($item_name) ?>', <?php echo $item_id ?>, '<?php echo addslashes($schedule_name) ?>')"
+                                            >delete</i></td>
+                                        <td><a class="modal-trigger black-text" href="#InfoModal<?php echo $item_id ?>"><i class="material-icons clickable" >info</i></a></td>
                                     </tr>
-                                    </thead>
-                                    <tbody>
-                                    <?php foreach ($items as $item) {
-                                        $item_id = $item["item_id"];
-                                        $item_name = $item["item_name"];
-                                        $item_duration = $item["item_duration"];
-                                        $item_desc = $item["item_desc"]; ?>
-                                        <tr>
-                                            <td><?php echo $item_name ?></td>
-                                            <td><?php echo int_to_duration($item_duration) ?></td>
-                                            <td><i class="material-icons" onclick="
-                                                    event.stopPropagation();
-                                                    confirmDeleteItem('<?php echo $item_name ?>', <?php echo $item_id ?>, '<?php echo $schedule_name ?>')"
-                                                >delete</i></td>
-                                            <td><i class="material-icons tooltipped" data-tooltip="<?php echo $item_desc ?>">info</i></td>
-                                        </tr>
-                                    <?php }?>
-                                    </tbody>
-                                </table>
-                                <br>
-                            </div>
+                                <?php }?>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
 
@@ -125,8 +136,22 @@ writeHeader($head) ?>
                             </div>
                         </form>
                     </div>
+                    <?php foreach ($items as $item) {
+                        $item_id = $item["item_id"];
+                        $item_name = $item["item_name"];
+                        $item_duration = $item["item_duration"];
+                        $item_desc = $item["item_desc"]; ?>
+                        <div class="modal" id="InfoModal<?php echo $item_id ?>">
+                            <div class="modal-content">
+                                <a class="modal-action modal-close black-text">
+                                    <h4 class="title center-align"><?php echo $item_name . " - " . int_to_duration($item_duration) ?><i class="material-icons right">close</i></h4>
+                                </a>
+                                <div class="divider"></div>
+                                <p><?php echo $item_desc ?></p>
+                            </div>
+                        </div>
+                    <?php } ?>
             <?php } ?>
-            </div>
         </div>
     </div>
 
@@ -136,10 +161,12 @@ writeHeader($head) ?>
             if ("<?php echo $modal ?>" !== "") {
                 $("#<?php echo $modal ?>").modal("open");
             }
-        });
-
-        $(".activator").click(function () {
-            $(".tooltipped").tooltip();
+            $('.grid').masonry({
+                itemSelector: '.grid-item',
+                columnWidth: '.grid-sizer',
+                percentPosition: true,
+                gutter: '.gutter-sizer'
+            });
         });
 
         function delItem(item_id) {

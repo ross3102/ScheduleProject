@@ -28,6 +28,7 @@
                         <th>Task Name</th>
                         <th>Task Date</th>
                         <th>Category</th>
+                        <th></th>
                     </tr>
                     </thead>
                     <tbody id="taskListBody">
@@ -35,14 +36,16 @@
                             $task_name = $task["task_name"];
                             $task_id = $task["task_id"];
                             $category_name = $task["category_name"];
-                            $task_date = $task["task_date_short"];?>
+                            $task_date = $task["task_date_short"];
+                            $task_complete = $task["task_completed"]; ?>
                             <tr id="T<?php echo $task_id ?>">
                                 <td>
-                                    <i class="material-icons" onclick="addToSchedule('<?php echo $task_id ?>', '<?php echo $task_name ?>', '<?php echo $category_name ?>', '<?php echo $task_date ?>')">chevron_left</i>
+                                    <i class="material-icons clickable" onclick="addToSchedule('<?php echo $task_id ?>', '<?php echo addslashes($task_name) ?>', '<?php echo addslashes($category_name) ?>', '<?php echo $task_date ?>')">chevron_left</i>
                                 </td>
                                 <td><?php echo $task_name ?></td>
                                 <td><?php echo $task_date ?></td>
                                 <td><?php echo $category_name ?></td>
+                                <td><?php if ($task_complete) { ?><i class="material-icons green-text">check</i><?php } ?></td>
                             </tr>
                         <?php } ?>
                     </tbody>
@@ -60,7 +63,7 @@
             }
             $("#T" + task_id).remove();
             var oc = 'removeFromSchedule(&quot;' + task_id + '&quot;, &quot;' + task_name + '&quot;, &quot;' + category_name + '&quot;, &quot;' + task_date + '&quot;)';
-            var newElement = '<tr data-task-id="' + task_id + '" data-time="' + time + '" data-desc="Imported from Task List. Category: ' + category_name + '. Due Date: ' + task_date + '"><td><i class="material-icons" onclick="' + oc + '">chevron_right</i></td><td>' + task_name + '</td><td>' + time + '</td></tr>';
+            var newElement = '<tr id="T' + task_id + '" data-task-id="' + task_id + '" data-time="' + time + '" data-desc="<?php if (false) { ?>Imported from Task List. Category: ' + category_name + '. Due Date: ' + task_date + '<?php } ?>"><td><i class="material-icons" onclick="' + oc + '">chevron_right</i></td><td>' + task_name + '</td><td>' + time + '</td></tr>';
             $("#builtScheduleBody").append(newElement);
         }
 

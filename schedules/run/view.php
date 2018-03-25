@@ -1,20 +1,18 @@
 <?php
-$head = "<script src='../../js/Timer/countdown-timer.js'></script>";
+$head = "";
 writeHeader($head) ?>
 <div class="container">
     <h3 class="title"><?php echo $schedule["schedule_name"] ?></h3>
     <div class="row center-align">
-        <div class="col s12">
-            <div class="timer"></div>
+        <div class="section">
+            <div class="timer blue"></div>
         </div>
-        <div class="col s12" style="margin-bottom: 5px;">
-            <a href=".." class="waves-effect waves-light btn">Back</a>
-            <button class="waves-effect waves-light btn" id="pause" onclick="pause()">Pause</button>
-            <button class="waves-effect waves-light btn" onclick="nextAssignment(true)">Next</button>
-        </div>
-        <div class="col s12">
-            <button class="waves-effect waves-light btn" onclick="alert('AFTER')">Add Item After</button>
-            <button class="waves-effect waves-light btn" onclick="alert('END')">Add Item To End</button>
+        <div class="col s6 offset-s3" style="margin-bottom: 5px;">
+            <a href=".." class="waves-effect waves-light btn col s4">Back</a>
+            <button class="waves-effect waves-light btn col s4" id="pause" onclick="pause()">Pause</button>
+            <button class="waves-effect waves-light btn col s4" onclick="nextAssignment(true)">Next</button>
+            <button class="waves-effect waves-light btn col s6" onclick="alert('AFTER')">Add Item After</button>
+            <button class="waves-effect waves-light btn col s6" onclick="alert('END')">Add Item To End</button>
         </div>
     </div>
     <table class="centered">

@@ -37,7 +37,7 @@ writeHeader($head);
                     </div>
                     <div class="input-field col s6 m3">
                         <select name="task_category" id="task_category">
-                            <option value="-1">General</option>
+<!--                            <option value="-1">General</option>-->
                             <?php foreach ($categories as $category) { ?>
                                 <option value="<?php echo $category['category_id'] ?>"><?php echo $category["category_name"] ?></option>
                             <?php } ?>
@@ -70,9 +70,9 @@ writeHeader($head);
                         <div class="category-header-inner">
                             <?php echo $category_name ?>
                             <span class="numTasks"><?php echo get_total_tasks($category_id) ?>
-                                <i class="material-icons tooltipped" data-tooltip="Delete Category" onclick="
+                                <i class="material-icons clickable tooltipped" data-tooltip="Delete Category" onclick="
                                         event.stopPropagation();
-                                        confirmDeleteCategory('<?php echo $category_name ?>', <?php echo $category_id ?>);"
+                                        confirmDeleteCategory('<?php echo addslashes($category_name) ?>', <?php echo $category_id ?>);"
                                 >delete</i></span>
                         </div>
                     </div>
@@ -86,9 +86,9 @@ writeHeader($head);
                                 $color = ($task_completed ? "grey": "black") . "-text"?>
                                 <li class="collection-item">
                                     <span class="secondary-content <?php echo $color . " " . $task_id; ?>"><?php echo $task_date ?>
-                                        <i class="material-icons tooltipped" data-tooltip="Delete Task" onclick="
+                                        <i class="material-icons clickable tooltipped" data-tooltip="Delete Task" onclick="
                                                 event.stopPropagation();
-                                                confirmDeleteTask('<?php echo $task_name ?>', <?php echo $task_id ?>, '<?php echo $category_name ?>')"
+                                                confirmDeleteTask('<?php echo addslashes($task_name) ?>', <?php echo $task_id ?>, '<?php echo addslashes($category_name) ?>')"
                                         >delete</i></span>
                                     <input id="CB<?php echo $task_id ?>" type="checkbox" <?php if ($task_completed == 1) echo "checked" ?>><label for="CB<?php echo $task_id ?>"><span class="<?php echo $color . " " . $task_id ?>"><?php echo $task_name ?></span></label>
                                 </li>
@@ -109,11 +109,11 @@ writeHeader($head);
         $(".modal").modal();
     });
 
-    $(".collapsibleItem").click(function() {
+    $(".collapsible-header").click(function() {
         var active;
-        if ($(this).find(".collection-item")[0] == null) {
-            if (!($(this).hasClass("active")))
-                event.stopPropagation();
+        var collapsibleItem = $(this).parent();
+        if (collapsibleItem.find(".collection-item")[0] == null) {
+            event.stopPropagation();
             Materialize.toast("This category is empty!", 2000);
             active = 0
         }
@@ -121,7 +121,7 @@ writeHeader($head);
             if ($(this).hasClass("active")) active = 0;
             else active = 1;
         }
-        var category_id = $(this).attr("id").slice(1);
+        var category_id = collapsibleItem.attr("id").slice(1);
         var url = './index.php?action=collapse&category_id=' + category_id + '&category_active=' + active;
         var request = new XMLHttpRequest();
         request.open('GET', url, true);

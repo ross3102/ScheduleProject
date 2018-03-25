@@ -19,6 +19,7 @@ switch ($action) {
         include "view.php";
         break;
     case 'confirm_build_schedule':
+        // TODO ids parameter too long for get request
         $ids = json_decode(filter_input(INPUT_GET, "ids"));
         $schedule_name = filter_input(INPUT_GET, "schedule_name");
         $schedule_desc = filter_input(INPUT_GET, "schedule_desc");

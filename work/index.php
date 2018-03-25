@@ -45,7 +45,6 @@ switch ($action) {
         $task_id = filter_input(INPUT_GET, "task_id");
         $task_completed = filter_input(INPUT_GET, "task_completed");
         complete($task_id, $task_completed);
-        header("Location: .");
         break;
     case 'collapse':
         $category_id = filter_input(INPUT_GET, "category_id");

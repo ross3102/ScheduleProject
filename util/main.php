@@ -42,7 +42,7 @@ function int_to_duration($item_duration) {
 }
 
 function writeHeader($head='') {
-    global $web_root, $app_title;
+    global $web_root, $app_title, $user;
     echo '
     <html>
     <head>
@@ -62,6 +62,7 @@ function writeHeader($head='') {
                     <a data-activates="sidenav" class="button-collapse"><i class="material-icons">menu</i></a>
                     <ul class="right hide-on-med-and-down">
                         <li><a href="/' . $web_root . '/dashboard">Dashboard</a></li>
+                        <li><a href="#">Hello, ' . $user["user_first_name"] . '</a></li>
                     </ul>
                     <ul class="side-nav" id="sidenav">
                         <li><a href="/' . $web_root . '/dashboard">Dashboard</a></li>
@@ -86,10 +87,10 @@ function writeFooter() {
                     <p>By Ross Newman</p>
                 </div>
                 <div class="col s3 offset-s3">
-                    <h5>Contact</h5>
+                    <!--<h5>Contact</h5>
                     <ul>
                         <li>Cell: 201-994-9454</li>
-                    </ul>
+                    </ul>-->
                 </div>
             </div>
         </div>

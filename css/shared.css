@@ -8,7 +8,7 @@ main {
     flex: 1 0 auto;
 }
 
-.material-icons:hover {
+.clickable:hover {
     cursor: pointer;
 }
 
@@ -35,4 +35,13 @@ main {
 
 blockquote {
     word-wrap: break-word;
+}
+
+.timer {
+    border-radius: 10px;
+    font-size: 200%;
+    display: inline-block;
+    padding: 5px 15px;
+    margin: 0 auto;
+    font-family: 'Courier';
 }

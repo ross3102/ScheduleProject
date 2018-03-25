@@ -179,11 +179,21 @@ function delete_item($item_id) {
     global $db;
 
     $query = "delete from item
-              where item_id = :item_id";
+              where item_id = :item_id;
+              update item
+                set item_index = item_index - 1
+                where item_index > :deleted_index
+                and schedule_id = :schedule_id";
 
     try {
         $statement = $db->prepare($query);
         $statement->bindValue(':item_id', $item_id);
+
+        $item = get_item_by_id($item_id);
+
+        $statement->bindValue(':deleted_index', $item["item_index"]);
+        $statement->bindValue(':schedule_id', $item["item_index"]);
+
         $statement->execute();
         $statement->closeCursor();
     } catch (PDOException $e) {
