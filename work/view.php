@@ -1,5 +1,11 @@
 <?php
-$head = '<link rel="stylesheet" href="work.css">';
+$head = '
+<link rel="stylesheet" href="work.css">
+<script>
+    function delTask(task_id) {
+        location.href = "./index.php?action=delete_task&task_id=" + task_id;
+    }
+</script>';
 writeHeader($head);
 ?>
 <div class="container">
@@ -70,7 +76,7 @@ writeHeader($head);
                         <div class="category-header-inner">
                             <?php echo $category_name ?>
                             <span class="numTasks"><?php echo get_total_tasks($category_id) ?>
-                                <i class="material-icons clickable tooltipped" data-tooltip="Delete Category" onclick="
+                                <i class="material-icons clickable tooltipped red-text" data-tooltip="Delete Category" onclick="
                                         event.stopPropagation();
                                         confirmDeleteCategory('<?php echo addslashes($category_name) ?>', <?php echo $category_id ?>);"
                                 >delete</i></span>
@@ -78,21 +84,24 @@ writeHeader($head);
                     </div>
                     <div class="collapsible-body">
                         <ul class="collection">
-                            <?php foreach ($tasks as $task) {
+                            <?php foreach ($tasks as $task):
                                 $task_id = $task["task_id"];
                                 $task_name = $task["task_name"];
                                 $task_date = $task["task_date"];
                                 $task_completed = $task["task_completed"];
-                                $color = ($task_completed ? "grey": "black") . "-text"?>
-                                <li class="collection-item">
-                                    <span class="secondary-content <?php echo $color . " " . $task_id; ?>"><?php echo $task_date ?>
-                                        <i class="material-icons clickable tooltipped" data-tooltip="Delete Task" onclick="
-                                                event.stopPropagation();
-                                                confirmDeleteTask('<?php echo addslashes($task_name) ?>', <?php echo $task_id ?>, '<?php echo addslashes($category_name) ?>')"
-                                        >delete</i></span>
-                                    <input id="CB<?php echo $task_id ?>" type="checkbox" <?php if ($task_completed == 1) echo "checked" ?>><label for="CB<?php echo $task_id ?>"><span class="<?php echo $color . " " . $task_id ?>"><?php echo $task_name ?></span></label>
-                                </li>
-                            <?php } ?>
+                                $color = ($task_completed ? "grey": "black") . "-text";
+                                if ($task_completed == 0) {?>
+                                    <li class="collection-item">
+                                        <span class="secondary-content <?php echo $color . " " . $task_id; ?>">
+                                            <?php echo $task_date ?>
+                                            <i class="material-icons clickable tooltipped blue-text" data-tooltip="Edit Task">edit</i>
+                                        </span>
+                                        <input id="CB<?php echo $task_id ?>" data-task-id="<?php echo $task_id ?>" type="checkbox"><label for="CB<?php echo $task_id ?>"><span class="<?php echo $color . " " . $task_id ?>"><?php echo $task_name ?></span></label>
+                                    </li>
+                                <?php } else { ?>
+                                    <script>delTask(<?php echo $task_id ?>);</script>
+                                <?php }
+                            endforeach; ?>
                         </ul>
                     </div>
                 </li>
@@ -128,16 +137,8 @@ writeHeader($head);
         request.send();
     });
 
-    function delTask(task_id) {
-        location.href='./index.php?action=delete_task&task_id=' + task_id;
-    }
-
     function delCategory(category_id) {
         location.href='./index.php?action=delete_category&category_id=' + category_id;
-    }
-
-    function confirmDeleteTask(task_name, task_id, category_name) {
-        Materialize.toast('<span>Delete ' + task_name + ' from ' + category_name + '?</span><button class="btn-flat toast-action" onclick="delTask(' + task_id + ')">Confirm</button>', 10000);
     }
 
     function confirmDeleteCategory(category_name, category_id) {
@@ -145,7 +146,7 @@ writeHeader($head);
     }
 
     $("input[type=checkbox]").change(function() {
-        var task_id = $(this).attr("id").slice(2);
+        var task_id = $(this).attr("data-task-id");
         var task_completed;
         if ($(this).is(':checked')) {
             task_completed = 1;
@@ -157,6 +158,7 @@ writeHeader($head);
         text.toggleClass("black-text");
         text.toggleClass("grey-text");
         var url = './index.php?action=complete&task_id=' + task_id + '&task_completed=' + task_completed;
+
         var request = new XMLHttpRequest();
         request.open('GET', url, true);
         request.send();

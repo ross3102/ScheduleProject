@@ -37,7 +37,6 @@ switch ($action) {
         break;
     case 'delete_task':
         $task_id = filter_input(INPUT_GET, "task_id");
-        $category_id = get_task_by_id($task_id)["category_id"];
         delete_task($task_id);
         header("Location: .");
         break;
