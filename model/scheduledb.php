@@ -192,7 +192,7 @@ function delete_item($item_id) {
         $item = get_item_by_id($item_id);
 
         $statement->bindValue(':deleted_index', $item["item_index"]);
-        $statement->bindValue(':schedule_id', $item["item_index"]);
+        $statement->bindValue(':schedule_id', $item["schedule_id"]);
 
         $statement->execute();
         $statement->closeCursor();

@@ -1,11 +1,5 @@
 <?php
-$head = '
-<link rel="stylesheet" href="work.css">
-<script>
-    function delTask(task_id) {
-        location.href = "./index.php?action=delete_task&task_id=" + task_id;
-    }
-</script>';
+$head = '<link rel="stylesheet" href="work.css">';
 writeHeader($head);
 ?>
 <div class="container">
@@ -88,20 +82,15 @@ writeHeader($head);
                                 $task_id = $task["task_id"];
                                 $task_name = $task["task_name"];
                                 $task_date = $task["task_date"];
-                                $task_completed = $task["task_completed"];
-                                $color = ($task_completed ? "grey": "black") . "-text";
-                                if ($task_completed == 0) {?>
-                                    <li class="collection-item">
-                                        <span class="secondary-content <?php echo $color . " " . $task_id; ?>">
-                                            <?php echo $task_date ?>
-                                            <i class="material-icons clickable tooltipped blue-text" data-tooltip="Edit Task">edit</i>
-                                        </span>
-                                        <input id="CB<?php echo $task_id ?>" data-task-id="<?php echo $task_id ?>" type="checkbox"><label for="CB<?php echo $task_id ?>"><span class="<?php echo $color . " " . $task_id ?>"><?php echo $task_name ?></span></label>
-                                    </li>
-                                <?php } else { ?>
-                                    <script>delTask(<?php echo $task_id ?>);</script>
-                                <?php }
-                            endforeach; ?>
+                                $task_completed = $task["task_completed"]; ?>
+                                <li class="collection-item">
+                                    <span class="secondary-content black-text">
+                                        <?php echo $task_date ?>
+                                        <i class="material-icons clickable tooltipped blue-text" data-tooltip="Edit Task">edit</i>
+                                    </span>
+                                    <input id="CB<?php echo $task_id ?>" data-task-id="<?php echo $task_id ?>" type="checkbox"><label for="CB<?php echo $task_id ?>"><span class="black-text <?php echo $task_id ?>"><?php echo $task_name ?></span></label>
+                                </li>
+                            <?php endforeach; ?>
                         </ul>
                     </div>
                 </li>

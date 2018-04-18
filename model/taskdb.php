@@ -21,6 +21,7 @@ function get_category_by_id($category_id) {
 }
 
 function get_task_by_id($task_id) {
+    clean();
     global $db;
 
     $query = "select task_id, task_name, DATE_FORMAT(task_date, '%b %d, %Y') as task_date, task_completed, category_id
@@ -61,6 +62,7 @@ function get_categories_by_user_id($user_id) {
 }
 
 function get_tasks_by_category_id($category_id) {
+    clean();
     global $db;
 
     $query = "select task_id, task_name, DATE_FORMAT(task_date, '%c/%e/%Y') as task_date, task_completed
@@ -81,6 +83,7 @@ function get_tasks_by_category_id($category_id) {
 }
 
 function get_total_tasks($category_id) {
+    clean();
     global $db;
 
     $query = "select count(*) as num
@@ -101,6 +104,7 @@ function get_total_tasks($category_id) {
 }
 
 function get_task_list($user_id) {
+    clean();
     global $db;
 
     $query = "select task_id, task_name, DATE_FORMAT(task_date, '%b %d, %Y') as task_datef, DATE_FORMAT(task_date, '%m/%d/%y') as task_date_short, task_completed, c.category_id, c.category_name
@@ -177,15 +181,14 @@ function delete_category($category_id) {
     }
 }
 
-function delete_task($task_id) {
+function clean() {
     global $db;
 
     $query = "delete from task_list_task
-              where task_id = :task_id";
+              where task_completed = 1";
 
     try {
         $statement = $db->prepare($query);
-        $statement->bindValue(':task_id', $task_id);
         $statement->execute();
         $statement->closeCursor();
     } catch (PDOException $e) {
