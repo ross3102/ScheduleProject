@@ -65,7 +65,7 @@ function get_tasks_by_category_id($category_id) {
     clean();
     global $db;
 
-    $query = "select task_id, task_name, DATE_FORMAT(task_date, '%c/%e/%Y') as task_date, task_completed
+    $query = "select task_id, task_name, DATE_FORMAT(task_date, '%c/%e/%Y') as task_date, task_date as form_date,  task_completed
               from task_list_task
               where category_id = :category_id
               order by task_date";
@@ -154,6 +154,48 @@ function add_task_to_category($category_id, $task_name, $task_date) {
         $statement->bindValue(':category_id', $category_id);
         $statement->bindValue(':task_name', $task_name);
         $statement->bindValue(':task_date', $task_date);
+        $statement->execute();
+        $statement->closeCursor();
+    } catch (PDOException $e) {
+        echo ($e);
+        exit();
+    }
+}
+
+function edit_category($category_id, $category_name) {
+    global $db;
+
+    $query = "update task_list_category
+              set category_name = :category_name
+              where category_id = :category_id";
+
+    try {
+        $statement = $db->prepare($query);
+        $statement->bindValue(':category_id', $category_id);
+        $statement->bindValue(':category_name', $category_name);
+        $statement->execute();
+        $statement->closeCursor();
+    } catch (PDOException $e) {
+        echo ($e);
+        exit();
+    }
+}
+
+function edit_task($task_id, $task_name, $task_date, $category_id) {
+    global $db;
+
+    $query = "update task_list_task
+              set task_name = :task_name,
+              task_date = :task_date,
+              category_id = :category_id
+              where task_id = :task_id";
+
+    try {
+        $statement = $db->prepare($query);
+        $statement->bindValue(':task_id', $task_id);
+        $statement->bindValue(':task_name', $task_name);
+        $statement->bindValue(':task_date', $task_date);
+        $statement->bindValue(':category_id', $category_id);
         $statement->execute();
         $statement->closeCursor();
     } catch (PDOException $e) {

@@ -30,6 +30,21 @@ switch ($action) {
         add_task_to_category($category_id, $task_name, $task_date);
         header("Location: .");
         break;
+    case 'edit_category':
+        $category_id = filter_input(INPUT_POST, "category_id");
+        $category_name = filter_input(INPUT_POST, "category_name");
+        edit_category($category_id, $category_name);
+        header("Location: .");
+        break;
+    case 'edit_task':
+        $task_id = filter_input(INPUT_POST, "task_id");
+        $task_name = filter_input(INPUT_POST, "task_name");
+        $category_id = filter_input(INPUT_POST, "task_category");
+        $task_date = filter_input(INPUT_POST, "task_date");
+        $task_date = date('Y-m-d', strtotime($task_date));
+        edit_task($task_id, $task_name, $task_date, $category_id);
+        header("Location: .");
+        break;
     case 'delete_category':
         $category_id = filter_input(INPUT_GET, "category_id");
         delete_category($category_id);
