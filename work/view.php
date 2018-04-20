@@ -15,7 +15,7 @@ writeHeader($head);
             <div class="modal-content">
                 <input type="hidden" name="action" value="add_category">
                 <div class="input-field">
-                    <input type="text" name="category_name" id="category_name" required>
+                    <input class="charCount" type="text" name="category_name" id="category_name" data-length="60" maxlength="60" required>
                     <label for="category_name">New Category</label>
                 </div>
             </div>
@@ -32,7 +32,7 @@ writeHeader($head);
                 <input type="hidden" name="action" value="add_task">
                 <div class="row">
                     <div class="input-field col s6 m5">
-                        <input type="text" name="task_name" id="task_name" required>
+                        <input class="charCount" type="text" name="task_name" id="task_name" data-length="80" maxlength="80" required>
                         <label for="task_name">New Task</label>
                     </div>
                     <div class="input-field col s6 m3">
@@ -72,7 +72,7 @@ writeHeader($head);
                             <input type="hidden" name="action" value="edit_category">
                             <input type="hidden" name="category_id" value="<?php echo $category_id ?>">
                             <div class="input-field">
-                                <input type="text" name="category_name" id="category_name" value="<?php echo $category_name ?>" required>
+                                <input class="charCount" type="text" name="category_name" id="category_name" data-length="60" maxlength="60" value="<?php echo $category_name ?>" required>
                                 <label for="category_name">Category Name</label>
                             </div>
                         </div>
@@ -113,7 +113,7 @@ writeHeader($head);
                                             <input type="hidden" name="task_id" value="<?php echo $task_id ?>">
                                             <div class="row">
                                                 <div class="input-field col s6 m5">
-                                                    <input type="text" name="task_name" id="task_name" value="<?php echo $task_name ?>" required>
+                                                    <input class="charCount" type="text" name="task_name" id="task_name" data-length="80" maxlength="80" value="<?php echo $task_name ?>" required>
                                                     <label for="task_name">Task Name</label>
                                                 </div>
                                                 <div class="input-field col s6 m3">
@@ -159,6 +159,7 @@ writeHeader($head);
         $(".datepicker").pickadate();
         $(".picker").appendTo('body');
         $(".modal").modal();
+        $(".charCount").characterCounter();
     });
 
     $(".collapsible-header").click(function() {
