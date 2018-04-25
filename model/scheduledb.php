@@ -119,7 +119,7 @@ function last_insert() {
 function add_schedule($user_id, $schedule_name, $schedule_desc) {
     global $db;
 
-    $query = "insert into schedule (id, schedule_name, schedule_desc)
+    $query = "insert into schedule (user_id, schedule_name, schedule_desc)
               values (:user_id, :schedule_name, :schedule_desc)";
 
     try {

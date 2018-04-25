@@ -2,7 +2,7 @@
 writeHeader("");
 ?>
 <div class="container row">
-    <div class="col s12 m6 offset-m3 z-depth-3" style="margin-top: 20px; padding: 0 50px 20px;">
+    <div class="col s12 l6 offset-l3 z-depth-3" style="margin-top: 20px; padding: 0 50px 20px;">
         <h2 class="title">Log In</h2>
         <form id="logInForm" action="." method="post">
             <input type="hidden" name="action" value="log_in">
@@ -23,11 +23,5 @@ writeHeader("");
         <p>Don't have an account? <a href="./index.php?action=show_sign_up">Sign Up</a></p>
     </div>
 </div>
-
-    <script>
-        $(document).ready(function() {
-            Materialize.updateTextFields();
-        });
-    </script>
 
 <?php writeFooter() ?>

@@ -7,7 +7,7 @@ writeHeader($head);
 
     <div class="btn-div center-align">
         <a href="#newCategory" class="waves-effect waves-light btn-large blue lighten-1 modal-trigger">New Category</a>
-        <a href="#newTask" class="waves-effect waves-light btn-large blue lighten-1 modal-trigger">New Task</a>
+        <a href="#newTask" class="waves-effect waves-light btn-large blue lighten-1 modal-trigger<?php echo count($categories) == 0 ? " disabled": "" ?>">New Task</a>
     </div>
 
     <div class="modal" id="newCategory">

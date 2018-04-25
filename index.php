@@ -17,7 +17,16 @@ switch ($action) {
         $password = filter_input(INPUT_POST, "password");
         $confirm = filter_input(INPUT_POST, "confirm");
         $email = filter_input(INPUT_POST, "email");
-        $auth->register($email, $password, $confirm)["error"];
+        if ($auth->register($email, $password, $confirm)["error"] == 0) {
+            $auth->login($email, $password);
+            $user_id = $auth->getCurrentUID();
+            $first_name = filter_input(INPUT_POST, "first_name");
+            $last_name = filter_input(INPUT_POST, "last_name");
+            $username = filter_input(INPUT_POST, "username");
+            new_user($user_id, $first_name, $last_name, $username);
+            header("Location: /" . $web_root . "/dashboard");
+        }
+        break;
     case "log_in":
         $email = filter_input(INPUT_POST, "email");
         $password = filter_input(INPUT_POST, "password");

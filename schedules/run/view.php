@@ -3,16 +3,13 @@ $head = "";
 writeHeader($head) ?>
 <div class="container">
     <h3 class="title"><?php echo $schedule["schedule_name"] ?></h3>
-    <div class="row center-align">
-        <div class="section">
-            <div class="timer"></div>
-        </div>
-        <div class="col s6 offset-s3" style="margin-bottom: 5px;">
-            <a href=".." class="waves-effect waves-light btn col s4">Back</a>
-            <button class="waves-effect waves-light btn col s4" id="pause" onclick="pause()">Pause</button>
-            <button class="waves-effect waves-light btn col s4" onclick="nextAssignment(true)">Next</button>
-            <button class="waves-effect waves-light btn col s6" onclick="alert('AFTER')">Add Item After</button>
-            <button class="waves-effect waves-light btn col s6" onclick="alert('END')">Add Item To End</button>
+    <div class="center-align">
+        <div class="timer"></div>
+        <br>
+        <div class="schedule_actions">
+            <i class="material-icons medium clickable" onclick="location.href='..'">stop</i>
+            <i class="material-icons medium clickable" onclick="pause()" id="pause">pause</i>
+            <i class="material-icons medium clickable" onclick="nextAssignment(true)">fast_forward</i>
         </div>
     </div>
     <table class="centered">
@@ -88,9 +85,9 @@ writeHeader($head) ?>
 
     function pause() {
         if (paused) {
-            $("#pause").text("Pause");
+            $("#pause").text("pause");
         } else {
-            $("#pause").text("Resume");
+            $("#pause").text("play_arrow");
         }
         paused = !paused;
     }

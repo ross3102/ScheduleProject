@@ -55,7 +55,7 @@ function int_to_duration($item_duration) {
 }
 
 function writeHeader($head='') {
-    global $web_root, $app_title, $user;
+    global $web_root, $app_title, $user, $auth;
     echo '
     <html>
     <head>
@@ -71,17 +71,20 @@ function writeHeader($head='') {
         <nav class="blue lighten-1">
             <div class="container">
                 <div class="nav-wrapper">
-                    <a href="/' . $web_root . '/dashboard" class="brand-logo">' . $app_title . '</a>
-                    <a data-activates="sidenav" class="button-collapse"><i class="material-icons">menu</i></a>
+                    <a href="/' . $web_root . '/dashboard" class="brand-logo">' . $app_title . '</a>' .
+                    ($auth->isLogged() ? '
+                    <a data-activates="sidenav" class="button-collapse"><i class="material-icons clickable">menu</i></a>
                     <ul class="right hide-on-med-and-down">
                         <li><a href="/' . $web_root . '/dashboard">Dashboard</a></li>
-                        <li><a href="#">Hello, ' . $user["email"] . '</a></li>
+                        <li><a>Hello, ' . $user["user_first_name"] . '</a></li>
                         <li><a href="/' . $web_root . '/index.php?action=logout">Log Out</a></li>
                     </ul>
                     <ul class="side-nav" id="sidenav">
                         <li><a href="/' . $web_root . '/dashboard">Dashboard</a></li>
-                    </ul>
-                </div>
+                        <li><a>Hello, ' . $user["user_first_name"] . '</a></li>
+                        <li><a href="/' . $web_root . '/index.php?action=logout">Log Out</a></li>
+                    </ul>': '') .
+                '</div>
             </div>
         </nav>
     </header>
