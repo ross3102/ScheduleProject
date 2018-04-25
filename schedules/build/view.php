@@ -1,8 +1,8 @@
 <?php writeHeader('') ?>
         <h3 class="title">Build Schedule</h3>
         <div class="center-align">
-            <a class="waves-effect waves-light btn" href="./index.php?action=cancel">Cancel</a>
-            <a class="waves-effect waves-light btn" onclick="assembleSchedule()">Add</a>
+            <a class="waves-effect waves-light btn-large blue lighten-1" href="./index.php?action=cancel">Cancel</a>
+            <a class="waves-effect waves-light btn-large blue lighten-1" onclick="assembleSchedule()">Add</a>
         </div>
         <div class="row">
             <div class="col s6">

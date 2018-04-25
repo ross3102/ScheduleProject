@@ -5,7 +5,7 @@ function get_user_by_id($user_id) {
 
     $query = "select *
     from user
-    where user_id = :user_id";
+    where id = :user_id";
 
     try {
         $statement = $db->prepare($query);

@@ -9,8 +9,8 @@ writeHeader($head) ?>
     <div class="container">
         <h3 class="title">Your Schedules</h3>
         <div class="center-align">
-            <a href="#add_schedule" class="waves-effect waves-light btn modal-trigger">Add Schedule</a>
-            <a href="./index.php?action=show_build_schedule" class="waves-effect waves-light btn">Build Schedule</a>
+            <a href="#add_schedule" class="waves-effect waves-light btn-large modal-trigger blue lighten-1">Add Schedule</a>
+            <a href="./index.php?action=show_build_schedule" class="waves-effect waves-light btn-large blue lighten-1">Build Schedule</a>
         </div>
 
         <div class="modal" id="add_schedule">
@@ -51,7 +51,7 @@ writeHeader($head) ?>
                             <div class="activator">
                                 <span class="card-title activator">
                                     <?php echo $schedule_name ?>
-                                    <span class="new badge activator blue"
+                                    <span class="new badge activator blue lighten-1"
                                           data-badge-caption="<?php echo "Item" . (count($items) != 1 ? "s": "") ?>">
                                         <?php echo count($items) ?>
                                     </span>
@@ -61,7 +61,7 @@ writeHeader($head) ?>
                                 </blockquote>
                                 <div class="divider"></div>
                                 <div class="section center-align">
-                                    <div class="timer green">
+                                    <div class="timer">
                                         <p class="activator"><?php echo int_to_duration($total_duration) ?></p>
                                     </div>
                                 </div>

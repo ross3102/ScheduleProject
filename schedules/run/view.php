@@ -5,7 +5,7 @@ writeHeader($head) ?>
     <h3 class="title"><?php echo $schedule["schedule_name"] ?></h3>
     <div class="row center-align">
         <div class="section">
-            <div class="timer blue"></div>
+            <div class="timer"></div>
         </div>
         <div class="col s6 offset-s3" style="margin-bottom: 5px;">
             <a href=".." class="waves-effect waves-light btn col s4">Back</a>

@@ -14,14 +14,14 @@ if ($action == NULL) {
 
 switch ($action) {
     case 'list_schedules':
-        $schedules = get_schedules_by_user_id($user["user_id"]);
+        $schedules = get_schedules_by_user_id($user["id"]);
         $modal = filter_input(INPUT_GET, "modal");
         include "view.php";
         break;
     case 'add_schedule':
         $schedule_name = filter_input(INPUT_POST, "schedule_name");
         $schedule_desc = filter_input(INPUT_POST, "schedule_desc");
-        add_schedule($user["user_id"], $schedule_name, $schedule_desc);
+        add_schedule($user["id"], $schedule_name, $schedule_desc);
         header("Location: .");
         break;
     case 'add_item':

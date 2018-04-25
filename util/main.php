@@ -2,6 +2,8 @@
 
 require_once dirname(__FILE__) . "/../../config.php";
 include dirname(__FILE__) . "/../model/userdb.php";
+require_once dirname(__FILE__) . "/../vendor/autoload.php";
+
 try {
     $db = new PDO($dsn, $username, $password, $options);
 } catch (PDOException $e) {
@@ -11,7 +13,18 @@ try {
     exit;
 }
 
-$user_id = 1;
+include(dirname(__FILE__) . "/../js/PHPAuth-master/Config.php");
+include(dirname(__FILE__) . "/../js/PHPAuth-master/Auth.php");
+
+$config = new PHPAuth\Config($db);
+$auth   = new PHPAuth\Auth($db, $config);
+list($scriptPath) = get_included_files();
+if (!$auth->isLogged() && $scriptPath != $_SERVER['DOCUMENT_ROOT'] . "/" . $web_root . "/index.php") {
+    header("Location: /" . $web_root . "/index.php");
+    exit();
+}
+
+$user_id = $auth->getCurrentUID();
 
 $user = get_user_by_id($user_id);
 
@@ -55,14 +68,15 @@ function writeHeader($head='') {
     </head>
     <body>
     <header>
-        <nav class="green">
+        <nav class="blue lighten-1">
             <div class="container">
                 <div class="nav-wrapper">
                     <a href="/' . $web_root . '/dashboard" class="brand-logo">' . $app_title . '</a>
                     <a data-activates="sidenav" class="button-collapse"><i class="material-icons">menu</i></a>
                     <ul class="right hide-on-med-and-down">
                         <li><a href="/' . $web_root . '/dashboard">Dashboard</a></li>
-                        <li><a href="#">Hello, ' . $user["user_first_name"] . '</a></li>
+                        <li><a href="#">Hello, ' . $user["email"] . '</a></li>
+                        <li><a href="/' . $web_root . '/index.php?action=logout">Log Out</a></li>
                     </ul>
                     <ul class="side-nav" id="sidenav">
                         <li><a href="/' . $web_root . '/dashboard">Dashboard</a></li>
@@ -79,7 +93,7 @@ function writeFooter() {
     global $app_title;
     echo '
     </main>
-    <footer class="page-footer green">
+    <footer class="page-footer blue lighten-1">
         <div class="container">
             <div class="row">
                 <div class="col s6">

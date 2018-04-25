@@ -38,10 +38,32 @@ blockquote {
 }
 
 .timer {
-    border-radius: 10px;
-    font-size: 200%;
+    font-size: 350%;
     display: inline-block;
     padding: 5px 15px;
     margin: 0 auto;
     font-family: 'Courier';
+}
+
+
+/* Make form stuff blue */
+.picker__date-display { background-color: #42a5f5; }
+.picker__day.picker__day--today { color: #42a5f5; }
+.picker__day--selected, .picker__day--selected:hover, .picker--focused .picker__day--selected { background-color: #42a5f5;}
+.picker__close { color: #42a5f5 !important;}
+.picker__today { color: #42a5f5 !important;}
+.clockpicker-tick:hover { background: #42a5f5 !important; }
+.clockpicker-canvas line { stroke: #42a5f5 !important; }
+.clockpicker-canvas-bearing { fill: #42a5f5 !important; }
+.clockpicker-canvas-bg { fill: #42a5f5 !important; }
+
+.input-field input:focus + label,
+.dropdown-content li * {
+    color: #42a5f5 !important;
+}
+
+.input-field input:focus,
+.input-field textarea:focus{
+    border-bottom: 1px solid #42a5f5 !important;
+    box-shadow: 0 1px 0 0 #42a5f5 !important;
 }

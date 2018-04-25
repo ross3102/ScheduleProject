@@ -3,8 +3,8 @@
 <div class="container">
     <h3 class="title"><?php echo $schedule["schedule_name"] ?></h3>
     <div class="center-align">
-        <a href=".." class="waves-effect waves-light btn">Cancel</a>
-        <a href="./index.php?action=run&schedule_id=<?php echo $schedule_id ?>" class="waves-effect waves-light btn">Confirm</a>
+        <a href=".." class="waves-effect waves-light btn-large blue lighten-1">Cancel</a>
+        <a href="./index.php?action=run&schedule_id=<?php echo $schedule_id ?>" class="waves-effect waves-light btn-large blue lighten-1">Confirm</a>
     </div>
     <table class="centered striped">
         <thead>

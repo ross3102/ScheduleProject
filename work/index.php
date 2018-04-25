@@ -14,12 +14,12 @@ if ($action == NULL) {
 
 switch ($action) {
     case 'list_tasks':
-        $categories = get_categories_by_user_id($user["user_id"]);
+        $categories = get_categories_by_user_id($user["id"]);
         include "view.php";
         break;
     case 'add_category':
         $category_name = filter_input(INPUT_POST, "category_name");
-        add_category($user["user_id"], $category_name);
+        add_category($user["id"], $category_name);
         header("Location: .");
         break;
     case 'add_task':

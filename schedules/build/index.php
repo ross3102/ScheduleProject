@@ -15,7 +15,7 @@ if ($action == NULL) {
 
 switch ($action) {
     case 'build_schedule':
-        $task_list = get_task_list($user["user_id"]);
+        $task_list = get_task_list($user["id"]);
         include "view.php";
         break;
     case 'confirm_build_schedule':

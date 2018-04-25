@@ -6,8 +6,8 @@ writeHeader($head);
     <h3 class="title">Task List</h3>
 
     <div class="btn-div center-align">
-        <a href="#newCategory" class="waves-effect waves-light btn modal-trigger">New Category</a>
-        <a href="#newTask" class="waves-effect waves-light btn modal-trigger">New Task</a>
+        <a href="#newCategory" class="waves-effect waves-light btn-large blue lighten-1 modal-trigger">New Category</a>
+        <a href="#newTask" class="waves-effect waves-light btn-large blue lighten-1 modal-trigger">New Task</a>
     </div>
 
     <div class="modal" id="newCategory">
@@ -56,7 +56,7 @@ writeHeader($head);
                         <select name="task_category" id="task_category">
 <!--                            <option value="-1">General</option>-->
                             <?php foreach ($categories as $category) { ?>
-                                <option value="<?php echo $category['category_id'] ?>"><?php echo $category["category_name"] ?></option>
+                                <option class="blue-text text-lighten-1" value="<?php echo $category['category_id'] ?>"><?php echo $category["category_name"] ?></option>
                             <?php } ?>
                         </select>
                         <label for="task_category">Category</label>
