@@ -29,7 +29,7 @@ switch ($action) {
             $first_name = filter_input(INPUT_POST, "first_name");
             $last_name = filter_input(INPUT_POST, "last_name");
             new_user($user_id, $first_name, $last_name, $username);
-            header("Location: /" . $web_root . "/dashboard");
+            header("Location: /" . $web_root . "dashboard");
         }
         $failed = $result["message"];
         include "sign_up.php";
@@ -39,12 +39,12 @@ switch ($action) {
         $password = filter_input(INPUT_POST, "password");
         $result = $auth->login($email, $password);
         if ($result["error"] == 0)
-            header("Location: /" . $web_root . "/dashboard");
+            header("Location: /" . $web_root . "dashboard");
         $username = $email;
         $email = get_user_by_username($username)["email"];
         $result = $auth->login($email, $password);
         if ($result["error"] == 0)
-            header("Location: /" . $web_root . "/dashboard");
+            header("Location: /" . $web_root . "dashboard");
         $failed = $result["message"];
         include "view.php";
         break;
@@ -52,7 +52,7 @@ switch ($action) {
         $auth->logout($auth->getSessionHash());
     default:
         if ($auth->isLogged()) {
-            header("Location: /" . $web_root . "/dashboard");
+            header("Location: /" . $web_root . "dashboard");
             exit();
         }
         $failed = false;
