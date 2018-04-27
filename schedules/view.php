@@ -74,36 +74,39 @@ writeHeader($head) ?>
                             >Delete</a>
                             <a href="#Add<?php echo $schedule_id ?>" class="modal-trigger">Add Item</a>
                             <a href='./index.php?action=run&schedule_id=<?php echo $schedule_id ?>'>Run</a>
-
                         </div>
-                        <div class="card-reveal">
-                            <span class="card-title white" style="position: sticky; top: 0;"><?php echo $schedule_name ?><i class="material-icons right">close</i></span>
-                            <table class="highlight">
-                                <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Duration</th>
-                                    <th></th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <?php foreach ($items as $item) {
-                                    $item_id = $item["item_id"];
-                                    $item_name = $item["item_name"];
-                                    $item_duration = $item["item_duration"];
-                                    $item_desc = $item["item_desc"]; ?>
+                        <div class="card-reveal" style="overflow: hidden;">
+                            <span class="card-title white"><?php echo $schedule_name ?><i class="material-icons right">close</i></span>
+                            <div style="overflow-y: scroll; height: 100%; width: 100%;">
+                                <table class="bordered">
+                                    <thead>
                                     <tr>
-                                        <td><?php echo $item_name ?></td>
-                                        <td><?php echo int_to_duration($item_duration) ?></td>
-                                        <td><i class="material-icons clickable" onclick="
-                                                event.stopPropagation();
-                                                confirmDeleteItem('<?php echo addslashes($item_name) ?>', <?php echo $item_id ?>, '<?php echo addslashes($schedule_name) ?>')"
-                                            >delete</i></td>
-                                        <td><a class="modal-trigger black-text" href="#InfoModal<?php echo $item_id ?>"><i class="material-icons clickable" >info</i></a></td>
+                                        <th>Name</th>
+                                        <th>Duration</th>
+                                        <th></th>
                                     </tr>
-                                <?php }?>
-                                </tbody>
-                            </table>
+                                    </thead>
+                                    <tbody>
+                                    <?php foreach ($items as $item) {
+                                        $item_id = $item["item_id"];
+                                        $item_name = $item["item_name"];
+                                        $item_duration = $item["item_duration"];
+                                        $item_desc = $item["item_desc"]; ?>
+                                        <tr>
+                                            <td><?php echo $item_name ?></td>
+                                            <td><?php echo int_to_duration($item_duration) ?></td>
+                                            <td><i class="material-icons clickable" onclick="
+                                                    event.stopPropagation();
+                                                    confirmDeleteItem('<?php echo addslashes($item_name) ?>', <?php echo $item_id ?>, '<?php echo addslashes($schedule_name) ?>')"
+                                                >delete</i>
+                                                &nbsp;
+                                                <a class="modal-trigger black-text" href="#InfoModal<?php echo $item_id ?>"><i class="material-icons clickable" >info</i></a></td>
+                                        </tr>
+                                    <?php }?>
+                                    </tbody>
+                                </table>
+                                <br>
+                            </div>
                         </div>
                     </div>
 

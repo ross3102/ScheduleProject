@@ -8,11 +8,11 @@ writeHeader("");
             <input type="hidden" name="action" value="log_in">
             <div class="row">
                 <div class="input-field col s12">
-                    <input type="email" name="email" id="email">
-                    <label for="email">Email</label>
+                    <input placeholder="" type="text" name="username" id="username">
+                    <label for="username">Username or Email</label>
                 </div>
                 <div class="input-field col s12">
-                    <input type="password" name="password" id="password">
+                    <input placeholder="" type="password" name="password" id="password">
                     <label for="password">Password</label>
                 </div>
             </div>
@@ -23,5 +23,10 @@ writeHeader("");
         <p>Don't have an account? <a href="./index.php?action=show_sign_up">Sign Up</a></p>
     </div>
 </div>
+
+    <script>
+        <?php if ($failed != false) ?>
+            Materialize.toast("<?php echo $failed ?>", 3000);
+    </script>
 
 <?php writeFooter() ?>

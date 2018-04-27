@@ -40,4 +40,9 @@ writeHeader("");
     </div>
 </div>
 
+    <script>
+        <?php if ($failed != false) ?>
+            Materialize.toast("<?php echo $failed ?>", 3000);
+    </script>
+
 <?php writeFooter() ?>
