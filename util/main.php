@@ -4,8 +4,7 @@ include dirname(__FILE__) . "/../model/userdb.php";
 require_once dirname(__FILE__) . "/../vendor/autoload.php";
 
 try {
-    $dsn = 'mysql:host=' . $db_host . ';dbname=' . $db_name;
-    $db = new PDO($dsn, $username, $password, $options);
+    $db = new PDO($db_host, $username, $password, $options);
 } catch (PDOException $e) {
     error_log("Unable to connect to database: " . $e->getMessage(), 0);
 
