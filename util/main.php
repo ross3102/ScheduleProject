@@ -27,8 +27,8 @@ include(dirname(__FILE__) . "/../js/PHPAuth-master/Auth.php");
 $config = new PHPAuth\Config($db);
 $auth   = new PHPAuth\Auth($db, $config);
 list($scriptPath) = get_included_files();
-if (!$auth->isLogged() && $scriptPath != $_SERVER['DOCUMENT_ROOT'] . "/" . $web_root . "/index.php") {
-    header("Location: /" . $web_root . "/index.php");
+if (!$auth->isLogged() && $scriptPath != $_SERVER['DOCUMENT_ROOT'] . "/" . $web_root . "index.php") {
+    header("Location: /" . $web_root . "index.php");
     exit();
 }
 
@@ -69,8 +69,8 @@ function writeHeader($head='') {
     <head>
         <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
         <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-        <link type="text/css" rel="stylesheet" href="/' . $web_root . '/css/shared.css">
-        <script src="/' . $web_root . '/js/jq.min.js" type="text/javascript"></script>
+        <link type="text/css" rel="stylesheet" href="/' . $web_root . 'css/shared.css">
+        <script src="/' . $web_root . 'js/jq.min.js" type="text/javascript"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js" type="text/javascript"></script>
         ' . $head . '
     </head>
@@ -79,18 +79,18 @@ function writeHeader($head='') {
         <nav class="blue lighten-1">
             <div class="container">
                 <div class="nav-wrapper">
-                    <a href="/' . $web_root . '/dashboard" class="brand-logo">' . $app_title . '</a>' .
+                    <a href="/' . $web_root . 'dashboard" class="brand-logo">' . $app_title . '</a>' .
                     ($auth->isLogged() ? '
                     <a data-activates="sidenav" class="button-collapse"><i class="material-icons clickable">menu</i></a>
                     <ul class="right hide-on-med-and-down">
-                        <li><a href="/' . $web_root . '/dashboard">Dashboard</a></li>
+                        <li><a href="/' . $web_root . 'dashboard">Dashboard</a></li>
                         <li><a>Hello, ' . $user["user_first_name"] . '</a></li>
-                        <li><a href="/' . $web_root . '/index.php?action=logout">Log Out</a></li>
+                        <li><a href="/' . $web_root . 'index.php?action=logout">Log Out</a></li>
                     </ul>
                     <ul class="side-nav" id="sidenav">
-                        <li><a href="/' . $web_root . '/dashboard">Dashboard</a></li>
+                        <li><a href="/' . $web_root . 'dashboard">Dashboard</a></li>
                         <li><a>Hello, ' . $user["user_first_name"] . '</a></li>
-                        <li><a href="/' . $web_root . '/index.php?action=logout">Log Out</a></li>
+                        <li><a href="/' . $web_root . 'index.php?action=logout">Log Out</a></li>
                     </ul>': '') .
                 '</div>
             </div>
