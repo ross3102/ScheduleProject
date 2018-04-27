@@ -4,11 +4,12 @@ include dirname(__FILE__) . "/../model/userdb.php";
 require_once dirname(__FILE__) . "/../vendor/autoload.php";
 
 try {
-    $db = new PDO($db_host, $username, $password, $options);
+    $dsn = 'mysql:host=bcataskmanager.herokuapp.com;dbname=' . $db_name;
+    $db = new PDO($dsn, $username, $password, $options);
 } catch (PDOException $e) {
     error_log("Unable to connect to database: " . $e->getMessage(), 0);
 
-    echo ($app["db_host"]);
+    echo ("Unable to connect to database.");
     exit;
 }
 
