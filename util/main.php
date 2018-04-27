@@ -8,7 +8,7 @@ try {
 } catch (PDOException $e) {
     error_log("Unable to connect to database: " . $e->getMessage(), 0);
 
-    echo ("Unable to connect to database.");
+    echo ($db_host);
     exit;
 }
 
