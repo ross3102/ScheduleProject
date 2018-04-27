@@ -3,8 +3,16 @@
 include dirname(__FILE__) . "/../model/userdb.php";
 require_once dirname(__FILE__) . "/../vendor/autoload.php";
 
+$db_name = getenv('db_name');
+$username = getenv('username');
+$password = getenv('password');
+$options = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION);
+$web_root = getenv('web_root');
+$app_title = getenv('app_title');
+$db_host = getenv('db_host');
+
 try {
-    $dsn = 'mysql:host=bcataskmanager.herokuapp.com;dbname=' . $db_name;
+    $dsn = 'mysql:host=' . $db_host . ';dbname=' . $db_name;
     $db = new PDO($dsn, $username, $password, $options);
 } catch (PDOException $e) {
     error_log("Unable to connect to database: " . $e->getMessage(), 0);
