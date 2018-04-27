@@ -2,8 +2,38 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bd99f3a2-7083-4bc5-ba02-994a4afa1da6" name="Default" comment="Restyled Run page - Icons instead of buttons&#10;Added more fields to user&#10;Resized login forms to fit better on smaller screens">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/vendor/autoload.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/vendor/bjeavons/zxcvbn-php/LICENSE.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/vendor/bjeavons/zxcvbn-php/README.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/vendor/bjeavons/zxcvbn-php/composer.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/vendor/bjeavons/zxcvbn-php/src/Matcher.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/vendor/bjeavons/zxcvbn-php/src/Matchers/Bruteforce.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/vendor/bjeavons/zxcvbn-php/src/Matchers/DateMatch.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/vendor/bjeavons/zxcvbn-php/src/Matchers/DictionaryMatch.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/vendor/bjeavons/zxcvbn-php/src/Matchers/DigitMatch.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/vendor/bjeavons/zxcvbn-php/src/Matchers/L33tMatch.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/vendor/bjeavons/zxcvbn-php/src/Matchers/Match.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/vendor/bjeavons/zxcvbn-php/src/Matchers/MatchInterface.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/vendor/bjeavons/zxcvbn-php/src/Matchers/RepeatMatch.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/vendor/bjeavons/zxcvbn-php/src/Matchers/SequenceMatch.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/vendor/bjeavons/zxcvbn-php/src/Matchers/SpatialMatch.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/vendor/bjeavons/zxcvbn-php/src/Matchers/YearMatch.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/vendor/bjeavons/zxcvbn-php/src/Matchers/adjacency_graphs.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/vendor/bjeavons/zxcvbn-php/src/Matchers/frequency_lists.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/vendor/bjeavons/zxcvbn-php/src/Matchers/ranked_frequency_lists.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/vendor/bjeavons/zxcvbn-php/src/Scorer.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/vendor/bjeavons/zxcvbn-php/src/ScorerInterface.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/vendor/bjeavons/zxcvbn-php/src/Searcher.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/vendor/bjeavons/zxcvbn-php/src/Zxcvbn.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/ClassLoader.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/LICENSE" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_real.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -53,7 +83,7 @@
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <caret line="0" column="8" lean-forward="true" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -501,7 +531,7 @@
       <workItem from="1524656769850" duration="15158000" />
       <workItem from="1524741997962" duration="4241000" />
       <workItem from="1524782401200" duration="409000" />
-      <workItem from="1524853262940" duration="336000" />
+      <workItem from="1524853262940" duration="413000" />
     </task>
     <task id="LOCAL-00001" summary="Primitive Schedule and Task List">
       <created>1505515987449</created>
@@ -612,7 +642,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="201180000" />
+    <option name="totallyTimeSpent" value="201257000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -625,9 +655,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="30" width="930" height="702" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39569893" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39569893" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32899022" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -1246,7 +1275,7 @@
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="8" lean-forward="true" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="8" />
           <folding />
         </state>
       </provider>
