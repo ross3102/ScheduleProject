@@ -93,7 +93,7 @@ function writeHeader($head='') {
                     </ul>
                     <ul class="side-nav" id="sidenav">
                         <li><a href="/' . $web_root . 'dashboard">Dashboard</a></li>
-                        <li>Hello, ' . $user["user_first_name"] . '</li>
+                        <li><a>Hello, ' . $user["user_first_name"] . '</a></li>
                         <li><a href="/' . $web_root . 'index.php?action=logout">Log Out</a></li>
                     </ul>': '') .
                 '</div>

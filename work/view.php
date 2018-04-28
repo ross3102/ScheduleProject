@@ -5,6 +5,18 @@ writeHeader($head);
 <div class="container">
     <h3 class="title">Task List</h3>
 
+    <div class="fixed-action-btn">
+        <a class="btn-floating btn-large red">
+            <i class="large material-icons">add</i>
+        </a>
+        <ul>
+            <li><a class="btn red"><i class="material-icons">insert_chart</i></a></li>
+            <li><a class="btn yellow darken-1"><i class="material-icons">format_quote</i></a></li>
+            <li><a class="btn green"><i class="material-icons">publish</i></a></li>
+            <li><a class="btn blue"><i class="material-icons">attach_file</i></a></li>
+        </ul>
+    </div>
+
     <div class="btn-div center-align">
         <a href="#newCategory" class="waves-effect waves-light btn-large blue lighten-1 modal-trigger">New Category</a>
         <a href="#newTask" class="waves-effect waves-light btn-large blue lighten-1 modal-trigger<?php echo count($categories) == 0 ? " disabled": "" ?>">New Task</a>
