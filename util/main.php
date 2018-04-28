@@ -4,12 +4,16 @@ include dirname(__FILE__) . "/../model/userdb.php";
 require_once dirname(__FILE__) . "/../vendor/autoload.php";
 
 $db_name = getenv('db_name');
-$username = getenv('username');
-$password = getenv('password');
-$options = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION);
-$web_root = getenv('web_root');
-$app_title = getenv('app_title');
-$db_host = getenv('db_host');
+if ($db_name == null)
+    require_once dirname(__FILE__) . "/../../config.php";
+else {
+    $username = getenv('username');
+    $password = getenv('password');
+    $options = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION);
+    $web_root = getenv('web_root');
+    $app_title = getenv('app_title');
+    $db_host = getenv('db_host');
+}
 
 try {
     $dsn = 'mysql:host=' . $db_host . ';dbname=' . $db_name;
@@ -89,7 +93,7 @@ function writeHeader($head='') {
                     </ul>
                     <ul class="side-nav" id="sidenav">
                         <li><a href="/' . $web_root . 'dashboard">Dashboard</a></li>
-                        <li><a>Hello, ' . $user["user_first_name"] . '</a></li>
+                        <li>Hello, ' . $user["user_first_name"] . '</li>
                         <li><a href="/' . $web_root . 'index.php?action=logout">Log Out</a></li>
                     </ul>': '') .
                 '</div>
