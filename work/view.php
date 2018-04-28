@@ -6,12 +6,12 @@ writeHeader($head);
     <h3 class="title">Task List</h3>
 
     <div class="fixed-action-btn">
-        <a class="btn-floating btn-large blue">
+        <a class="btn-floating btn-large red">
             <i class="large material-icons">add</i>
         </a>
         <ul>
-            <li><a class="btn-floating blue lighten-1"><i class="material-icons">playlist_add</i></a></li>
-            <li><a class="btn-floating blue lighten-1"><i class="material-icons">library_add</i></a></li>
+            <li><a class="btn-floating yellow"><i class="material-icons">playlist_add</i></a></li>
+            <li><a class="btn-floating green"><i class="material-icons">library_add</i></a></li>
         </ul>
     </div>
 
