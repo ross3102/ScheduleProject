@@ -127,10 +127,8 @@ function writeFooter() {
     </body>
     <script>
         $(document).ready(function() {
-            var tool = $(".tooltipped");
-            tool.attr({
-                "data-delay": 50,
-                "data-position": "top"
+            $(".tooltipped").attr({
+                "data-delay": 50
             });
             $(".button-collapse").sideNav();
         });
