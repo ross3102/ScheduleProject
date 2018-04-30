@@ -68,5 +68,4 @@ switch ($action) {
     default:
         echo ('Unknown action: ' . $action);
         exit();
-        break;
 }
