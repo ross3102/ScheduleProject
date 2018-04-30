@@ -80,7 +80,7 @@ function writeHeader($head='') {
     </head>
     <body>
     <header>
-        <nav class="">
+        <nav class="blue lighten-1">
             <div class="container">
                 <div class="nav-wrapper">
                     <a href="/' . $web_root . 'dashboard" class="brand-logo">' . $app_title . '</a>' .
@@ -108,7 +108,7 @@ function writeFooter() {
     global $app_title;
     echo '
     </main>
-    <footer class="page-footer">
+    <footer class="page-footer blue lighten-1">
         <div class="container">
             <div class="row">
                 <div class="col s6">
