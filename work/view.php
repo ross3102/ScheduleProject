@@ -10,8 +10,8 @@ writeHeader($head);
             <i class="large material-icons">add</i>
         </a>
         <ul>
-            <li><a href="#newTask" class="waves-effect waves-light btn-floating blue tooltipped modal-trigger" data-tooltip="New Task" data-position="left"><i class="material-icons">playlist_add</i></a></li>
-            <li><a href="#newCategory" class="waves-effect waves-light btn-floating green tooltipped modal-trigger" data-tooltip="New Category" data-position="left"><i class="material-icons">library_add</i></a></li>
+            <li><a href="#newTask" class="waves-effect waves-light btn-floating btn-large blue tooltipped modal-trigger" data-tooltip="New Task" data-position="left"><i class="material-icons">playlist_add</i></a></li>
+            <li><a href="#newCategory" class="waves-effect waves-light btn-floating btn-large green tooltipped modal-trigger" data-tooltip="New Category" data-position="left"><i class="material-icons">library_add</i></a></li>
         </ul>
     </div>
 
