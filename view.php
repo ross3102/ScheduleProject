@@ -32,6 +32,9 @@ writeHeader("");
                 data: "action=log_in&username=" + username + "&password=" + password,
                 complete: function(data) {
                     var json = JSON.parse(JSON.stringify(data));
+                    var loc = json["responseJSON"]["location"];
+                    if (loc != null)
+                        location.href = loc;
                     var message = json["responseJSON"]["message"];
                     Materialize.toast(message, 3000)
                 }

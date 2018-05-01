@@ -39,13 +39,16 @@ switch ($action) {
         $password = filter_input(INPUT_POST, "password");
         $result = $auth->login($email, $password);
         if ($result["error"] == 0)
-            header("Location: /" . $web_root . "dashboard");
-        $username = $email;
-        $email = get_user_by_username($username)["email"];
-        $result = $auth->login($email, $password);
-        if ($result["error"] == 0)
-            header("Location: /" . $web_root . "dashboard");
-        $data = array("message" => "Credentials Invalid");
+            $data = array("location" => "/" . $web_root . "dashboard");
+        else {
+            $username = $email;
+            $email = get_user_by_username($username)["email"];
+            $result = $auth->login($email, $password);
+            if ($result["error"] == 0)
+                $data = array("location" => "/" . $web_root . "dashboard");
+            else
+                $data = array("location" => null, "message" => "Credentials Invalid");
+        }
         header('Content-Type: application/json');
         echo json_encode($data);
         break;
