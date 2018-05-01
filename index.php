@@ -28,9 +28,9 @@ switch ($action) {
                 $last_name = filter_input(INPUT_POST, "last_name");
                 new_user($user_id, $first_name, $last_name, $username);
             }
-            $data = array("location" => $result["error"] == 0 ? "/" . $web_root . "dashboard": null, "message" => $result["message"]);
         } else
-            $data = array("location" => null, "message" => "The username " . $username . " is already in use.");
+            $result = array("error" => 1, "message" => "The username " . $username . " is already in use.");
+        $data = array("location" => $result["error"] == 0 ? "/" . $web_root . "dashboard": null, "message" => $result["message"]);
         header('Content-Type: application/json');
         echo json_encode($data);
         break;
@@ -46,8 +46,11 @@ switch ($action) {
             $result = $auth->login($email, $password);
             if ($result["error"] == 0)
                 $data = array("location" => "/" . $web_root . "dashboard");
-            else
-                $data = array("location" => null, "message" => "Credentials Invalid");
+            else {
+                $data = array("location" => null, "message" => $result["message"]);
+                if ($data["message"] === "Email address / password are incorrect.")
+                    $data["message"] = "Invalid Credentials";
+            }
         }
         header('Content-Type: application/json');
         echo json_encode($data);

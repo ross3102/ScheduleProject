@@ -35,8 +35,10 @@ writeHeader("");
                     var loc = json["responseJSON"]["location"];
                     if (loc != null)
                         location.href = loc;
-                    var message = json["responseJSON"]["message"];
-                    Materialize.toast(message, 3000)
+                    else {
+                        var message = json["responseJSON"]["message"];
+                        Materialize.toast(message, 3000);
+                    }
                 }
             });
         }
