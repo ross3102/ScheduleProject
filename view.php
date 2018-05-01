@@ -33,6 +33,7 @@ writeHeader("");
                 complete: function(data) {
                     var json = JSON.parse(JSON.stringify(data));
                     var loc = json["responseJSON"]["location"];
+                    alert(loc);
                     if (loc != null)
                         location.href = loc;
                     var message = json["responseJSON"]["message"];
