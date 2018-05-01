@@ -19,20 +19,20 @@ switch ($action) {
         $confirm = filter_input(INPUT_POST, "confirm");
         $email = filter_input(INPUT_POST, "email");
         $username = filter_input(INPUT_POST, "username");
-        if (!username_in_use($username))
+        if (!username_in_use($username)) {
             $result = $auth->register($email, $password, $confirm);
-        else
-            $result = array("error" => 1, "message" => "The username " . $username . " is already in use.");
-        if ($result["error"] == 0) {
-            $auth->login($email, $password);
-            $user_id = $auth->getCurrentUID();
-            $first_name = filter_input(INPUT_POST, "first_name");
-            $last_name = filter_input(INPUT_POST, "last_name");
-            new_user($user_id, $first_name, $last_name, $username);
-            header("Location: /" . $web_root . "dashboard");
-        }
-        $failed = $result["message"];
-        include "sign_up.php";
+            if ($result["error"] == 0) {
+                $auth->login($email, $password);
+                $user_id = $auth->getCurrentUID();
+                $first_name = filter_input(INPUT_POST, "first_name");
+                $last_name = filter_input(INPUT_POST, "last_name");
+                new_user($user_id, $first_name, $last_name, $username);
+            }
+            $data = array("location" => $result["error"] == 0 ? "/" . $web_root . "dashboard": null, "message" => $result["message"]);
+        } else
+            $data = array("location" => null, "message" => "The username " . $username . " is already in use.");
+        header('Content-Type: application/json');
+        echo json_encode($data);
         break;
     case "log_in":
         $email = filter_input(INPUT_POST, "username");
