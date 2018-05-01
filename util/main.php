@@ -128,7 +128,8 @@ function writeFooter() {
     <script>
         $(document).ready(function() {
             $(".tooltipped").attr({
-                "data-delay": 50
+                "data-delay": 50,
+                "data-position": "top"
             });
             $(".button-collapse").sideNav();
         });

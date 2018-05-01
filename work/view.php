@@ -5,13 +5,14 @@ writeHeader($head);
 <div class="container">
     <h3 class="title">Task List</h3>
 
-    <div class="fixed-action-btn">
+    <div class="fixed-action-btn toolbar">
         <a class="btn-floating btn-large red">
             <i class="large material-icons">add</i>
         </a>
         <ul>
-            <li><a href="#newTask" class="waves-effect waves-light btn-floating btn-large blue tooltipped modal-trigger" data-tooltip="New Task" data-position="left"><i class="material-icons">playlist_add</i></a></li>
-            <li><a href="#newCategory" class="waves-effect waves-light btn-floating btn-large green tooltipped modal-trigger" data-tooltip="New Category" data-position="left"><i class="material-icons">library_add</i></a></li>
+            <li><a href="#newTask" class="waves-effect waves-light modal-trigger">New Task <i class="material-icons">playlist_add</i></a></li>
+            <li><a href="#newCategory" class="waves-effect waves-light modal-trigger">New Category <i class="material-icons">library_add</i></a></li>
+<!--            <li><a onclick="deleteAll()" class="waves-effect waves-light modal-trigger">Delete All <i class="material-icons">delete_sweep</i></a></li>-->
         </ul>
     </div>
 
