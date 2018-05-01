@@ -45,7 +45,7 @@ switch ($action) {
         $result = $auth->login($email, $password);
         if ($result["error"] == 0)
             header("Location: /" . $web_root . "dashboard");
-        $data = array("message" => $result["message"]);
+        $data = array("message" => "Credentials Invalid");
         header('Content-Type: application/json');
         echo json_encode($data);
         break;
