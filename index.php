@@ -45,8 +45,9 @@ switch ($action) {
         $result = $auth->login($email, $password);
         if ($result["error"] == 0)
             header("Location: /" . $web_root . "dashboard");
-        $failed = $result["message"];
-        include "view.php";
+        $data = array("message" => $result["message"]);
+        header('Content-Type: application/json');
+        echo json_encode($data);
         break;
     case "logout":
         $auth->logout($auth->getSessionHash());
