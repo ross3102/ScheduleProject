@@ -1,6 +1,7 @@
 <?php
 $head = '<link rel="stylesheet" href="work.css">';
 writeHeader($head);
+$numCategories = count($categories);
 ?>
 <div class="container">
     <h3 class="title">Task List</h3>
@@ -10,8 +11,8 @@ writeHeader($head);
             <i class="large material-icons">add</i>
         </a>
         <ul>
-            <li><a href="#newCategory" class="waves-effect waves-light modal-trigger">New Category <i class="material-icons">library_add</i></a></li>
-            <li><a href="#newTask" class="waves-effect waves-light modal-trigger">New Task <i class="material-icons">playlist_add</i></a></li>
+            <li><a href="#newCategory" class="btn waves-effect waves-light modal-trigger">New Category <i class="material-icons">library_add</i></a></li>
+            <li><a href="#newTask" class="btn waves-effect waves-light modal-trigger <?php if ($numCategories==0) echo "disabled" ?>">New Task <i class="material-icons">playlist_add</i></a></li>
 <!--            <li><a onclick="deleteAll()" class="waves-effect waves-light modal-trigger">Delete All <i class="material-icons">delete_sweep</i></a></li>-->
         </ul>
     </div>

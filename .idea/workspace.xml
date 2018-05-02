@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bd99f3a2-7083-4bc5-ba02-994a4afa1da6" name="Default" comment="Database for localhost">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/work/view.php" afterPath="$PROJECT_DIR$/work/view.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,8 +32,20 @@
       <file leaf-file-name="view.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/work/view.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="12" column="149" lean-forward="false" selection-start-line="12" selection-start-column="149" selection-end-line="12" selection-end-column="149" />
+            <state relative-caret-position="247">
+              <caret line="12" column="12" lean-forward="true" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
+              <folding>
+                <element signature="e#8333#8339#0#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="work.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/work/work.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="455">
+              <caret line="37" column="1" lean-forward="false" selection-start-line="37" selection-start-column="1" selection-end-line="37" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -118,7 +131,6 @@
         <option value="$PROJECT_DIR$/js/masonry.pkgd.min.js" />
         <option value="$PROJECT_DIR$/css/column-flow.css" />
         <option value="$PROJECT_DIR$/schedules/build/index.php" />
-        <option value="$PROJECT_DIR$/work/work.css" />
         <option value="$PROJECT_DIR$/schedules/run/confirm_run.php" />
         <option value="$PROJECT_DIR$/schedules/build/view.php" />
         <option value="$PROJECT_DIR$/composer.json" />
@@ -137,6 +149,7 @@
         <option value="$PROJECT_DIR$/sign_up.php" />
         <option value="$PROJECT_DIR$/view.php" />
         <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/work/work.css" />
         <option value="$PROJECT_DIR$/work/view.php" />
       </list>
     </option>
@@ -154,7 +167,7 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="17" />
+    <option name="x" value="3" />
     <option name="y" value="23" />
     <option name="width" value="1262" />
     <option name="height" value="698" />
@@ -194,6 +207,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -211,7 +225,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -402,7 +415,8 @@
       <workItem from="1525038545046" duration="387000" />
       <workItem from="1525095657407" duration="957000" />
       <workItem from="1525186628421" duration="1080000" />
-      <workItem from="1525188198128" duration="3523000" />
+      <workItem from="1525188198128" duration="3825000" />
+      <workItem from="1525261526489" duration="663000" />
     </task>
     <task id="LOCAL-00001" summary="Primitive Schedule and Task List">
       <created>1505515987449</created>
@@ -520,7 +534,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="212692000" />
+    <option name="totallyTimeSpent" value="213657000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -532,7 +546,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="17" y="23" width="1262" height="698" extended-state="0" />
+    <frame x="3" y="23" width="1262" height="698" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2614897" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -874,13 +888,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/work/work.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="515">
-          <caret line="37" column="1" lean-forward="false" selection-start-line="37" selection-start-column="1" selection-end-line="37" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/schedules/run/confirm_run.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
@@ -1024,12 +1031,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="515">
           <caret line="71" column="29" lean-forward="false" selection-start-line="71" selection-start-column="29" selection-end-line="71" selection-end-column="29" />
-          <folding>
-            <marker date="1524761203433" expanded="true" signature="74:156" ph="select * fro... user" />
-            <marker date="1524761203433" expanded="true" signature="576:717" ph="insert into user... " />
-            <marker date="1524761203433" expanded="true" signature="1219:1248" ph="select usern... user" />
-            <marker date="1524761203433" expanded="true" signature="1703:1792" ph="select * fro... user" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1058,7 +1059,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="58" column="27" lean-forward="false" selection-start-line="58" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1066,7 +1066,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="305">
           <caret line="35" column="36" lean-forward="true" selection-start-line="35" selection-start-column="36" selection-end-line="35" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1074,7 +1073,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="762">
           <caret line="50" column="43" lean-forward="true" selection-start-line="50" selection-start-column="43" selection-end-line="50" selection-end-column="43" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1117,11 +1115,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/work/work.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="455">
+          <caret line="37" column="1" lean-forward="false" selection-start-line="37" selection-start-column="1" selection-end-line="37" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/work/view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="12" column="149" lean-forward="false" selection-start-line="12" selection-start-column="149" selection-end-line="12" selection-end-column="149" />
-          <folding />
+        <state relative-caret-position="247">
+          <caret line="12" column="12" lean-forward="true" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
+          <folding>
+            <element signature="e#8333#8339#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
