@@ -4,161 +4,172 @@ writeHeader($head);
 $numCategories = count($categories);
 ?>
 <div class="container">
-    <h3 class="title">Task List</h3>
-
-    <div class="fixed-action-btn toolbar">
-        <a class="btn-floating btn-large red">
-            <i class="large material-icons">add</i>
-        </a>
-        <ul>
-            <li><a href="#newCategory" class="btn waves-effect waves-light modal-trigger">New Category <i class="material-icons">library_add</i></a></li>
-            <li><a href="#newTask" class="btn waves-effect waves-light modal-trigger <?php if ($numCategories==0) echo "disabled" ?>">New Task <i class="material-icons">playlist_add</i></a></li>
-<!--            <li><a onclick="deleteAll()" class="waves-effect waves-light modal-trigger">Delete All <i class="material-icons">delete_sweep</i></a></li>-->
+    <div class="row">
+        <ul class="tabs">
+            <li class="tab col s6"><a href="#task-list-view">Task List</a></li>
+            <li class="tab col s6"><a href="#upcoming">Test 2</a></li>
         </ul>
     </div>
 
-    <div class="modal" id="newCategory">
-        <form action="." method="post">
-            <div class="modal-content">
-                <input type="hidden" name="action" value="add_category">
-                <div class="input-field">
-                    <input class="charCount" type="text" name="category_name" id="category_name" data-length="60" maxlength="60" required>
-                    <label for="category_name">New Category</label>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <a class="btn-flat waves-effect waves-green modal-action modal-close">Cancel</a>
-                <button class="btn-flat waves-effect waves-green">Create</button>
-            </div>
-        </form>
-    </div>
+    <div id="task-list-view">
 
-    <div class="modal" id="editCat">
-        <form action="." method="post">
-            <div class="modal-content">
-                <input type="hidden" name="action" value="edit_category">
-                <input type="hidden" name="category_id" id="edit_category_id">
-                <div class="input-field">
-                    <input class="charCount" type="text" name="category_name" id="edit_category_name" data-length="60" maxlength="60" required>
-                    <label for="edit_category_name">Category Name</label>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <a class="btn-flat waves-effect waves-green modal-action modal-close">Cancel</a>
-                <button class="btn-flat waves-effect waves-green">Confirm</button>
-            </div>
-        </form>
-    </div>
+        <div class="fixed-action-btn toolbar">
+            <a class="btn-floating btn-large red">
+                <i class="large material-icons">add</i>
+            </a>
+            <ul>
+                <li><a href="#newCategory" class="btn waves-effect waves-light modal-trigger">New Category <i class="material-icons">library_add</i></a></li>
+                <li><a href="#newTask" class="btn waves-effect waves-light modal-trigger <?php if ($numCategories==0) echo "disabled" ?>">New Task <i class="material-icons">playlist_add</i></a></li>
+    <!--            <li><a onclick="deleteAll()" class="waves-effect waves-light modal-trigger">Delete All <i class="material-icons">delete_sweep</i></a></li>-->
+            </ul>
+        </div>
 
-    <div class="modal" id="newTask">
-        <form action="." method="post" autocomplete="on">
-            <div class="modal-content">
-                <input type="hidden" name="action" value="add_task">
-                <div class="row">
-                    <div class="input-field col s6 m5">
-                        <input class="charCount" type="text" name="task_name" id="task_name" data-length="80" maxlength="80" required>
-                        <label for="task_name">New Task</label>
-                    </div>
-                    <div class="input-field col s6 m3">
-                        <select name="task_category" id="task_category">
-<!--                            <option value="-1">General</option>-->
-                            <?php foreach ($categories as $category) { ?>
-                                <option class="blue-text text-lighten-1" value="<?php echo $category['category_id'] ?>"><?php echo $category["category_name"] ?></option>
-                            <?php } ?>
-                        </select>
-                        <label for="task_category">Category</label>
-                    </div>
-                    <div class="input-field col s12 m4">
-                        <input class="datepicker" id=datepicker type="date" name="task_date" required>
-                        <label for="datepicker">Due Date</label>
+        <div class="modal" id="newCategory">
+            <form action="." method="post">
+                <div class="modal-content">
+                    <input type="hidden" name="action" value="add_category">
+                    <div class="input-field">
+                        <input class="charCount" type="text" name="category_name" id="category_name" data-length="60" maxlength="60" required>
+                        <label for="category_name">New Category</label>
                     </div>
                 </div>
-            </div>
-            <div class="modal-footer">
-                <a class="btn-flat waves-effect waves-green modal-action modal-close">Cancel</a>
-                <button class="btn-flat waves-effect waves-green">Create</button>
-            </div>
-        </form>
-    </div>
+                <div class="modal-footer">
+                    <a class="btn-flat waves-effect waves-green modal-action modal-close">Cancel</a>
+                    <button class="btn-flat waves-effect waves-green">Create</button>
+                </div>
+            </form>
+        </div>
 
-    <div class="modal" id="editTask">
-        <form action="." method="post">
-            <div class="modal-content">
-                <input type="hidden" name="action" value="edit_task">
-                <input type="hidden" name="task_id" id="edit_task_id">
-                <div class="row">
-                    <div class="input-field col s6 m5">
-                        <input class="charCount" type="text" name="task_name" id="edit_task_name" data-length="80" maxlength="80" required>
-                        <label for="edit_task_name">Task Name</label>
-                    </div>
-                    <div class="input-field col s6 m3">
-                        <select name="task_category" id="edit_task_category">
-                            <?php foreach ($categories as $category) { ?>
-                                <option value="<?php echo $category['category_id'] ?>"><?php echo $category["category_name"] ?></option>
-                            <?php } ?>
-                        </select>
-                        <label for="edit_task_category">Category</label>
-                    </div>
-                    <div class="input-field col s12 m4">
-                        <input class="datepicker" id="edit_task_date" type="date" name="task_date" required>
-                        <label for="edit_task_date">Due Date</label>
+        <div class="modal" id="editCat">
+            <form action="." method="post">
+                <div class="modal-content">
+                    <input type="hidden" name="action" value="edit_category">
+                    <input type="hidden" name="category_id" id="edit_category_id">
+                    <div class="input-field">
+                        <input class="charCount" type="text" name="category_name" id="edit_category_name" data-length="60" maxlength="60" required>
+                        <label for="edit_category_name">Category Name</label>
                     </div>
                 </div>
-            </div>
-            <div class="modal-footer">
-                <a class="btn-flat waves-effect waves-green modal-action modal-close">Cancel</a>
-                <button class="btn-flat waves-effect waves-green">Create</button>
-            </div>
-        </form>
-    </div>
+                <div class="modal-footer">
+                    <a class="btn-flat waves-effect waves-green modal-action modal-close">Cancel</a>
+                    <button class="btn-flat waves-effect waves-green">Confirm</button>
+                </div>
+            </form>
+        </div>
 
-    <?php if (count($categories) > 0) { ?>
-        <ul class="collapsible popout" data-collapsible="expandable">
-            <?php foreach ($categories as $category) {
-                $category_id = $category["category_id"];
-                $category_name = $category["category_name"];
-                $tasks = get_tasks_by_category_id($category_id);
-                if (count($tasks) == 0)
-                    collapse($category_id, 0);
-                $category_active = $category["category_active"] && count($tasks) > 0 ? "active": "";?>
-                <li class="collapsibleItem" id="C<?php echo $category_id ?>">
-                    <div class="collapsible-header <?php echo $category_active ?>">
-                        <div class="category-header-inner">
-                            <?php echo $category_name ?>
-                            <span class="numTasks valign-wrapper"><?php echo get_total_tasks($category_id) ?>
-                                <a onclick="event.stopPropagation(); editCat(<?php echo $category_id ?>, '<?php echo addslashes($category_name) ?>')">
-                                    <i style="margin: 0;" class="material-icons clickable tooltipped blue-text"
-                                       data-tooltip="Edit Category">edit</i>
-                                </a>
-                                <i class="material-icons clickable tooltipped red-text" data-tooltip="Delete Category" onclick="
-                                        event.stopPropagation();
-                                        confirmDeleteCategory('<?php echo addslashes($category_name) ?>', <?php echo $category_id ?>);"
-                                >delete</i></span>
+        <div class="modal" id="newTask">
+            <form action="." method="post" autocomplete="on">
+                <div class="modal-content">
+                    <input type="hidden" name="action" value="add_task">
+                    <div class="row">
+                        <div class="input-field col s6 m5">
+                            <input class="charCount" type="text" name="task_name" id="task_name" data-length="80" maxlength="80" required>
+                            <label for="task_name">New Task</label>
+                        </div>
+                        <div class="input-field col s6 m3">
+                            <select name="task_category" id="task_category">
+    <!--                            <option value="-1">General</option>-->
+                                <?php foreach ($categories as $category) { ?>
+                                    <option class="blue-text text-lighten-1" value="<?php echo $category['category_id'] ?>"><?php echo $category["category_name"] ?></option>
+                                <?php } ?>
+                            </select>
+                            <label for="task_category">Category</label>
+                        </div>
+                        <div class="input-field col s12 m4">
+                            <input class="datepicker" id=datepicker type="date" name="task_date" required>
+                            <label for="datepicker">Due Date</label>
                         </div>
                     </div>
-                    <div class="collapsible-body">
-                        <ul class="collection">
-                            <?php foreach ($tasks as $task):
-                                $task_id = $task["task_id"];
-                                $task_name = $task["task_name"];
-                                $task_date = $task["task_date"];
-                                $form_date = $task["form_date"];
-                                $task_completed = $task["task_completed"]; ?>
-                                <li class="collection-item">
-                                    <span class="secondary-content black-text valign-wrapper">
-                                        <?php echo $task_date ?>
-                                        &nbsp;
-                                        <i class="material-icons clickable tooltipped blue-text" onclick="editTask(<?php echo $task_id ?>, '<?php echo addslashes($task_name); ?>', '<?php echo $form_date ?>', <?php echo $category_id ?>);" data-tooltip="Edit Task">edit</i>
-                                    </span>
-                                    <input id="CB<?php echo $task_id ?>" data-task-id="<?php echo $task_id ?>" type="checkbox"><label for="CB<?php echo $task_id ?>"><span class="black-text <?php echo $task_id ?>"><?php echo $task_name ?></span></label>
-                                </li>
-                            <?php endforeach; ?>
-                        </ul>
+                </div>
+                <div class="modal-footer">
+                    <a class="btn-flat waves-effect waves-green modal-action modal-close">Cancel</a>
+                    <button class="btn-flat waves-effect waves-green">Create</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="modal" id="editTask">
+            <form action="." method="post">
+                <div class="modal-content">
+                    <input type="hidden" name="action" value="edit_task">
+                    <input type="hidden" name="task_id" id="edit_task_id">
+                    <div class="row">
+                        <div class="input-field col s6 m5">
+                            <input class="charCount" type="text" name="task_name" id="edit_task_name" data-length="80" maxlength="80" required>
+                            <label for="edit_task_name">Task Name</label>
+                        </div>
+                        <div class="input-field col s6 m3">
+                            <select name="task_category" id="edit_task_category">
+                                <?php foreach ($categories as $category) { ?>
+                                    <option value="<?php echo $category['category_id'] ?>"><?php echo $category["category_name"] ?></option>
+                                <?php } ?>
+                            </select>
+                            <label for="edit_task_category">Category</label>
+                        </div>
+                        <div class="input-field col s12 m4">
+                            <input class="datepicker" id="edit_task_date" type="date" name="task_date" required>
+                            <label for="edit_task_date">Due Date</label>
+                        </div>
                     </div>
-                </li>
-            <?php } ?>
-        </ul>
-    <?php } ?>
+                </div>
+                <div class="modal-footer">
+                    <a class="btn-flat waves-effect waves-green modal-action modal-close">Cancel</a>
+                    <button class="btn-flat waves-effect waves-green">Create</button>
+                </div>
+            </form>
+        </div>
+
+        <?php if (count($categories) > 0) { ?>
+            <ul class="collapsible popout" data-collapsible="expandable">
+                <?php foreach ($categories as $category) {
+                    $category_id = $category["category_id"];
+                    $category_name = $category["category_name"];
+                    $tasks = get_tasks_by_category_id($category_id);
+                    if (count($tasks) == 0)
+                        collapse($category_id, 0);
+                    $category_active = $category["category_active"] && count($tasks) > 0 ? "active": "";?>
+                    <li class="collapsibleItem" id="C<?php echo $category_id ?>">
+                        <div class="collapsible-header <?php echo $category_active ?>">
+                            <div class="category-header-inner">
+                                <?php echo $category_name ?>
+                                <span class="numTasks valign-wrapper"><?php echo get_total_tasks($category_id) ?>
+                                    <a onclick="event.stopPropagation(); editCat(<?php echo $category_id ?>, '<?php echo addslashes($category_name) ?>')">
+                                        <i style="margin: 0;" class="material-icons clickable tooltipped blue-text"
+                                           data-tooltip="Edit Category">edit</i>
+                                    </a>
+                                    <i class="material-icons clickable tooltipped red-text" data-tooltip="Delete Category" onclick="
+                                            event.stopPropagation();
+                                            confirmDeleteCategory('<?php echo addslashes($category_name) ?>', <?php echo $category_id ?>);"
+                                    >delete</i></span>
+                            </div>
+                        </div>
+                        <div class="collapsible-body">
+                            <ul class="collection">
+                                <?php foreach ($tasks as $task):
+                                    $task_id = $task["task_id"];
+                                    $task_name = $task["task_name"];
+                                    $task_date = $task["task_date"];
+                                    $form_date = $task["form_date"];
+                                    $task_completed = $task["task_completed"]; ?>
+                                    <li class="collection-item">
+                                        <span class="secondary-content black-text valign-wrapper">
+                                            <?php echo $task_date ?>
+                                            &nbsp;
+                                            <i class="material-icons clickable tooltipped blue-text" onclick="editTask(<?php echo $task_id ?>, '<?php echo addslashes($task_name); ?>', '<?php echo $form_date ?>', <?php echo $category_id ?>);" data-tooltip="Edit Task">edit</i>
+                                        </span>
+                                        <input id="CB<?php echo $task_id ?>" data-task-id="<?php echo $task_id ?>" type="checkbox"><label for="CB<?php echo $task_id ?>"><span class="black-text <?php echo $task_id ?>"><?php echo $task_name ?></span></label>
+                                    </li>
+                                <?php endforeach; ?>
+                            </ul>
+                        </div>
+                    </li>
+                <?php } ?>
+            </ul>
+        <?php } ?>
+    </div>
+    <div id="upcoming">
+        HI
+    </div>
 </div>
 
 <script>
