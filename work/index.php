@@ -15,6 +15,7 @@ if ($action == NULL) {
 switch ($action) {
     case 'list_tasks':
         $categories = get_categories_by_user_id($user["id"]);
+        $all_tasks = get_task_list($user["id"]);
         include "view.php";
         break;
     case 'add_category':

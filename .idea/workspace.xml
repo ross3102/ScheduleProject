@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bd99f3a2-7083-4bc5-ba02-994a4afa1da6" name="Default" comment="Database for localhost">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/model/taskdb.php" afterPath="$PROJECT_DIR$/model/taskdb.php" />
+      <change beforePath="$PROJECT_DIR$/work/index.php" afterPath="$PROJECT_DIR$/work/index.php" />
       <change beforePath="$PROJECT_DIR$/work/view.php" afterPath="$PROJECT_DIR$/work/view.php" />
+      <change beforePath="$PROJECT_DIR$/work/work.css" afterPath="$PROJECT_DIR$/work/work.css" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -29,21 +31,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="view.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/work/view.php">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/work/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="9" column="70" lean-forward="true" selection-start-line="9" selection-start-column="70" selection-end-line="9" selection-end-column="70" />
+            <state relative-caret-position="129">
+              <caret line="17" column="48" lean-forward="false" selection-start-line="17" selection-start-column="48" selection-end-line="17" selection-end-column="48" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="work.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/schedules/build/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="296">
+              <caret line="17" column="24" lean-forward="true" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="view.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/work/view.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="96">
+              <caret line="182" column="52" lean-forward="false" selection-start-line="182" selection-start-column="52" selection-end-line="182" selection-end-column="52" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="work.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/work/work.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="777">
-              <caret line="37" column="1" lean-forward="false" selection-start-line="37" selection-start-column="1" selection-end-line="37" selection-end-column="1" />
+            <state relative-caret-position="580">
+              <caret line="44" column="26" lean-forward="false" selection-start-line="44" selection-start-column="26" selection-end-line="44" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -62,10 +84,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>time</find>
-      <find>collapse</find>
-      <find>request.send</find>
-      <find>CB</find>
       <find>delete</find>
       <find>datepicker</find>
       <find>get_task_list</find>
@@ -92,6 +110,10 @@
       <find>use_email</find>
       <find>imported from</find>
       <find>web_root</find>
+      <find>clean(</find>
+      <find>get_tasks</find>
+      <find>get_task</find>
+      <find>CB</find>
     </findStrings>
     <replaceStrings>
       <replace>cc</replace>
@@ -133,7 +155,6 @@
         <option value="$PROJECT_DIR$/schedules/build/view.php" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/js/PHPAuth-master/Auth.php" />
-        <option value="$PROJECT_DIR$/model/taskdb.php" />
         <option value="$PROJECT_DIR$/model/scheduledb.php" />
         <option value="$PROJECT_DIR$/schedules/run/view.php" />
         <option value="$PROJECT_DIR$/schedules/view.php" />
@@ -142,13 +163,14 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/schedules/index.php" />
         <option value="$PROJECT_DIR$/dashboard/index.php" />
-        <option value="$PROJECT_DIR$/work/index.php" />
         <option value="$PROJECT_DIR$/util/main.php" />
         <option value="$PROJECT_DIR$/sign_up.php" />
         <option value="$PROJECT_DIR$/view.php" />
         <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/work/work.css" />
+        <option value="$PROJECT_DIR$/work/index.php" />
+        <option value="$PROJECT_DIR$/model/taskdb.php" />
         <option value="$PROJECT_DIR$/work/view.php" />
+        <option value="$PROJECT_DIR$/work/work.css" />
       </list>
     </option>
   </component>
@@ -211,6 +233,17 @@
             <path>
               <item name="schedule" type="b2602c69:ProjectViewProjectNode" />
               <item name="schedule" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="schedule" type="b2602c69:ProjectViewProjectNode" />
+              <item name="schedule" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="schedules" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="schedule" type="b2602c69:ProjectViewProjectNode" />
+              <item name="schedule" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="schedules" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="build" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="schedule" type="b2602c69:ProjectViewProjectNode" />
@@ -416,7 +449,7 @@
       <workItem from="1525188198128" duration="3825000" />
       <workItem from="1525261526489" duration="1234000" />
       <workItem from="1525375588489" duration="46000" />
-      <workItem from="1525818144793" duration="176000" />
+      <workItem from="1525818144793" duration="2295000" />
     </task>
     <task id="LOCAL-00001" summary="Primitive Schedule and Task List">
       <created>1505515987449</created>
@@ -534,7 +567,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="214450000" />
+    <option name="totallyTimeSpent" value="216569000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -626,24 +659,24 @@
         <state relative-caret-position="4137">
           <caret line="197" column="58" lean-forward="false" selection-start-line="197" selection-start-column="58" selection-end-line="197" selection-end-column="58" />
           <folding>
-            <marker date="1524679235774" expanded="true" signature="82:155" ph="select * fro... task_list_category" />
-            <marker date="1524679235774" expanded="true" signature="558:715" ph="select task_... task_list_task" />
-            <marker date="1524679235774" expanded="true" signature="1108:1228" ph="select * fro... task_list_category" />
-            <marker date="1524679235774" expanded="true" signature="1639:1868" ph="select task_... task_list_task" />
-            <marker date="1524679235774" expanded="true" signature="2278:2381" ph="select count... task_list_task" />
-            <marker date="1524679235774" expanded="true" signature="2860:3245" ph="select task_... task_list_task" />
-            <marker date="1524679235774" expanded="true" signature="3643:3746" ph="insert into task_list_category... " />
-            <marker date="1524679235774" expanded="true" signature="4164:4286" ph="insert into task_list_task... " />
-            <marker date="1524679235774" expanded="true" signature="4746:4867" ph="update task_list_category... " />
-            <marker date="1524679235774" expanded="true" signature="4752:4807" ph="delete from task_list_task... " />
-            <marker date="1524679235774" expanded="true" signature="4821:4867" ph="delete from task_list_category... " />
-            <marker date="1524679235774" expanded="true" signature="5292:5473" ph="update task_list_task... " />
-            <marker date="1524679235774" expanded="true" signature="5972:6045" ph="delete from task_list_task... " />
-            <marker date="1524679235774" expanded="true" signature="6061:6138" ph="delete from task_list_category... " />
-            <marker date="1524679235774" expanded="true" signature="6448:6512" ph="delete from task_list_task... " />
-            <marker date="1524679235774" expanded="true" signature="6448:6513" ph="delete from task_list_task... " />
-            <marker date="1524679235774" expanded="true" signature="6790:6901" ph="update task_list_task... " />
-            <marker date="1524679235774" expanded="true" signature="7303:7428" ph="update task_list_category... " />
+            <marker date="1525819300585" expanded="true" signature="82:155" ph="select * fro... task_list_category" />
+            <marker date="1525819300585" expanded="true" signature="558:715" ph="select task_... task_list_task" />
+            <marker date="1525819300585" expanded="true" signature="1108:1228" ph="select * fro... task_list_category" />
+            <marker date="1525819300585" expanded="true" signature="1639:1868" ph="select task_... task_list_task" />
+            <marker date="1525819300585" expanded="true" signature="2278:2381" ph="select count... task_list_task" />
+            <marker date="1525819300585" expanded="true" signature="2860:3318" ph="select task_... task_list_task" />
+            <marker date="1525819300585" expanded="true" signature="3716:3819" ph="insert into task_list_category... " />
+            <marker date="1525819300585" expanded="true" signature="4237:4359" ph="insert into task_list_task... " />
+            <marker date="1525819300585" expanded="true" signature="4819:4940" ph="update task_list_category... " />
+            <marker date="1525819300585" expanded="true" signature="4825:4880" ph="delete from task_list_task... " />
+            <marker date="1525819300585" expanded="true" signature="4894:4940" ph="delete from task_list_category... " />
+            <marker date="1525819300585" expanded="true" signature="5365:5546" ph="update task_list_task... " />
+            <marker date="1525819300585" expanded="true" signature="6045:6118" ph="delete from task_list_task... " />
+            <marker date="1525819300585" expanded="true" signature="6134:6211" ph="delete from task_list_category... " />
+            <marker date="1525819300585" expanded="true" signature="6521:6585" ph="delete from task_list_task... " />
+            <marker date="1525819300585" expanded="true" signature="6521:6586" ph="delete from task_list_task... " />
+            <marker date="1525819300585" expanded="true" signature="6863:6974" ph="update task_list_task... " />
+            <marker date="1525819300585" expanded="true" signature="7376:7501" ph="update task_list_category... " />
           </folding>
         </state>
       </provider>
@@ -667,24 +700,24 @@
         <state relative-caret-position="4137">
           <caret line="197" column="58" lean-forward="false" selection-start-line="197" selection-start-column="58" selection-end-line="197" selection-end-column="58" />
           <folding>
-            <marker date="1524679235774" expanded="true" signature="82:155" ph="select * fro... task_list_category" />
-            <marker date="1524679235774" expanded="true" signature="558:715" ph="select task_... task_list_task" />
-            <marker date="1524679235774" expanded="true" signature="1108:1228" ph="select * fro... task_list_category" />
-            <marker date="1524679235774" expanded="true" signature="1639:1868" ph="select task_... task_list_task" />
-            <marker date="1524679235774" expanded="true" signature="2278:2381" ph="select count... task_list_task" />
-            <marker date="1524679235774" expanded="true" signature="2860:3245" ph="select task_... task_list_task" />
-            <marker date="1524679235774" expanded="true" signature="3643:3746" ph="insert into task_list_category... " />
-            <marker date="1524679235774" expanded="true" signature="4164:4286" ph="insert into task_list_task... " />
-            <marker date="1524679235774" expanded="true" signature="4746:4867" ph="update task_list_category... " />
-            <marker date="1524679235774" expanded="true" signature="4752:4807" ph="delete from task_list_task... " />
-            <marker date="1524679235774" expanded="true" signature="4821:4867" ph="delete from task_list_category... " />
-            <marker date="1524679235774" expanded="true" signature="5292:5473" ph="update task_list_task... " />
-            <marker date="1524679235774" expanded="true" signature="5972:6045" ph="delete from task_list_task... " />
-            <marker date="1524679235774" expanded="true" signature="6061:6138" ph="delete from task_list_category... " />
-            <marker date="1524679235774" expanded="true" signature="6448:6512" ph="delete from task_list_task... " />
-            <marker date="1524679235774" expanded="true" signature="6448:6513" ph="delete from task_list_task... " />
-            <marker date="1524679235774" expanded="true" signature="6790:6901" ph="update task_list_task... " />
-            <marker date="1524679235774" expanded="true" signature="7303:7428" ph="update task_list_category... " />
+            <marker date="1525819300585" expanded="true" signature="82:155" ph="select * fro... task_list_category" />
+            <marker date="1525819300585" expanded="true" signature="558:715" ph="select task_... task_list_task" />
+            <marker date="1525819300585" expanded="true" signature="1108:1228" ph="select * fro... task_list_category" />
+            <marker date="1525819300585" expanded="true" signature="1639:1868" ph="select task_... task_list_task" />
+            <marker date="1525819300585" expanded="true" signature="2278:2381" ph="select count... task_list_task" />
+            <marker date="1525819300585" expanded="true" signature="2860:3318" ph="select task_... task_list_task" />
+            <marker date="1525819300585" expanded="true" signature="3716:3819" ph="insert into task_list_category... " />
+            <marker date="1525819300585" expanded="true" signature="4237:4359" ph="insert into task_list_task... " />
+            <marker date="1525819300585" expanded="true" signature="4819:4940" ph="update task_list_category... " />
+            <marker date="1525819300585" expanded="true" signature="4825:4880" ph="delete from task_list_task... " />
+            <marker date="1525819300585" expanded="true" signature="4894:4940" ph="delete from task_list_category... " />
+            <marker date="1525819300585" expanded="true" signature="5365:5546" ph="update task_list_task... " />
+            <marker date="1525819300585" expanded="true" signature="6045:6118" ph="delete from task_list_task... " />
+            <marker date="1525819300585" expanded="true" signature="6134:6211" ph="delete from task_list_category... " />
+            <marker date="1525819300585" expanded="true" signature="6521:6585" ph="delete from task_list_task... " />
+            <marker date="1525819300585" expanded="true" signature="6521:6586" ph="delete from task_list_task... " />
+            <marker date="1525819300585" expanded="true" signature="6863:6974" ph="update task_list_task... " />
+            <marker date="1525819300585" expanded="true" signature="7376:7501" ph="update task_list_category... " />
           </folding>
         </state>
       </provider>
@@ -708,24 +741,24 @@
         <state relative-caret-position="4137">
           <caret line="197" column="58" lean-forward="false" selection-start-line="197" selection-start-column="58" selection-end-line="197" selection-end-column="58" />
           <folding>
-            <marker date="1524679235774" expanded="true" signature="82:155" ph="select * fro... task_list_category" />
-            <marker date="1524679235774" expanded="true" signature="558:715" ph="select task_... task_list_task" />
-            <marker date="1524679235774" expanded="true" signature="1108:1228" ph="select * fro... task_list_category" />
-            <marker date="1524679235774" expanded="true" signature="1639:1868" ph="select task_... task_list_task" />
-            <marker date="1524679235774" expanded="true" signature="2278:2381" ph="select count... task_list_task" />
-            <marker date="1524679235774" expanded="true" signature="2860:3245" ph="select task_... task_list_task" />
-            <marker date="1524679235774" expanded="true" signature="3643:3746" ph="insert into task_list_category... " />
-            <marker date="1524679235774" expanded="true" signature="4164:4286" ph="insert into task_list_task... " />
-            <marker date="1524679235774" expanded="true" signature="4746:4867" ph="update task_list_category... " />
-            <marker date="1524679235774" expanded="true" signature="4752:4807" ph="delete from task_list_task... " />
-            <marker date="1524679235774" expanded="true" signature="4821:4867" ph="delete from task_list_category... " />
-            <marker date="1524679235774" expanded="true" signature="5292:5473" ph="update task_list_task... " />
-            <marker date="1524679235774" expanded="true" signature="5972:6045" ph="delete from task_list_task... " />
-            <marker date="1524679235774" expanded="true" signature="6061:6138" ph="delete from task_list_category... " />
-            <marker date="1524679235774" expanded="true" signature="6448:6512" ph="delete from task_list_task... " />
-            <marker date="1524679235774" expanded="true" signature="6448:6513" ph="delete from task_list_task... " />
-            <marker date="1524679235774" expanded="true" signature="6790:6901" ph="update task_list_task... " />
-            <marker date="1524679235774" expanded="true" signature="7303:7428" ph="update task_list_category... " />
+            <marker date="1525819300585" expanded="true" signature="82:155" ph="select * fro... task_list_category" />
+            <marker date="1525819300585" expanded="true" signature="558:715" ph="select task_... task_list_task" />
+            <marker date="1525819300585" expanded="true" signature="1108:1228" ph="select * fro... task_list_category" />
+            <marker date="1525819300585" expanded="true" signature="1639:1868" ph="select task_... task_list_task" />
+            <marker date="1525819300585" expanded="true" signature="2278:2381" ph="select count... task_list_task" />
+            <marker date="1525819300585" expanded="true" signature="2860:3318" ph="select task_... task_list_task" />
+            <marker date="1525819300585" expanded="true" signature="3716:3819" ph="insert into task_list_category... " />
+            <marker date="1525819300585" expanded="true" signature="4237:4359" ph="insert into task_list_task... " />
+            <marker date="1525819300585" expanded="true" signature="4819:4940" ph="update task_list_category... " />
+            <marker date="1525819300585" expanded="true" signature="4825:4880" ph="delete from task_list_task... " />
+            <marker date="1525819300585" expanded="true" signature="4894:4940" ph="delete from task_list_category... " />
+            <marker date="1525819300585" expanded="true" signature="5365:5546" ph="update task_list_task... " />
+            <marker date="1525819300585" expanded="true" signature="6045:6118" ph="delete from task_list_task... " />
+            <marker date="1525819300585" expanded="true" signature="6134:6211" ph="delete from task_list_category... " />
+            <marker date="1525819300585" expanded="true" signature="6521:6585" ph="delete from task_list_task... " />
+            <marker date="1525819300585" expanded="true" signature="6521:6586" ph="delete from task_list_task... " />
+            <marker date="1525819300585" expanded="true" signature="6863:6974" ph="update task_list_task... " />
+            <marker date="1525819300585" expanded="true" signature="7376:7501" ph="update task_list_category... " />
           </folding>
         </state>
       </provider>
@@ -777,24 +810,24 @@
         <state relative-caret-position="3015">
           <caret line="201" column="38" lean-forward="false" selection-start-line="201" selection-start-column="31" selection-end-line="201" selection-end-column="38" />
           <folding>
-            <marker date="1524679235774" expanded="true" signature="82:155" ph="select * fro... task_list_category" />
-            <marker date="1524679235774" expanded="true" signature="558:715" ph="select task_... task_list_task" />
-            <marker date="1524679235774" expanded="true" signature="1108:1228" ph="select * fro... task_list_category" />
-            <marker date="1524679235774" expanded="true" signature="1639:1868" ph="select task_... task_list_task" />
-            <marker date="1524679235774" expanded="true" signature="2278:2381" ph="select count... task_list_task" />
-            <marker date="1524679235774" expanded="true" signature="2860:3245" ph="select task_... task_list_task" />
-            <marker date="1524679235774" expanded="true" signature="3643:3746" ph="insert into task_list_category... " />
-            <marker date="1524679235774" expanded="true" signature="4164:4286" ph="insert into task_list_task... " />
-            <marker date="1524679235774" expanded="true" signature="4746:4867" ph="update task_list_category... " />
-            <marker date="1524679235774" expanded="true" signature="4752:4807" ph="delete from task_list_task... " />
-            <marker date="1524679235774" expanded="true" signature="4821:4867" ph="delete from task_list_category... " />
-            <marker date="1524679235774" expanded="true" signature="5292:5473" ph="update task_list_task... " />
-            <marker date="1524679235774" expanded="true" signature="5972:6045" ph="delete from task_list_task... " />
-            <marker date="1524679235774" expanded="true" signature="6061:6138" ph="delete from task_list_category... " />
-            <marker date="1524679235774" expanded="true" signature="6448:6512" ph="delete from task_list_task... " />
-            <marker date="1524679235774" expanded="true" signature="6448:6513" ph="delete from task_list_task... " />
-            <marker date="1524679235774" expanded="true" signature="6790:6901" ph="update task_list_task... " />
-            <marker date="1524679235774" expanded="true" signature="7303:7428" ph="update task_list_category... " />
+            <marker date="1525819300585" expanded="true" signature="82:155" ph="select * fro... task_list_category" />
+            <marker date="1525819300585" expanded="true" signature="558:715" ph="select task_... task_list_task" />
+            <marker date="1525819300585" expanded="true" signature="1108:1228" ph="select * fro... task_list_category" />
+            <marker date="1525819300585" expanded="true" signature="1639:1868" ph="select task_... task_list_task" />
+            <marker date="1525819300585" expanded="true" signature="2278:2381" ph="select count... task_list_task" />
+            <marker date="1525819300585" expanded="true" signature="2860:3318" ph="select task_... task_list_task" />
+            <marker date="1525819300585" expanded="true" signature="3716:3819" ph="insert into task_list_category... " />
+            <marker date="1525819300585" expanded="true" signature="4237:4359" ph="insert into task_list_task... " />
+            <marker date="1525819300585" expanded="true" signature="4819:4940" ph="update task_list_category... " />
+            <marker date="1525819300585" expanded="true" signature="4825:4880" ph="delete from task_list_task... " />
+            <marker date="1525819300585" expanded="true" signature="4894:4940" ph="delete from task_list_category... " />
+            <marker date="1525819300585" expanded="true" signature="5365:5546" ph="update task_list_task... " />
+            <marker date="1525819300585" expanded="true" signature="6045:6118" ph="delete from task_list_task... " />
+            <marker date="1525819300585" expanded="true" signature="6134:6211" ph="delete from task_list_category... " />
+            <marker date="1525819300585" expanded="true" signature="6521:6585" ph="delete from task_list_task... " />
+            <marker date="1525819300585" expanded="true" signature="6521:6586" ph="delete from task_list_task... " />
+            <marker date="1525819300585" expanded="true" signature="6863:6974" ph="update task_list_task... " />
+            <marker date="1525819300585" expanded="true" signature="7376:7501" ph="update task_list_category... " />
           </folding>
         </state>
       </provider>
@@ -818,24 +851,24 @@
         <state relative-caret-position="3015">
           <caret line="201" column="38" lean-forward="false" selection-start-line="201" selection-start-column="31" selection-end-line="201" selection-end-column="38" />
           <folding>
-            <marker date="1524679235774" expanded="true" signature="82:155" ph="select * fro... task_list_category" />
-            <marker date="1524679235774" expanded="true" signature="558:715" ph="select task_... task_list_task" />
-            <marker date="1524679235774" expanded="true" signature="1108:1228" ph="select * fro... task_list_category" />
-            <marker date="1524679235774" expanded="true" signature="1639:1868" ph="select task_... task_list_task" />
-            <marker date="1524679235774" expanded="true" signature="2278:2381" ph="select count... task_list_task" />
-            <marker date="1524679235774" expanded="true" signature="2860:3245" ph="select task_... task_list_task" />
-            <marker date="1524679235774" expanded="true" signature="3643:3746" ph="insert into task_list_category... " />
-            <marker date="1524679235774" expanded="true" signature="4164:4286" ph="insert into task_list_task... " />
-            <marker date="1524679235774" expanded="true" signature="4746:4867" ph="update task_list_category... " />
-            <marker date="1524679235774" expanded="true" signature="4752:4807" ph="delete from task_list_task... " />
-            <marker date="1524679235774" expanded="true" signature="4821:4867" ph="delete from task_list_category... " />
-            <marker date="1524679235774" expanded="true" signature="5292:5473" ph="update task_list_task... " />
-            <marker date="1524679235774" expanded="true" signature="5972:6045" ph="delete from task_list_task... " />
-            <marker date="1524679235774" expanded="true" signature="6061:6138" ph="delete from task_list_category... " />
-            <marker date="1524679235774" expanded="true" signature="6448:6512" ph="delete from task_list_task... " />
-            <marker date="1524679235774" expanded="true" signature="6448:6513" ph="delete from task_list_task... " />
-            <marker date="1524679235774" expanded="true" signature="6790:6901" ph="update task_list_task... " />
-            <marker date="1524679235774" expanded="true" signature="7303:7428" ph="update task_list_category... " />
+            <marker date="1525819300585" expanded="true" signature="82:155" ph="select * fro... task_list_category" />
+            <marker date="1525819300585" expanded="true" signature="558:715" ph="select task_... task_list_task" />
+            <marker date="1525819300585" expanded="true" signature="1108:1228" ph="select * fro... task_list_category" />
+            <marker date="1525819300585" expanded="true" signature="1639:1868" ph="select task_... task_list_task" />
+            <marker date="1525819300585" expanded="true" signature="2278:2381" ph="select count... task_list_task" />
+            <marker date="1525819300585" expanded="true" signature="2860:3318" ph="select task_... task_list_task" />
+            <marker date="1525819300585" expanded="true" signature="3716:3819" ph="insert into task_list_category... " />
+            <marker date="1525819300585" expanded="true" signature="4237:4359" ph="insert into task_list_task... " />
+            <marker date="1525819300585" expanded="true" signature="4819:4940" ph="update task_list_category... " />
+            <marker date="1525819300585" expanded="true" signature="4825:4880" ph="delete from task_list_task... " />
+            <marker date="1525819300585" expanded="true" signature="4894:4940" ph="delete from task_list_category... " />
+            <marker date="1525819300585" expanded="true" signature="5365:5546" ph="update task_list_task... " />
+            <marker date="1525819300585" expanded="true" signature="6045:6118" ph="delete from task_list_task... " />
+            <marker date="1525819300585" expanded="true" signature="6134:6211" ph="delete from task_list_category... " />
+            <marker date="1525819300585" expanded="true" signature="6521:6585" ph="delete from task_list_task... " />
+            <marker date="1525819300585" expanded="true" signature="6521:6586" ph="delete from task_list_task... " />
+            <marker date="1525819300585" expanded="true" signature="6863:6974" ph="update task_list_task... " />
+            <marker date="1525819300585" expanded="true" signature="7376:7501" ph="update task_list_category... " />
           </folding>
         </state>
       </provider>
@@ -859,24 +892,24 @@
         <state relative-caret-position="3015">
           <caret line="201" column="38" lean-forward="false" selection-start-line="201" selection-start-column="31" selection-end-line="201" selection-end-column="38" />
           <folding>
-            <marker date="1524679235774" expanded="true" signature="82:155" ph="select * fro... task_list_category" />
-            <marker date="1524679235774" expanded="true" signature="558:715" ph="select task_... task_list_task" />
-            <marker date="1524679235774" expanded="true" signature="1108:1228" ph="select * fro... task_list_category" />
-            <marker date="1524679235774" expanded="true" signature="1639:1868" ph="select task_... task_list_task" />
-            <marker date="1524679235774" expanded="true" signature="2278:2381" ph="select count... task_list_task" />
-            <marker date="1524679235774" expanded="true" signature="2860:3245" ph="select task_... task_list_task" />
-            <marker date="1524679235774" expanded="true" signature="3643:3746" ph="insert into task_list_category... " />
-            <marker date="1524679235774" expanded="true" signature="4164:4286" ph="insert into task_list_task... " />
-            <marker date="1524679235774" expanded="true" signature="4746:4867" ph="update task_list_category... " />
-            <marker date="1524679235774" expanded="true" signature="4752:4807" ph="delete from task_list_task... " />
-            <marker date="1524679235774" expanded="true" signature="4821:4867" ph="delete from task_list_category... " />
-            <marker date="1524679235774" expanded="true" signature="5292:5473" ph="update task_list_task... " />
-            <marker date="1524679235774" expanded="true" signature="5972:6045" ph="delete from task_list_task... " />
-            <marker date="1524679235774" expanded="true" signature="6061:6138" ph="delete from task_list_category... " />
-            <marker date="1524679235774" expanded="true" signature="6448:6512" ph="delete from task_list_task... " />
-            <marker date="1524679235774" expanded="true" signature="6448:6513" ph="delete from task_list_task... " />
-            <marker date="1524679235774" expanded="true" signature="6790:6901" ph="update task_list_task... " />
-            <marker date="1524679235774" expanded="true" signature="7303:7428" ph="update task_list_category... " />
+            <marker date="1525819300585" expanded="true" signature="82:155" ph="select * fro... task_list_category" />
+            <marker date="1525819300585" expanded="true" signature="558:715" ph="select task_... task_list_task" />
+            <marker date="1525819300585" expanded="true" signature="1108:1228" ph="select * fro... task_list_category" />
+            <marker date="1525819300585" expanded="true" signature="1639:1868" ph="select task_... task_list_task" />
+            <marker date="1525819300585" expanded="true" signature="2278:2381" ph="select count... task_list_task" />
+            <marker date="1525819300585" expanded="true" signature="2860:3318" ph="select task_... task_list_task" />
+            <marker date="1525819300585" expanded="true" signature="3716:3819" ph="insert into task_list_category... " />
+            <marker date="1525819300585" expanded="true" signature="4237:4359" ph="insert into task_list_task... " />
+            <marker date="1525819300585" expanded="true" signature="4819:4940" ph="update task_list_category... " />
+            <marker date="1525819300585" expanded="true" signature="4825:4880" ph="delete from task_list_task... " />
+            <marker date="1525819300585" expanded="true" signature="4894:4940" ph="delete from task_list_category... " />
+            <marker date="1525819300585" expanded="true" signature="5365:5546" ph="update task_list_task... " />
+            <marker date="1525819300585" expanded="true" signature="6045:6118" ph="delete from task_list_task... " />
+            <marker date="1525819300585" expanded="true" signature="6134:6211" ph="delete from task_list_category... " />
+            <marker date="1525819300585" expanded="true" signature="6521:6585" ph="delete from task_list_task... " />
+            <marker date="1525819300585" expanded="true" signature="6521:6586" ph="delete from task_list_task... " />
+            <marker date="1525819300585" expanded="true" signature="6863:6974" ph="update task_list_task... " />
+            <marker date="1525819300585" expanded="true" signature="7376:7501" ph="update task_list_category... " />
           </folding>
         </state>
       </provider>
@@ -923,33 +956,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/taskdb.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="169" column="33" lean-forward="false" selection-start-line="169" selection-start-column="29" selection-end-line="169" selection-end-column="33" />
-          <folding>
-            <marker date="1524679235774" expanded="true" signature="82:155" ph="select * fro... task_list_category" />
-            <marker date="1524679235774" expanded="true" signature="558:715" ph="select task_... task_list_task" />
-            <marker date="1524679235774" expanded="true" signature="1108:1228" ph="select * fro... task_list_category" />
-            <marker date="1524679235774" expanded="true" signature="1639:1868" ph="select task_... task_list_task" />
-            <marker date="1524679235774" expanded="true" signature="2278:2381" ph="select count... task_list_task" />
-            <marker date="1524679235774" expanded="true" signature="2860:3245" ph="select task_... task_list_task" />
-            <marker date="1524679235774" expanded="true" signature="3643:3746" ph="insert into task_list_category... " />
-            <marker date="1524679235774" expanded="true" signature="4164:4286" ph="insert into task_list_task... " />
-            <marker date="1524679235774" expanded="true" signature="4746:4867" ph="update task_list_category... " />
-            <marker date="1524679235774" expanded="true" signature="4752:4807" ph="delete from task_list_task... " />
-            <marker date="1524679235774" expanded="true" signature="4821:4867" ph="delete from task_list_category... " />
-            <marker date="1524679235774" expanded="true" signature="5292:5473" ph="update task_list_task... " />
-            <marker date="1524679235774" expanded="true" signature="5972:6045" ph="delete from task_list_task... " />
-            <marker date="1524679235774" expanded="true" signature="6061:6138" ph="delete from task_list_category... " />
-            <marker date="1524679235774" expanded="true" signature="6448:6512" ph="delete from task_list_task... " />
-            <marker date="1524679235774" expanded="true" signature="6448:6513" ph="delete from task_list_task... " />
-            <marker date="1524679235774" expanded="true" signature="6790:6901" ph="update task_list_task... " />
-            <marker date="1524679235774" expanded="true" signature="7303:7428" ph="update task_list_category... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/password/password.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="376">
@@ -975,20 +981,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="13944">
           <caret line="666" column="36" lean-forward="false" selection-start-line="666" selection-start-column="36" selection-end-line="666" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/schedules/build/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-359">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/schedules/build/view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="56" column="48" lean-forward="true" selection-start-line="56" selection-start-column="48" selection-end-line="56" selection-end-column="48" />
         </state>
       </provider>
     </entry>
@@ -1031,13 +1023,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="515">
           <caret line="71" column="29" lean-forward="false" selection-start-line="71" selection-start-column="29" selection-end-line="71" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/work/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="688">
-          <caret line="69" column="15" lean-forward="true" selection-start-line="69" selection-start-column="15" selection-end-line="69" selection-end-column="15" />
         </state>
       </provider>
     </entry>
@@ -1115,18 +1100,69 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/schedules/build/view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="56" column="48" lean-forward="true" selection-start-line="56" selection-start-column="48" selection-end-line="56" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/taskdb.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="9" lean-forward="false" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="9" />
+          <folding>
+            <marker date="1525819300585" expanded="true" signature="82:155" ph="select * fro... task_list_category" />
+            <marker date="1525819300585" expanded="true" signature="558:715" ph="select task_... task_list_task" />
+            <marker date="1525819300585" expanded="true" signature="1108:1228" ph="select * fro... task_list_category" />
+            <marker date="1525819300585" expanded="true" signature="1639:1868" ph="select task_... task_list_task" />
+            <marker date="1525819300585" expanded="true" signature="2278:2381" ph="select count... task_list_task" />
+            <marker date="1525819300585" expanded="true" signature="2860:3318" ph="select task_... task_list_task" />
+            <marker date="1525819300585" expanded="true" signature="3716:3819" ph="insert into task_list_category... " />
+            <marker date="1525819300585" expanded="true" signature="4237:4359" ph="insert into task_list_task... " />
+            <marker date="1525819300585" expanded="true" signature="4819:4940" ph="update task_list_category... " />
+            <marker date="1525819300585" expanded="true" signature="4825:4880" ph="delete from task_list_task... " />
+            <marker date="1525819300585" expanded="true" signature="4894:4940" ph="delete from task_list_category... " />
+            <marker date="1525819300585" expanded="true" signature="5365:5546" ph="update task_list_task... " />
+            <marker date="1525819300585" expanded="true" signature="6045:6118" ph="delete from task_list_task... " />
+            <marker date="1525819300585" expanded="true" signature="6134:6211" ph="delete from task_list_category... " />
+            <marker date="1525819300585" expanded="true" signature="6521:6585" ph="delete from task_list_task... " />
+            <marker date="1525819300585" expanded="true" signature="6521:6586" ph="delete from task_list_task... " />
+            <marker date="1525819300585" expanded="true" signature="6863:6974" ph="update task_list_task... " />
+            <marker date="1525819300585" expanded="true" signature="7376:7501" ph="update task_list_category... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schedules/build/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="17" column="24" lean-forward="true" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/work/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="17" column="48" lean-forward="false" selection-start-line="17" selection-start-column="48" selection-end-line="17" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/work/view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="9" column="70" lean-forward="true" selection-start-line="9" selection-start-column="70" selection-end-line="9" selection-end-column="70" />
+        <state relative-caret-position="96">
+          <caret line="182" column="52" lean-forward="false" selection-start-line="182" selection-start-column="52" selection-end-line="182" selection-end-column="52" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/work/work.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="777">
-          <caret line="37" column="1" lean-forward="false" selection-start-line="37" selection-start-column="1" selection-end-line="37" selection-end-column="1" />
+        <state relative-caret-position="580">
+          <caret line="44" column="26" lean-forward="false" selection-start-line="44" selection-start-column="26" selection-end-line="44" selection-end-column="26" />
           <folding />
         </state>
       </provider>

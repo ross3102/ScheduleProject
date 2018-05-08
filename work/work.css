@@ -13,7 +13,7 @@
     font-size: 1.25em;
 }
 
-.collection-item {
+.collapsible-body .collection-item {
     padding-left: 5% !important;
 }
 
@@ -35,4 +35,17 @@
 
 .modal {
     overflow: visible;
+}
+
+.container.main {
+    margin: 20px auto;
+    overflow: hidden;
+}
+
+#task-list-view, #upcoming {
+    padding: 20px;
+}
+
+table.highlight tbody:hover {
+    cursor: pointer;
 }
