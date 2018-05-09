@@ -20,19 +20,18 @@ switch ($action) {
         $email = filter_input(INPUT_POST, "email");
         $username = filter_input(INPUT_POST, "username");
         if (!username_in_use($username)) {
-            $result = $auth->register($email, $password, $confirm);
-            if ($result["error"] == 0) {
-                $auth->login($email, $password);
-                $user_id = $auth->getCurrentUID();
-                $first_name = filter_input(INPUT_POST, "first_name");
-                $last_name = filter_input(INPUT_POST, "last_name");
-                new_user($user_id, $first_name, $last_name, $username);
-            }
+            $result = $auth->register($email, $password, $confirm, array(), null, true);
+//            if ($result["error"] == 0) {
+//                $auth->login($email, $password);
+//                $user_id = $auth->getCurrentUID();
+//                $first_name = filter_input(INPUT_POST, "first_name");
+//                $last_name = filter_input(INPUT_POST, "last_name");
+//                new_user($user_id, $first_name, $last_name, $username);
+//            }
         } else
             $result = array("error" => 1, "message" => "The username " . $username . " is already in use.");
-        $data = array("location" => $result["error"] == 0 ? "/" . $web_root . "dashboard": null, "message" => $result["message"]);
         header('Content-Type: application/json');
-        echo json_encode($data);
+        echo json_encode($result);
         break;
     case "log_in":
         $email = filter_input(INPUT_POST, "username");

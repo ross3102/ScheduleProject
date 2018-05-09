@@ -52,13 +52,13 @@ writeHeader("");
                 data: "action=sign_up&username=" + username + "&first_name=" + first_name + "&last_name=" + last_name + "&email=" + email + "&password=" + password + "&confirm=" + confrm,
                 complete: function(data) {
                     var json = JSON.parse(JSON.stringify(data));
-                    var loc = json["responseJSON"]["location"];
-                    if (loc != null)
-                        location.href = loc;
-                    else {
+                    // var loc = json["responseJSON"]["location"];
+                    // if (loc != null)
+                    //     location.href = loc;
+                    // else {
                         var message = json["responseJSON"]["message"];
                         Materialize.toast(message, 3000);
-                    }
+                    // }
                 }
             });
         }

@@ -1,5 +1,7 @@
 {
   "require": {
-    "bjeavons/zxcvbn-php": "^0.3"
+    "bjeavons/zxcvbn-php": "^0.3",
+    "ircmaxell/password-compat": "^1.0",
+    "phpmailer/phpmailer": "^6.0"
   }
 }
