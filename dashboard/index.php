@@ -31,7 +31,7 @@ writeHeader($head);
     <div class="collection">
         <?php
             create_dashboard_item("work", "Task List",
-                "Write down upcoming tasks or assignments", "view_agenda");
+                "Write down upcoming tasks or assignments in an organized planner.", "view_agenda");
             create_dashboard_item("schedules", "Manage Schedules",
                 "Use this tool to manage your time effectively. Set aside time to complete your work and " .
                 "establish deadlines to motivate you not to procrastinate! Don't worry if you run out of time, " .
