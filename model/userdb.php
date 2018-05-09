@@ -83,3 +83,21 @@ function get_user_by_username($username) {
         exit();
     }
 }
+
+function numUsers() {
+    global $db;
+
+    $query = "select count(*) as num
+    from user";
+
+    try {
+        $statement = $db->prepare($query);
+        $statement->execute();
+        $result = $statement->fetch()["num"];
+        $statement->closeCursor();
+        return $result;
+    } catch (PDOException $e) {
+        echo ($e);
+        exit();
+    }
+}

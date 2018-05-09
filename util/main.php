@@ -116,6 +116,7 @@ function writeFooter() {
                     <p>By Ross Newman</p>
                 </div>
                 <div class="col s3 offset-s3">
+                    BCA Task Manager has <span class="blue-text text-lighten-1"><?php echo numUsers() ?></span> users!
                     <!--<h5>Contact</h5>
                     <ul>
                         <li>Cell: 201-994-9454</li>
