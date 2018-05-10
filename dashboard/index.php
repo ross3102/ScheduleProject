@@ -24,6 +24,8 @@ $head = '<link rel="stylesheet" href="dashboard.css">';
 
 writeHeader($head);
 
+verify_logged();
+
 ?>
 
 <div class="container">

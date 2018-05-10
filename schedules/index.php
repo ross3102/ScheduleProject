@@ -3,6 +3,8 @@
 include "../util/main.php";
 include "../model/scheduledb.php";
 
+verify_logged();
+
 $action = strtolower(filter_input(INPUT_POST, 'action'));
 if ($action == NULL) {
     $action = strtolower(filter_input(INPUT_GET, 'action'));

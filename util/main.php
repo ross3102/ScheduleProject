@@ -30,15 +30,18 @@ include(dirname(__FILE__) . "/../js/PHPAuth-master/Auth.php");
 
 $config = new PHPAuth\Config($db);
 $auth   = new PHPAuth\Auth($db, $config);
-list($scriptPath) = get_included_files();
-if (!$auth->isLogged() && $scriptPath != $_SERVER['DOCUMENT_ROOT'] . "/" . $web_root . "index.php") {
-    header("Location: /" . $web_root . "index.php");
-    exit();
-}
 
 $user_id = $auth->getCurrentUID();
 
 $user = get_user_by_id($user_id);
+
+function verify_logged() {
+    global $auth, $web_root;
+    if (!$auth->isLogged()) {
+        header("Location: /" . $web_root . "index.php");
+        exit();
+    }
+}
 
 function pad($num, $target) {
     $num = array_map('intval', str_split($num));
