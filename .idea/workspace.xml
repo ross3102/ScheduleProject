@@ -94,8 +94,8 @@
       <file leaf-file-name="view.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/work/view.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="630">
-              <caret line="190" column="39" lean-forward="true" selection-start-line="190" selection-start-column="39" selection-end-line="190" selection-end-column="39" />
+            <state relative-caret-position="482">
+              <caret line="283" column="0" lean-forward="false" selection-start-line="283" selection-start-column="0" selection-end-line="283" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -523,7 +523,7 @@
       <workItem from="1525375588489" duration="46000" />
       <workItem from="1525818144793" duration="3810000" />
       <workItem from="1525865684455" duration="1599000" />
-      <workItem from="1525896464781" duration="4728000" />
+      <workItem from="1525896464781" duration="5211000" />
     </task>
     <task id="LOCAL-00001" summary="Primitive Schedule and Task List">
       <created>1505515987449</created>
@@ -641,7 +641,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="224411000" />
+    <option name="totallyTimeSpent" value="224894000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1293,8 +1293,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/work/view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="190" column="39" lean-forward="true" selection-start-line="190" selection-start-column="39" selection-end-line="190" selection-end-column="39" />
+        <state relative-caret-position="482">
+          <caret line="283" column="0" lean-forward="false" selection-start-line="283" selection-start-column="0" selection-end-line="283" selection-end-column="0" />
           <folding />
         </state>
       </provider>
