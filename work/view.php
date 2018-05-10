@@ -187,8 +187,8 @@ $numCategories = count($categories);
                 $form_date = $task["form_date"];
                 $task_completed = $task["task_completed"]; ?>
                 <tr onclick="editTask(<?php echo $task_id ?>, '<?php echo addslashes($task_name); ?>', '<?php echo $form_date ?>', <?php echo $category_id ?>);">
-                    <td onclick="event.stopPropagation();">
-                        <input id="CB2<?php echo $task_id ?>" data-task-id="<?php echo $task_id ?>" type="checkbox"><label for="CB2<?php echo $task_id ?>"><span class="black-text <?php echo $task_id ?>"><?php echo $task_name ?></span></label>
+                    <td>
+                        <span onclick="event.stopPropagation();"><input id="CB2<?php echo $task_id ?>" data-task-id="<?php echo $task_id ?>" type="checkbox"><label for="CB2<?php echo $task_id ?>"><span class="black-text <?php echo $task_id ?>"><?php echo $task_name ?></span></label></span>
                     </td>
                     <td>
                         <?php echo $category_name ?>
