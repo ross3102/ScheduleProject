@@ -19,7 +19,7 @@ writeHeader("");
 
     <script>
 
-        function logIn() {
+        function activate() {
             key = $("#key").val();
             $.ajax({
                 type: "POST",
