@@ -276,17 +276,17 @@ $numCategories = count($categories);
         request.send();
     });
 
-    $(document).keypress(function(e) {
-        var keycode = (e.keyCode ? e.keyCode : e.which);
-        if (keycode === 116) { // T
-            $("#newCategory").modal("close");
-            $("#newTask").modal("open");
-        }
-        else if (keycode === 99) { // C
-            $("#newTask").modal("close");
-            $("#newCategory").modal("open");
-        }
-    });
+    // $(document).keypress(function(e) {
+    //     var keycode = (e.keyCode ? e.keyCode : e.which);
+    //     if (keycode === 116) { // T
+    //         $("#newCategory").modal("close");
+    //         $("#newTask").modal("open");
+    //     }
+    //     else if (keycode === 99) { // C
+    //         $("#newTask").modal("close");
+    //         $("#newCategory").modal("open");
+    //     }
+    // });
 
 </script>
 
