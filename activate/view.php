@@ -31,6 +31,7 @@ writeHeader("");
                     var json = JSON.parse(JSON.stringify(data));
                     var message = json["responseJSON"]["message"];
                     Materialize.toast(message, 2000);
+                    alert(json["responseJSON"]["error"]);
                     if (!json["responseJSON"]["error"]) {
                         setTimeout(2000);
                         location.href = "..";
