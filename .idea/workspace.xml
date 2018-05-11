@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bd99f3a2-7083-4bc5-ba02-994a4afa1da6" name="Default" comment="Database for localhost">
-      <change beforePath="" afterPath="$PROJECT_DIR$/activate/resend.php" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/activate/index.php" afterPath="$PROJECT_DIR$/activate/index.php" />
-      <change beforePath="$PROJECT_DIR$/activate/view.php" afterPath="$PROJECT_DIR$/activate/view.php" />
-      <change beforePath="$PROJECT_DIR$/sign_up.php" afterPath="$PROJECT_DIR$/sign_up.php" />
+      <change beforePath="$PROJECT_DIR$/activate/resend.php" afterPath="$PROJECT_DIR$/activate/resend.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -67,7 +63,7 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/activate/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="321">
+            <state relative-caret-position="384">
               <caret line="21" column="30" lean-forward="true" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
               <folding />
             </state>
@@ -77,8 +73,8 @@
       <file leaf-file-name="resend.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/activate/resend.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="23" column="38" lean-forward="true" selection-start-line="23" selection-start-column="38" selection-end-line="23" selection-end-column="38" />
+            <state relative-caret-position="206">
+              <caret line="15" column="76" lean-forward="false" selection-start-line="15" selection-start-column="76" selection-end-line="15" selection-end-column="76" />
               <folding />
             </state>
           </provider>
@@ -184,9 +180,9 @@
         <option value="$PROJECT_DIR$/schedules/run/index.php" />
         <option value="$PROJECT_DIR$/work/view.php" />
         <option value="$PROJECT_DIR$/activate/view.php" />
-        <option value="$PROJECT_DIR$/activate/resend.php" />
         <option value="$PROJECT_DIR$/activate/index.php" />
         <option value="$PROJECT_DIR$/sign_up.php" />
+        <option value="$PROJECT_DIR$/activate/resend.php" />
       </list>
     </option>
   </component>
@@ -489,7 +485,7 @@
       <workItem from="1525951766308" duration="3283000" />
       <workItem from="1525982720844" duration="513000" />
       <workItem from="1525987959410" duration="525000" />
-      <workItem from="1526042347052" duration="687000" />
+      <workItem from="1526042347052" duration="777000" />
     </task>
     <task id="LOCAL-00001" summary="Primitive Schedule and Task List">
       <created>1505515987449</created>
@@ -607,7 +603,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="230008000" />
+    <option name="totallyTimeSpent" value="230098000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1075,14 +1071,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/activate/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="21" column="30" lean-forward="true" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/activate/view.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
@@ -1099,10 +1087,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/activate/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="21" column="30" lean-forward="true" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/activate/resend.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="23" column="38" lean-forward="true" selection-start-line="23" selection-start-column="38" selection-end-line="23" selection-end-column="38" />
+        <state relative-caret-position="206">
+          <caret line="15" column="76" lean-forward="false" selection-start-line="15" selection-start-column="76" selection-end-line="15" selection-end-column="76" />
           <folding />
         </state>
       </provider>

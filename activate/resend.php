@@ -13,7 +13,7 @@ writeHeader("");
             <div class="center-align">
                 <a onclick="resend()" class="waves-effect waves-light btn-large blue lighten-1">Activate</a>
             </div>
-            <p>Didn't receive the email? <a href="./index.php?action=show_resend">Resend</a></p>
+            <p>Received the email? <a href="./index.php?action=show_activate">Activate</a></p>
             <p>Already have an activated account? <a href="../index.php">Log In</a></p>
         </div>
     </div>
