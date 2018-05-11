@@ -15,6 +15,15 @@ switch ($action) {
         header('Content-Type: application/json');
         echo json_encode($result);
         break;
+    case "show_resend":
+        include "resend.php";
+        break;
+    case "resend":
+        $email = filter_input(INPUT_POST, "email");
+        $result = $auth->resendActivation($email, true);
+        header('Content-Type: application/json');
+        echo json_encode($result);
+        break;
     default:
         include "view.php";
 }

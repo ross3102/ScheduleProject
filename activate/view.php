@@ -6,13 +6,14 @@ writeHeader("");
         <h2 class="title">Activate Acount</h2>
         <div class="row">
             <div class="input-field col s12">
-                <input type="text" name="key" id="key">
-                <label for="key">Enter the key sent to your email</label>
+                <input placeholder="Enter the key sent to your email" type="text" name="key" id="key">
+                <label for="key">Key</label>
             </div>
         </div>
         <div class="center-align">
             <a onclick="activate()" class="waves-effect waves-light btn-large blue lighten-1">Activate</a>
         </div>
+        <p>Didn't receive the email? <a href="./index.php?action=show_resend">Resend</a></p>
         <p>Already have an activated account? <a href="../index.php">Log In</a></p>
     </div>
 </div>
