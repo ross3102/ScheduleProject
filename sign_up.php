@@ -53,8 +53,8 @@ writeHeader("");
                 complete: function(data) {
                     var json = JSON.parse(JSON.stringify(data));
                     var message = json["responseJSON"]["message"];
-                    Materialize.toast(message, 1000);
-                    setTimeout(1000);
+                    Materialize.toast(message, 2000);
+                    setTimeout(2000);
                     location.href = "activate";
                 }
             });

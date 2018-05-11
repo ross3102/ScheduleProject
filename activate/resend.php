@@ -11,7 +11,7 @@ writeHeader("");
                 </div>
             </div>
             <div class="center-align">
-                <a onclick="resend()" class="waves-effect waves-light btn-large blue lighten-1">Activate</a>
+                <a onclick="resend()" class="waves-effect waves-light btn-large blue lighten-1">Resend</a>
             </div>
             <p>Received the email? <a href="./index.php?action=show_activate">Activate</a></p>
             <p>Already have an activated account? <a href="../index.php">Log In</a></p>
@@ -20,7 +20,7 @@ writeHeader("");
 
     <script>
 
-        function activate() {
+        function resend() {
             email = $("#email").val();
             $.ajax({
                 type: "POST",
