@@ -40,7 +40,7 @@
                             $task_complete = $task["task_completed"]; ?>
                             <tr id="T<?php echo $task_id ?>">
                                 <td>
-                                    <i class="material-icons clickable" onclick="addToSchedule('<?php echo $task_id ?>', '<?php echo addslashes($task_name) ?>', '<?php echo addslashes($category_name) ?>', '<?php echo $task_date ?>')">chevron_left</i>
+                                    <i class="material-icons clickable" onclick="addToSchedule('<?php echo $task_id ?>', '<?php echo htmlspecialchars(addslashes($task_name)) ?>', '<?php echo htmlspecialchars(addslashes($category_name)) ?>', '<?php echo $task_date ?>')">chevron_left</i>
                                 </td>
                                 <td><?php echo $task_name ?></td>
                                 <td><?php echo $task_date ?></td>

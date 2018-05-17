@@ -70,7 +70,7 @@ writeHeader($head) ?>
                         <div class="card-action">
                             <a href="#" onclick="
                                 event.stopPropagation();
-                                confirmDeleteSchedule('<?php echo addslashes($schedule_name) ?>', <?php echo $schedule_id ?>);"
+                                confirmDeleteSchedule('<?php echo htmlspecialchars(addslashes($schedule_name)) ?>', <?php echo $schedule_id ?>);"
                             >Delete</a>
                             <a href="#Add<?php echo $schedule_id ?>" class="modal-trigger">Add Item</a>
                             <a href='./index.php?action=run&schedule_id=<?php echo $schedule_id ?>'>Run</a>
@@ -97,7 +97,7 @@ writeHeader($head) ?>
                                             <td><?php echo int_to_duration($item_duration) ?></td>
                                             <td><i class="material-icons clickable" onclick="
                                                     event.stopPropagation();
-                                                    confirmDeleteItem('<?php echo addslashes($item_name) ?>', <?php echo $item_id ?>, '<?php echo addslashes($schedule_name) ?>')"
+                                                    confirmDeleteItem('<?php echo htmlspecialchars(addslashes($item_name)) ?>', <?php echo $item_id ?>, '<?php echo htmlspecialchars(addslashes($schedule_name)) ?>')"
                                                 >delete</i>
                                                 &nbsp;
                                                 <a class="modal-trigger black-text" href="#InfoModal<?php echo $item_id ?>"><i class="material-icons clickable" >info</i></a></td>

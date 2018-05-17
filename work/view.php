@@ -112,7 +112,7 @@ $numCategories = count($categories);
     </div>
 
     <div class="row">
-        <ul class="tabs">
+        <ul class="tabs tabs-fixed-width">
             <li class="tab col s6"><a href="#task-list-view">Task List</a></li>
             <li class="tab col s6"><a href="#upcoming">Upcoming</a></li>
         </ul>
@@ -134,13 +134,13 @@ $numCategories = count($categories);
                             <div class="category-header-inner">
                                 <?php echo $category_name ?>
                                 <span class="numTasks valign-wrapper"><?php echo get_total_tasks($category_id) ?>
-                                    <a onclick="event.stopPropagation(); editCat(<?php echo $category_id ?>, '<?php echo addslashes($category_name) ?>')">
+                                    <a onclick="event.stopPropagation(); editCat(<?php echo $category_id ?>, '<?php echo htmlspecialchars(addslashes($category_name)) ?>')">
                                         <i style="margin: 0;" class="material-icons clickable tooltipped blue-text"
                                            data-tooltip="Edit Category">edit</i>
                                     </a>
                                     <i class="material-icons clickable tooltipped red-text" data-tooltip="Delete Category" onclick="
                                             event.stopPropagation();
-                                            confirmDeleteCategory('<?php echo addslashes($category_name) ?>', <?php echo $category_id ?>);"
+                                            confirmDeleteCategory('<?php echo htmlspecialchars(addslashes($category_name)) ?>', <?php echo $category_id ?>);"
                                     >delete</i></span>
                             </div>
                         </div>
@@ -156,7 +156,7 @@ $numCategories = count($categories);
                                         <span class="secondary-content black-text valign-wrapper">
                                             <?php echo $task_date ?>
                                             &nbsp;
-                                            <i class="material-icons clickable tooltipped blue-text" onclick="editTask(<?php echo $task_id ?>, '<?php echo addslashes($task_name); ?>', '<?php echo $form_date ?>', <?php echo $category_id ?>);" data-tooltip="Edit Task">edit</i>
+                                            <i class="material-icons clickable tooltipped blue-text" onclick="editTask(<?php echo $task_id ?>, '<?php echo htmlspecialchars(addslashes($task_name)); ?>', '<?php echo $form_date ?>', <?php echo $category_id ?>);" data-tooltip="Edit Task">edit</i>
                                         </span>
                                         <input id="CB<?php echo $task_id ?>" data-task-id="<?php echo $task_id ?>" type="checkbox"><label for="CB<?php echo $task_id ?>"><span class="black-text <?php echo $task_id ?>"><?php echo $task_name ?></span></label>
                                     </li>
@@ -186,7 +186,7 @@ $numCategories = count($categories);
                 $task_date = $task["task_date"];
                 $form_date = $task["form_date"];
                 $task_completed = $task["task_completed"]; ?>
-                <tr onclick="editTask(<?php echo $task_id ?>, '<?php echo addslashes($task_name); ?>', '<?php echo $form_date ?>', <?php echo $category_id ?>);">
+                <tr onclick="editTask(<?php echo $task_id ?>, '<?php echo htmlspecialchars(addslashes($task_name)); ?>', '<?php echo $form_date ?>', <?php echo $category_id ?>);">
                     <td>
                         <span onclick="event.stopPropagation();"><input id="CB2<?php echo $task_id ?>" data-task-id="<?php echo $task_id ?>" type="checkbox"><label for="CB2<?php echo $task_id ?>"><span class="black-text <?php echo $task_id ?>"><?php echo $task_name ?></span></label></span>
                     </td>
