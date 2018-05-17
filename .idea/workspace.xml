@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bd99f3a2-7083-4bc5-ba02-994a4afa1da6" name="Default" comment="Database for localhost">
+    <list default="true" id="bd99f3a2-7083-4bc5-ba02-994a4afa1da6" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/schedules/build/view.php" afterPath="$PROJECT_DIR$/schedules/build/view.php" />
       <change beforePath="$PROJECT_DIR$/schedules/view.php" afterPath="$PROJECT_DIR$/schedules/view.php" />
@@ -58,8 +58,8 @@
       <file leaf-file-name="view.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/schedules/view.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="86">
-              <caret line="95" column="77" lean-forward="true" selection-start-line="95" selection-start-column="77" selection-end-line="95" selection-end-column="77" />
+            <state relative-caret-position="359">
+              <caret line="108" column="34" lean-forward="true" selection-start-line="108" selection-start-column="34" selection-end-line="108" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -464,7 +464,7 @@
       <workItem from="1525987959410" duration="525000" />
       <workItem from="1526042347052" duration="1853000" />
       <workItem from="1526324083427" duration="210000" />
-      <workItem from="1526575008245" duration="2057000" />
+      <workItem from="1526575008245" duration="2086000" />
     </task>
     <task id="LOCAL-00001" summary="Primitive Schedule and Task List">
       <created>1505515987449</created>
@@ -578,11 +578,18 @@
       <option name="project" value="LOCAL" />
       <updated>1524888289981</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Escaped &quot; and '">
+      <created>1526578088517</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1526578088517</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="233441000" />
+    <option name="totallyTimeSpent" value="233470000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -641,7 +648,8 @@
     <MESSAGE value="Changed some greens to blues&#10;User Authentication!" />
     <MESSAGE value="Restyled Run page - Icons instead of buttons&#10;Added more fields to user&#10;Resized login forms to fit better on smaller screens" />
     <MESSAGE value="Database for localhost" />
-    <option name="LAST_COMMIT_MESSAGE" value="Database for localhost" />
+    <MESSAGE value="Escaped &quot; and '" />
+    <option name="LAST_COMMIT_MESSAGE" value="Escaped &quot; and '" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -682,8 +690,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/schedules/view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="86">
-          <caret line="95" column="77" lean-forward="true" selection-start-line="95" selection-start-column="77" selection-end-line="95" selection-end-column="77" />
+        <state relative-caret-position="359">
+          <caret line="108" column="34" lean-forward="true" selection-start-line="108" selection-start-column="34" selection-end-line="108" selection-end-column="34" />
           <folding />
         </state>
       </provider>
