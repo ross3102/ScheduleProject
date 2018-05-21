@@ -58,7 +58,7 @@ blockquote {
 .clockpicker-canvas-bg { fill: #42a5f5 !important; }
 
 .input-field input:focus + label,
-.dropdown-content li * {
+form .dropdown-content li * {
     color: #42a5f5 !important;
 }
 

@@ -82,7 +82,14 @@ function writeHeader($head='') {
         ' . $head . '
     </head>
     <body>
-    <header>
+    <header>' . ($auth->isLogged() ? '
+        <ul class="dropdown-content blue lighten-1" id="account-dropdown-big">
+            <li><a class=white-text href="/' . $web_root . 'index.php?action=logout">Log Out</a></li>
+        </ul>
+        <ul class="dropdown-content" id="account-dropdown-small">
+            <li><a href="/' . $web_root . 'index.php?action=logout">Log Out</a></li>
+        </ul>
+        ': '') . '
         <nav class="blue lighten-1" style="padding: 0 3%; white-space: nowrap;">
             <div class="nav-wrapper">
                 <a href="/' . $web_root . 'dashboard" class="brand-logo">' . $app_title . '</a>' .
@@ -90,13 +97,11 @@ function writeHeader($head='') {
                 <a data-activates="sidenav" class="button-collapse"><i class="material-icons clickable">menu</i></a>
                 <ul class="right hide-on-med-and-down">
                     <li><a href="/' . $web_root . 'dashboard">Dashboard</a></li>
-                    <li><a>Hello, ' . $user["user_first_name"] . '</a></li>
-                    <li><a href="/' . $web_root . 'index.php?action=logout">Log Out</a></li>
+                    <li><a class="dropdown-button" data-hover="true" data-beloworigin="true" data-activates="account-dropdown-big">Hello, ' . $user["user_first_name"] . '<i class="material-icons right">arrow_drop_down</i></a></li>
                 </ul>
                 <ul class="side-nav" id="sidenav">
                     <li><a href="/' . $web_root . 'dashboard">Dashboard</a></li>
-                    <li><a>Hello, ' . $user["user_first_name"] . '</a></li>
-                    <li><a href="/' . $web_root . 'index.php?action=logout">Log Out</a></li>
+                    <li><a class="dropdown-button" data-hover="true" data-beloworigin="true" data-activates="account-dropdown-small">Hello, ' . $user["user_first_name"] . '<i class="material-icons right">arrow_drop_down</i></a></li>
                 </ul>': '') .
             '</div>
         </nav>
@@ -134,6 +139,7 @@ function writeFooter() {
                 "data-position": "top"
             });
             $(".button-collapse").sideNav();
+            $(".dropdown-button").dropdown();
         });
     </script>
     </html>';
