@@ -83,24 +83,22 @@ function writeHeader($head='') {
     </head>
     <body>
     <header>
-        <nav class="blue lighten-1">
-            <div class="container">
-                <div class="nav-wrapper">
-                    <a href="/' . $web_root . 'dashboard" class="brand-logo">' . $app_title . '</a>' .
-                    ($auth->isLogged() ? '
-                    <a data-activates="sidenav" class="button-collapse"><i class="material-icons clickable">menu</i></a>
-                    <ul class="right hide-on-med-and-down">
-                        <li><a href="/' . $web_root . 'dashboard">Dashboard</a></li>
-                        <li><a>Hello, ' . $user["user_first_name"] . '</a></li>
-                        <li><a href="/' . $web_root . 'index.php?action=logout">Log Out</a></li>
-                    </ul>
-                    <ul class="side-nav" id="sidenav">
-                        <li><a href="/' . $web_root . 'dashboard">Dashboard</a></li>
-                        <li><a>Hello, ' . $user["user_first_name"] . '</a></li>
-                        <li><a href="/' . $web_root . 'index.php?action=logout">Log Out</a></li>
-                    </ul>': '') .
-                '</div>
-            </div>
+        <nav class="blue lighten-1" style="padding: 0 3%; white-space: nowrap;">
+            <div class="nav-wrapper">
+                <a href="/' . $web_root . 'dashboard" class="brand-logo">' . $app_title . '</a>' .
+                ($auth->isLogged() ? '
+                <a data-activates="sidenav" class="button-collapse"><i class="material-icons clickable">menu</i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="/' . $web_root . 'dashboard">Dashboard</a></li>
+                    <li><a>Hello, ' . $user["user_first_name"] . '</a></li>
+                    <li><a href="/' . $web_root . 'index.php?action=logout">Log Out</a></li>
+                </ul>
+                <ul class="side-nav" id="sidenav">
+                    <li><a href="/' . $web_root . 'dashboard">Dashboard</a></li>
+                    <li><a>Hello, ' . $user["user_first_name"] . '</a></li>
+                    <li><a href="/' . $web_root . 'index.php?action=logout">Log Out</a></li>
+                </ul>': '') .
+            '</div>
         </nav>
     </header>
     <main>
