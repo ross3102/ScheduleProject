@@ -1,6 +1,7 @@
 <?php
 
 include "../util/main.php";
+verify_logged();
 
 $action = strtolower(filter_input(INPUT_POST, 'action'));
 if ($action == NULL) {
@@ -23,8 +24,6 @@ switch ($action) {
 $head = '<link rel="stylesheet" href="dashboard.css">';
 
 writeHeader($head);
-
-verify_logged();
 
 ?>
 
