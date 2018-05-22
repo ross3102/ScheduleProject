@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bd99f3a2-7083-4bc5-ba02-994a4afa1da6" name="Default" comment="Escaped &quot; and '">
-      <change beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -43,7 +43,7 @@
       <file leaf-file-name="view.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/schedules/view.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="776">
+            <state relative-caret-position="2037">
               <caret line="97" column="49" lean-forward="false" selection-start-line="97" selection-start-column="49" selection-end-line="97" selection-end-column="49" />
               <folding />
             </state>
@@ -53,8 +53,8 @@
       <file leaf-file-name="main.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/util/main.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="756">
-              <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+            <state relative-caret-position="462">
+              <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
               <folding>
                 <marker date="1526947788208" expanded="true" signature="2116:4373" ph="..." />
                 <marker date="1526947788208" expanded="true" signature="2127:2720" ph="..." />
@@ -86,8 +86,8 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="10" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="60" selection-end-column="1" />
+            <state relative-caret-position="252">
+              <caret line="12" column="15" lean-forward="false" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -116,7 +116,7 @@
       <file leaf-file-name="shared.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/shared.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="433">
+            <state relative-caret-position="1260">
               <caret line="60" column="5" lean-forward="false" selection-start-line="60" selection-start-column="5" selection-end-line="60" selection-end-column="5" />
               <folding />
             </state>
@@ -256,7 +256,7 @@
       <path value="$PROJECT_DIR$/vendor/phpmailer/phpmailer" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="23" />
     <option name="width" value="1920" />
     <option name="height" value="977" />
@@ -296,7 +296,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -304,16 +304,11 @@
               <item name="schedule" type="b2602c69:ProjectViewProjectNode" />
               <item name="schedule" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
-            <path>
-              <item name="schedule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="schedule" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="util" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -518,7 +513,8 @@
       <workItem from="1526575008245" duration="3136000" />
       <workItem from="1526647377899" duration="782000" />
       <workItem from="1526930837131" duration="127000" />
-      <workItem from="1526939659302" duration="3270000" />
+      <workItem from="1526939659302" duration="3316000" />
+      <workItem from="1526988914435" duration="44000" />
     </task>
     <task id="LOCAL-00001" summary="Primitive Schedule and Task List">
       <created>1505515987449</created>
@@ -643,7 +639,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="238699000" />
+    <option name="totallyTimeSpent" value="238789000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -655,10 +651,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1920" height="977" extended-state="0" />
+    <frame x="0" y="23" width="1280" height="698" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13854167" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13828126" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32899022" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -720,11 +716,99 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/schedules/view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2037">
+          <caret line="97" column="49" lean-forward="false" selection-start-line="97" selection-start-column="49" selection-end-line="97" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/util/main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="756">
+          <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding>
+            <marker date="1526947788208" expanded="true" signature="2116:4373" ph="..." />
+            <marker date="1526947788208" expanded="true" signature="2127:2720" ph="..." />
+            <marker date="1526947788208" expanded="true" signature="2731:2744" ph="..." />
+            <marker date="1526947788208" expanded="true" signature="2731:4373" ph="..." />
+            <marker date="1526947788208" expanded="true" signature="2744:4357" ph="..." />
+            <marker date="1526947788208" expanded="true" signature="2849:2965" ph="..." />
+            <marker date="1526947788208" expanded="true" signature="3031:3130" ph="..." />
+            <marker date="1526947788208" expanded="true" signature="3194:3229" ph="..." />
+            <marker date="1526947788208" expanded="true" signature="3230:4343" ph="..." />
+            <marker date="1526947788208" expanded="true" signature="3268:4328" ph="..." />
+            <marker date="1526947788208" expanded="true" signature="3579:3913" ph="..." />
+            <marker date="1526947788208" expanded="true" signature="3964:4300" ph="..." />
+            <marker date="1526947788208" expanded="true" signature="4368:4373" ph="..." />
+            <marker date="1526947788208" expanded="true" signature="4497:5036" ph="..." />
+            <marker date="1526947788208" expanded="true" signature="4529:5022" ph="..." />
+            <marker date="1526947788208" expanded="true" signature="4559:5007" ph="..." />
+            <marker date="1526947788208" expanded="true" signature="4596:4705" ph="..." />
+            <marker date="1526947788208" expanded="true" signature="4742:4988" ph="..." />
+            <marker date="1526947788208" expanded="true" signature="4844:4963" ph="..." />
+            <marker date="1526947788208" expanded="true" signature="5061:5342" ph="..." />
+            <marker date="1526947788208" expanded="true" signature="5100:5327" ph="{...}" />
+            <marker date="1526947788208" expanded="true" signature="5136:5224" ph="{&quot;data-position&quot;: &quot;top&quot;...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboard/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="34" column="8" lean-forward="false" selection-start-line="34" selection-start-column="8" selection-end-line="34" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboard/dashboard.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="6" column="1" lean-forward="false" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/shared.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1260">
+          <caret line="60" column="5" lean-forward="false" selection-start-line="60" selection-start-column="5" selection-end-line="60" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/work/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="22" column="38" lean-forward="false" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/work/view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding>
+            <marker date="1526577814064" expanded="true" signature="13821:14224" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/schedules/build/view.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="882">
           <caret line="42" column="216" lean-forward="false" selection-start-line="42" selection-start-column="208" selection-end-line="42" selection-end-column="216" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -781,7 +865,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="882">
           <caret line="42" column="216" lean-forward="false" selection-start-line="42" selection-start-column="208" selection-end-line="42" selection-end-column="216" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -856,7 +939,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="776">
           <caret line="42" column="216" lean-forward="false" selection-start-line="42" selection-start-column="208" selection-end-line="42" selection-end-column="216" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -872,7 +954,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/css/shared.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="433">
+        <state relative-caret-position="1260">
           <caret line="60" column="5" lean-forward="false" selection-start-line="60" selection-start-column="5" selection-end-line="60" selection-end-column="5" />
           <folding />
         </state>
@@ -890,7 +972,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -898,7 +979,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -906,7 +986,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -914,7 +993,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -938,7 +1016,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
           <caret line="155" column="36" lean-forward="false" selection-start-line="155" selection-start-column="36" selection-end-line="155" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -946,7 +1023,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
           <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -958,10 +1034,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/schedules/view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2037">
+          <caret line="97" column="49" lean-forward="false" selection-start-line="97" selection-start-column="49" selection-end-line="97" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/util/main.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="756">
-          <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+        <state relative-caret-position="462">
+          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
           <folding>
             <marker date="1526947788208" expanded="true" signature="2116:4373" ph="..." />
             <marker date="1526947788208" expanded="true" signature="2127:2720" ph="..." />
@@ -989,18 +1073,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/schedules/view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="776">
-          <caret line="97" column="49" lean-forward="false" selection-start-line="97" selection-start-column="49" selection-end-line="97" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="10" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="60" selection-end-column="1" />
+        <state relative-caret-position="252">
+          <caret line="12" column="15" lean-forward="false" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
           <folding />
         </state>
       </provider>
