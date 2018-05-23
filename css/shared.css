@@ -45,6 +45,10 @@ blockquote {
     font-family: 'Courier';
 }
 
+#account-dropdown-big li:hover {
+    background-color: #42A5F5;
+}
+
 
 /* Make form stuff blue */
 .picker__date-display { background-color: #42a5f5; }
