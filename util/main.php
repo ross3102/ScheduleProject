@@ -90,7 +90,7 @@ function writeHeader($head='') {
             <li><a href="/' . $web_root . 'index.php?action=logout">Log Out</a></li>
         </ul>
         ': '') . '
-        <nav class="blue lighten-1" style="padding: 0 3%; white-space: nowrap;">
+        <nav class="blue lighten-1" style="padding-left: 3%; white-space: nowrap;">
             <div class="nav-wrapper">
                 <a href="/' . $web_root . 'dashboard" class="brand-logo">' . $app_title . '</a>' .
                 ($auth->isLogged() ? '
