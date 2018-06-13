@@ -2,7 +2,7 @@
 writeHeader("");
 ?>
 <div class="container row">
-    <div class="col s12 l6 offset-l3 z-depth-3" style="margin-top: 20px; padding: 0 50px 20px;">
+    <div class="col s12 offset-s0 l6 offset-l3 z-depth-3" style="margin-top: 20px; padding: 0 50px 20px;">
         <h2 class="title">Log In</h2>
         <div class="row">
             <div class="input-field col s12">

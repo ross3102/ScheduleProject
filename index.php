@@ -33,13 +33,13 @@ switch ($action) {
         $password = filter_input(INPUT_POST, "password");
         $result = $auth->login($email, $password);
         if ($result["error"] == 0)
-            $data = array("location" => "/" . $web_root . "dashboard");
+            $data = array("location" => "/" . $web_root . "work");
         else {
             $username = $email;
             $email = get_user_by_username($username)["email"];
             $result = $auth->login($email, $password);
             if ($result["error"] == 0)
-                $data = array("location" => "/" . $web_root . "dashboard");
+                $data = array("location" => "/" . $web_root . "work");
             else {
                 $data = array("location" => null, "message" => $result["message"]);
                 if ($data["message"] === "Email address / password are incorrect.")
@@ -53,7 +53,7 @@ switch ($action) {
         $auth->logout($auth->getSessionHash());
     default:
         if ($auth->isLogged()) {
-            header("Location: /" . $web_root . "dashboard");
+            header("Location: /" . $web_root . "work");
             exit();
         }
         $failed = false;

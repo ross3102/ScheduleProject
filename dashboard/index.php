@@ -32,18 +32,17 @@ writeHeader($head);
     <div class="collection">
         <?php
             create_dashboard_item("work", "Task List",
-                "Write down upcoming tasks or assignments in an organized planner.", "view_agenda");
+                "Write down upcoming tasks or assignments in an organized planner.", "view_list");
             create_dashboard_item("schedules", "Manage Schedules (Beta)",
                 "Use this tool to manage your time effectively. Set aside time to complete your work and " .
                 "establish deadlines to motivate you not to procrastinate! Don't worry if you run out of time, " .
                 "because the deadlines can be extended when time runs out, but try to set reasonable goals and " .
-                "strive to complete them!", "view_list");
+                "strive to complete them!", "timer");
 /*  TODO: Add the following:
  *            create_dashboard_item("notes", "Notes",
  *                "Create and view small reminders and other notes", "edit");
  *            create_dashboard_item("calendar", "Calendar",
- *                "Click to see your calendar", "today");
- *
+ *                "View your task list in calendar form!", "today");
  *            create_dashboard_item("feedback", "Give feedback",
  *                "Have a question? Comment? Concern? Feedback is always appreciated", "comment");
  *

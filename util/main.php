@@ -84,35 +84,87 @@ function writeHeader($head='') {
     <body>
     <header>' . ($auth->isLogged() ? '
         <ul class="dropdown-content blue lighten-1" id="account-dropdown-big">
-            <li><a class=white-text href="/' . $web_root . 'index.php?action=logout">Log Out</a></li>
+            <li><a class=white-text href="/' . $web_root . 'index.php?action=logout"><i class="material-icons">exit_to_app</i> Log Out</a></li>
         </ul>
         <ul class="dropdown-content" id="account-dropdown-small">
-            <li><a href="/' . $web_root . 'index.php?action=logout">Log Out</a></li>
+            <li><a href="/' . $web_root . 'index.php?action=logout"><i class="material-icons">exit_to_app</i> Log Out</a></li>
         </ul>
         ': '') . '
         <nav class="blue lighten-1" style="padding-left: 3%; white-space: nowrap;">
             <div class="nav-wrapper">
-                <a href="/' . $web_root . 'dashboard" class="brand-logo">' . $app_title . '</a>' .
+                <a href="/' . $web_root . 'work" class="brand-logo">' . $app_title . '</a>' .
                 ($auth->isLogged() ? '
                 <a data-activates="sidenav" class="button-collapse"><i class="material-icons clickable">menu</i></a>
                 <ul class="right hide-on-med-and-down">
-                    <li><a href="/' . $web_root . 'dashboard">Dashboard</a></li>
-                    <li><a class="dropdown-button" data-hover="true" data-beloworigin="true" data-activates="account-dropdown-big">Hello, ' . $user["user_first_name"] . '<i class="material-icons right">arrow_drop_down</i></a></li>
+                    <li>
+                    <a class="dropdown-button" data-hover="true" data-beloworigin="true" data-activates="account-dropdown-big">
+                        <i class="material-icons left">person</i> Hello, ' . $user["user_first_name"] . '<i class="material-icons right">arrow_drop_down</i>
+                    </a>
+                    </li>
                 </ul>
                 <ul class="side-nav" id="sidenav">
-                    <li><a href="/' . $web_root . 'dashboard">Dashboard</a></li>
-                    <li><a class="dropdown-button" data-hover="true" data-beloworigin="true" data-activates="account-dropdown-small">Hello, ' . $user["user_first_name"] . '<i class="material-icons right">arrow_drop_down</i></a></li>
+                    <li><a href="/' . $web_root . 'work">
+                        <i class="material-icons">view_list</i> Task List
+                    </a></li>
+                    <li><a href="/' . $web_root . 'schedules">
+                        <i class="material-icons">timer</i> Manage Schedules
+                    </a></li>
+                    <li><a href="/' . $web_root . 'calendar">
+                        <i class="material-icons">today</i> Calendar
+                    </a></li>
+                    <li>
+                        <a class="dropdown-button" data-hover="true" data-beloworigin="true" data-activates="account-dropdown-small">
+                            <i class="material-icons">person</i>
+                            Hello, ' . $user["user_first_name"] . '
+                            <i class="material-icons right">arrow_drop_down</i>
+                        </a>
+                    </li>
                 </ul>': '') .
             '</div>
         </nav>
     </header>
     <main>
+        <div class="row pageLayout">' . ($auth->isLogged() ? '
+            <div class="col l3 sideBar hide-on-med-and-down z-depth-5">
+                <!-- <ul>
+                <li>
+                    <a href="#" class="white-text">
+                        <i class="material-icons">timer</i> Manage Schedules
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="white-text">
+                        <i class="material-icons">timer</i> Manage Schedules
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="white-text">
+                        <i class="material-icons">timer</i> Manage Schedules
+                    </a>
+                </li>
+                </ul> -->
+                
+                <ul class="collection sideItems">
+                    <a href="/' . $web_root . 'work" class="black-text collection-item">
+                        <i class="material-icons">view_list</i> Task List
+                    </a>
+                    <a href="/' . $web_root . 'schedules" class="black-text collection-item">
+                        <i class="material-icons">timer</i> Manage Schedules
+                    </a>
+                    <a href="/' . $web_root . 'calendar" class="black-text collection-item">
+                        <i class="material-icons">today</i> Calendar
+                    </a>
+                </ul>
+            </div>' : '') . '
+            <div class="col s12' . ($auth->isLogged() ? ' l9': '') . '">
     ';
 }
 
 function writeFooter() {
     global $app_title;
     echo '
+    </div>
+    </div>
     </main>
     <footer class="page-footer blue lighten-1">
         <div class="container">
