@@ -151,9 +151,6 @@ function writeHeader($head='') {
                     <a href="/' . $web_root . 'schedules" class="black-text collection-item">
                         <i class="material-icons">timer</i> Manage Schedules
                     </a>
-                    <a href="/' . $web_root . 'calendar" class="black-text collection-item">
-                        <i class="material-icons">today</i> Calendar
-                    </a>
                 </ul>
             </div>' : '') . '
             <div class="col s12' . ($auth->isLogged() ? ' l9': '') . '">
