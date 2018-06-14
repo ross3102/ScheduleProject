@@ -74,6 +74,7 @@ function writeHeader($head='') {
     echo '
     <html>
     <head>
+        <title>BCA Task Manager</title>
         <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
         <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link type="text/css" rel="stylesheet" href="/' . $web_root . 'css/shared.css">
@@ -126,24 +127,6 @@ function writeHeader($head='') {
     <main>
         <div class="row pageLayout">' . ($auth->isLogged() ? '
             <div class="col l3 sideBar hide-on-med-and-down z-depth-5">
-                <!-- <ul>
-                <li>
-                    <a href="#" class="white-text">
-                        <i class="material-icons">timer</i> Manage Schedules
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="white-text">
-                        <i class="material-icons">timer</i> Manage Schedules
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="white-text">
-                        <i class="material-icons">timer</i> Manage Schedules
-                    </a>
-                </li>
-                </ul> -->
-                
                 <ul class="collection sideItems">
                     <a href="/' . $web_root . 'work" class="black-text collection-item">
                         <i class="material-icons">view_list</i> Task List

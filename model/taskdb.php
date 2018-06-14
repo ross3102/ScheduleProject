@@ -82,27 +82,6 @@ function get_tasks_by_category_id($category_id) {
     }
 }
 
-function get_total_tasks($category_id) {
-    clean();
-    global $db;
-
-    $query = "select count(*) as num
-              from task_list_task
-              where category_id = :category_id";
-    try {
-        $statement = $db->prepare($query);
-        $statement->bindValue(':category_id', $category_id);
-        $statement->execute();
-        $result = $statement->fetch();
-        $statement->closeCursor();
-        $result = $result["num"] . " Task" . ($result["num"] != 1 ? "s": "");
-        return $result;
-    } catch (PDOException $e) {
-        echo ($e);
-        exit();
-    }
-}
-
 function get_task_list($user_id) {
     clean();
     global $db;

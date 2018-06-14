@@ -12,7 +12,7 @@ $numCategories = count($categories);
         <ul>
             <li><a href="#newCategory" class="btn waves-effect waves-light modal-trigger">New Category <i class="material-icons">library_add</i></a></li>
             <li><a href="#newTask" class="btn waves-effect waves-light modal-trigger <?php if ($numCategories==0) echo "disabled" ?>">New Task <i class="material-icons">playlist_add</i></a></li>
-            <!--            <li><a onclick="deleteAll()" class="waves-effect waves-light modal-trigger">Delete All <i class="material-icons">delete_sweep</i></a></li>-->
+<!--            <li><a onclick="deleteAll()" class="waves-effect waves-light modal-trigger">Delete All <i class="material-icons">delete_sweep</i></a></li>-->
         </ul>
     </div>
 
@@ -126,14 +126,16 @@ $numCategories = count($categories);
                     $category_id = $category["category_id"];
                     $category_name = $category["category_name"];
                     $tasks = get_tasks_by_category_id($category_id);
+                    $num_tasks = count($tasks);
+                    $task_caption = "Task" . ($num_tasks != 1 ? "s": "");
                     if (count($tasks) == 0)
                         collapse($category_id, 0);
-                    $category_active = $category["category_active"] && count($tasks) > 0 ? "active": "";?>
+                    $category_active = $category["category_active"] && $num_tasks > 0 ? "active": ""; ?>
                     <li class="collapsibleItem" id="C<?php echo $category_id ?>">
                         <div class="collapsible-header <?php echo $category_active ?>">
                             <div class="category-header-inner">
                                 <?php echo $category_name ?>
-                                <span class="numTasks valign-wrapper"><?php echo get_total_tasks($category_id) ?>
+                                <span class="numTasks valign-wrapper"><?php echo $num_tasks . " " . $task_caption ?>
                                     <a onclick="event.stopPropagation(); editCat(<?php echo $category_id ?>, '<?php echo htmlspecialchars(addslashes($category_name)) ?>')">
                                         <i style="margin: 0;" class="material-icons clickable tooltipped blue-text"
                                            data-tooltip="Edit Category">edit</i>
@@ -208,7 +210,9 @@ $numCategories = count($categories);
         $("select").material_select();
         $(".datepicker").pickadate();
         $(".picker").appendTo('body');
-        $(".modal").modal();
+        $(".modal").modal({
+            dismissible: false
+        });
         $(".charCount").characterCounter();
     });
 

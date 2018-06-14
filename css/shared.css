@@ -57,6 +57,10 @@ main {
     border: 0;
 }
 
+.numTasks .badge {
+    margin: 0 !important;
+}
+
 .clickable:hover {
     cursor: pointer;
 }
