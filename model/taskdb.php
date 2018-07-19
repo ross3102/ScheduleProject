@@ -68,7 +68,7 @@ function get_tasks_by_category_id($category_id) {
     $query = "select task_id, task_name, DATE_FORMAT(task_date, '%c/%e/%Y') as task_date, task_date as form_date,  task_completed
               from task_list_task
               where category_id = :category_id
-              order by form_date";
+              order by form_date, task_id";
     try {
         $statement = $db->prepare($query);
         $statement->bindValue(':category_id', $category_id);
