@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bd99f3a2-7083-4bc5-ba02-994a4afa1da6" name="Default" comment="Escaped &quot; and '">
+    <list default="true" id="bd99f3a2-7083-4bc5-ba02-994a4afa1da6" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -448,7 +448,7 @@
       <workItem from="1533644907575" duration="511000" />
       <workItem from="1533645877743" duration="68000" />
       <workItem from="1533646039058" duration="543000" />
-      <workItem from="1533646662189" duration="16000" />
+      <workItem from="1533646662189" duration="36000" />
     </task>
     <task id="LOCAL-00001" summary="Primitive Schedule and Task List">
       <created>1505515987449</created>
@@ -569,11 +569,18 @@
       <option name="project" value="LOCAL" />
       <updated>1526578088517</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="PHPExcel to PHPSpreadsheet">
+      <created>1533646689797</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1533646689797</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="258425000" />
+    <option name="totallyTimeSpent" value="258445000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -633,7 +640,8 @@
     <MESSAGE value="Restyled Run page - Icons instead of buttons&#10;Added more fields to user&#10;Resized login forms to fit better on smaller screens" />
     <MESSAGE value="Database for localhost" />
     <MESSAGE value="Escaped &quot; and '" />
-    <option name="LAST_COMMIT_MESSAGE" value="Escaped &quot; and '" />
+    <MESSAGE value="PHPExcel to PHPSpreadsheet" />
+    <option name="LAST_COMMIT_MESSAGE" value="PHPExcel to PHPSpreadsheet" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
