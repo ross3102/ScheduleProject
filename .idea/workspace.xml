@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="bd99f3a2-7083-4bc5-ba02-994a4afa1da6" name="Default" comment="Escaped &quot; and '">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/model/taskdb.php" afterPath="$PROJECT_DIR$/model/taskdb.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -28,49 +27,22 @@
     <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="view.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/work/view.php">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="146">
-              <caret line="127" column="37" lean-forward="false" selection-start-line="127" selection-start-column="37" selection-end-line="127" selection-end-column="37" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="taskdb.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/model/taskdb.php">
+      <file leaf-file-name="view.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/view.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="334">
-              <caret line="70" column="41" lean-forward="false" selection-start-line="70" selection-start-column="41" selection-end-line="70" selection-end-column="41" />
-              <folding>
-                <marker date="1532019068285" expanded="true" signature="82:155" ph="select * fro... task_list_category" />
-                <marker date="1532019068285" expanded="true" signature="558:715" ph="select task_... task_list_task" />
-                <marker date="1532019068285" expanded="true" signature="1108:1228" ph="select * fro... task_list_category" />
-                <marker date="1532019068285" expanded="true" signature="1639:1868" ph="select task_... task_list_task" />
-                <marker date="1532019068285" expanded="true" signature="1639:1869" ph="select task_... task_list_task" />
-                <marker date="1532019068285" expanded="true" signature="1639:1877" ph="select task_... task_list_task" />
-                <marker date="1532019068285" expanded="true" signature="2281:2739" ph="select task_... task_list_task" />
-                <marker date="1532019068285" expanded="true" signature="3137:3240" ph="insert into task_list_category... " />
-                <marker date="1532019068285" expanded="true" signature="3658:3780" ph="insert into task_list_task... " />
-                <marker date="1532019068285" expanded="true" signature="4240:4361" ph="update task_list_category... " />
-                <marker date="1532019068285" expanded="true" signature="4786:4967" ph="update task_list_task... " />
-                <marker date="1532019068285" expanded="true" signature="5466:5539" ph="delete from task_list_task... " />
-                <marker date="1532019068285" expanded="true" signature="5555:5632" ph="delete from task_list_category... " />
-                <marker date="1532019068285" expanded="true" signature="5942:6007" ph="delete from task_list_task... " />
-                <marker date="1532019068285" expanded="true" signature="6284:6395" ph="update task_list_task... " />
-                <marker date="1532019068285" expanded="true" signature="6797:6922" ph="update task_list_category... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/work/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="104">
-              <caret line="19" column="24" lean-forward="false" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
+            <state relative-caret-position="61">
+              <caret line="26" column="14" lean-forward="false" selection-start-line="26" selection-start-column="14" selection-end-line="26" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -177,11 +149,11 @@
         <option value="$PROJECT_DIR$/dashboard/dashboard.css" />
         <option value="$PROJECT_DIR$/dashboard/index.php" />
         <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/view.php" />
         <option value="$PROJECT_DIR$/css/shared.css" />
         <option value="$PROJECT_DIR$/util/main.php" />
         <option value="$PROJECT_DIR$/work/view.php" />
         <option value="$PROJECT_DIR$/model/taskdb.php" />
+        <option value="$PROJECT_DIR$/view.php" />
       </list>
     </option>
   </component>
@@ -239,6 +211,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -249,23 +222,12 @@
             <path>
               <item name="schedule" type="b2602c69:ProjectViewProjectNode" />
               <item name="schedule" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="css" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="schedule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="schedule" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="util" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="schedule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="schedule" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="work" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -481,7 +443,12 @@
       <workItem from="1528237785746" duration="1485000" />
       <workItem from="1528915030119" duration="1703000" />
       <workItem from="1528975666756" duration="3014000" />
-      <workItem from="1532018993689" duration="82000" />
+      <workItem from="1532018993689" duration="262000" />
+      <workItem from="1532433903057" duration="80000" />
+      <workItem from="1533644907575" duration="511000" />
+      <workItem from="1533645877743" duration="68000" />
+      <workItem from="1533646039058" duration="543000" />
+      <workItem from="1533646662189" duration="16000" />
     </task>
     <task id="LOCAL-00001" summary="Primitive Schedule and Task List">
       <created>1505515987449</created>
@@ -606,7 +573,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="257027000" />
+    <option name="totallyTimeSpent" value="258425000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -669,48 +636,147 @@
     <option name="LAST_COMMIT_MESSAGE" value="Escaped &quot; and '" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/index.php</url>
+          <line>49</line>
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/work/index.php">
+    <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="19" column="24" lean-forward="false" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="24" column="20" lean-forward="true" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/work/view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="146">
+        <state relative-caret-position="2667">
           <caret line="127" column="37" lean-forward="false" selection-start-line="127" selection-start-column="37" selection-end-line="127" selection-end-column="37" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/work/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="19" column="24" lean-forward="false" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/model/taskdb.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="70" column="41" lean-forward="false" selection-start-line="70" selection-start-column="41" selection-end-line="70" selection-end-column="41" />
-          <folding>
-            <marker date="1532019068285" expanded="true" signature="82:155" ph="select * fro... task_list_category" />
-            <marker date="1532019068285" expanded="true" signature="558:715" ph="select task_... task_list_task" />
-            <marker date="1532019068285" expanded="true" signature="1108:1228" ph="select * fro... task_list_category" />
-            <marker date="1532019068285" expanded="true" signature="1639:1868" ph="select task_... task_list_task" />
-            <marker date="1532019068285" expanded="true" signature="1639:1869" ph="select task_... task_list_task" />
-            <marker date="1532019068285" expanded="true" signature="1639:1877" ph="select task_... task_list_task" />
-            <marker date="1532019068285" expanded="true" signature="2281:2739" ph="select task_... task_list_task" />
-            <marker date="1532019068285" expanded="true" signature="3137:3240" ph="insert into task_list_category... " />
-            <marker date="1532019068285" expanded="true" signature="3658:3780" ph="insert into task_list_task... " />
-            <marker date="1532019068285" expanded="true" signature="4240:4361" ph="update task_list_category... " />
-            <marker date="1532019068285" expanded="true" signature="4786:4967" ph="update task_list_task... " />
-            <marker date="1532019068285" expanded="true" signature="5466:5539" ph="delete from task_list_task... " />
-            <marker date="1532019068285" expanded="true" signature="5555:5632" ph="delete from task_list_category... " />
-            <marker date="1532019068285" expanded="true" signature="5942:6007" ph="delete from task_list_task... " />
-            <marker date="1532019068285" expanded="true" signature="6284:6395" ph="update task_list_task... " />
-            <marker date="1532019068285" expanded="true" signature="6797:6922" ph="update task_list_category... " />
-          </folding>
+        <state relative-caret-position="1260">
+          <caret line="60" column="5" lean-forward="false" selection-start-line="60" selection-start-column="5" selection-end-line="60" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/work/view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2667">
+          <caret line="127" column="37" lean-forward="false" selection-start-line="127" selection-start-column="37" selection-end-line="127" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/work/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="19" column="24" lean-forward="false" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/taskdb.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1260">
+          <caret line="60" column="5" lean-forward="true" selection-start-line="60" selection-start-column="5" selection-end-line="60" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/taskdb.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="60" column="5" lean-forward="false" selection-start-line="60" selection-start-column="5" selection-end-line="60" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/work/view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="127" column="37" lean-forward="false" selection-start-line="127" selection-start-column="37" selection-end-line="127" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/work/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-707">
+          <caret line="19" column="24" lean-forward="false" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schedules/build/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-391">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schedules/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-732">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sign_up.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="61">
+          <caret line="26" column="14" lean-forward="false" selection-start-line="26" selection-start-column="14" selection-end-line="26" selection-end-column="14" />
+          <folding />
         </state>
       </provider>
     </entry>
