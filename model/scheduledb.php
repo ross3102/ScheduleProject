@@ -66,7 +66,7 @@ function get_items_by_schedule_id($schedule_id) {
     $query = "select item_id, item_name, item_duration, item_desc
               from item
               where schedule_id = :schedule_id
-              order by item_index";
+              order by item_index, item_id";
     try {
         $statement = $db->prepare($query);
         $statement->bindValue(':schedule_id', $schedule_id);

@@ -110,9 +110,9 @@ function writeHeader($head='') {
                     <li><a href="/' . $web_root . 'schedules">
                         <i class="material-icons">timer</i> Manage Schedules
                     </a></li>
-                    <li><a href="/' . $web_root . 'calendar">
+                    <!--<li><a href="/ . $web_root . calendar">
                         <i class="material-icons">today</i> Calendar
-                    </a></li>
+                    </a></li> --->
                     <li>
                         <a class="dropdown-button" data-hover="true" data-beloworigin="true" data-activates="account-dropdown-small">
                             <i class="material-icons">person</i>
