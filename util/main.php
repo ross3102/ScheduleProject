@@ -43,6 +43,11 @@ function verify_logged() {
     }
 }
 
+// Pages
+
+$TASK_LIST = "task_list";
+$SCHEDULES = "schedules";
+
 function pad($num, $target) {
     $num = array_map('intval', str_split($num));
     $os = "";
@@ -69,8 +74,8 @@ function int_to_duration($item_duration) {
     return $item_hours . ":" . $item_minutes . ":" . $item_duration;
 }
 
-function writeHeader($head='') {
-    global $web_root, $app_title, $user, $auth;
+function writeHeader($currentPage, $head='') {
+    global $web_root, $app_title, $user, $auth, $TASK_LIST, $SCHEDULES;
     echo '
     <html>
     <head>
@@ -96,13 +101,26 @@ function writeHeader($head='') {
                 <a href="/' . $web_root . 'work" class="brand-logo">' . $app_title . '</a>' .
                 ($auth->isLogged() ? '
                 <a data-activates="sidenav" class="button-collapse"><i class="material-icons clickable">menu</i></a>
-                <ul class="right hide-on-med-and-down">
+                <ul id="nav_links" class="right hide-on-med-and-down">
+                    <li id="page_' . $TASK_LIST . '">
+                        <a href="/' . $web_root . 'work">
+                            <i class="material-icons left">view_list</i> Task List
+                        </a>
+                    </li>
+                    <li id="page_' . $SCHEDULES . '">
+                        <a href="/' . $web_root . 'schedules">
+                            <i class="material-icons left">timer</i> Manage Schedules
+                        </a>
+                    </li>
                     <li>
                     <a class="dropdown-button" data-hover="true" data-beloworigin="true" data-activates="account-dropdown-big">
                         <i class="material-icons left">person</i> Hello, ' . $user["user_first_name"] . '<i class="material-icons right">arrow_drop_down</i>
                     </a>
                     </li>
                 </ul>
+                <script>
+                    $("#page_' . $currentPage . '").addClass("active")
+                </script>
                 <ul class="side-nav" id="sidenav">
                     <li><a href="/' . $web_root . 'work">
                         <i class="material-icons">view_list</i> Task List
@@ -125,18 +143,8 @@ function writeHeader($head='') {
         </nav>
     </header>
     <main>
-        <div class="row pageLayout">' . ($auth->isLogged() ? '
-            <div class="col l3 sideBar hide-on-med-and-down z-depth-5">
-                <ul class="collection sideItems">
-                    <a href="/' . $web_root . 'work" class="black-text collection-item">
-                        <i class="material-icons">view_list</i> Task List
-                    </a>
-                    <a href="/' . $web_root . 'schedules" class="black-text collection-item">
-                        <i class="material-icons">timer</i> Manage Schedules
-                    </a>
-                </ul>
-            </div>' : '') . '
-            <div class="col s12' . ($auth->isLogged() ? ' l9': '') . '">
+        <div class="row pageLayout">
+            <div class="col s12">
     ';
 }
 

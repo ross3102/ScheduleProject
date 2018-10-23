@@ -1,4 +1,4 @@
-<?php writeHeader() ?>
+<?php writeHeader($SCHEDULES) ?>
 
 <div class="container">
     <h3 class="title"><?php echo $schedule["schedule_name"] ?></h3>

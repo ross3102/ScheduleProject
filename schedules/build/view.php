@@ -1,4 +1,4 @@
-<?php writeHeader('') ?>
+<?php writeHeader($SCHEDULES) ?>
         <h3 class="title">Build Schedule</h3>
         <div class="center-align">
             <a class="waves-effect waves-light btn-large blue lighten-1" href="./index.php?action=cancel">Cancel</a>

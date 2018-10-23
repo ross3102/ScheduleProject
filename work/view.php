@@ -1,6 +1,6 @@
 <?php
 $head = '<link rel="stylesheet" href="work.css">';
-writeHeader($head);
+writeHeader($TASK_LIST, $head);
 $numCategories = count($categories);
 ?>
 <div class="container main z-depth-4">

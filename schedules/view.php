@@ -5,7 +5,7 @@ $head = "
 <link rel='stylesheet' href='../css/shared.css'>
 
 ";
-writeHeader($head) ?>
+writeHeader($SCHEDULES, $head) ?>
     <div class="container">
         <h3 class="title">Your Schedules</h3>
         <div class="center-align">

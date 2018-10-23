@@ -27,36 +27,6 @@ main {
     margin-bottom: 0;
 }
 
-.sideBar {
-    padding: 2% !important;
-    /*background-color: red !important;*/
-}
-
-.sideBar .collection-item {
-    background-color: transparent !important;
-    padding: 10px auto;
-}
-
-.sideBar .collection, .sideBar .collection-item {
-    /*background-color: transparent !important;*/
-    border: 0 !important;
-    font-weight: 200;
-    font-size: 1.2em;
-
-}
-
-.sideBar .collection-item {
-    transition: none !important;
-}
-
-.sideBar .collection-item:hover {
-    border-left: 3px solid black !important;
-}
-
-.sideItems {
-    border: 0;
-}
-
 .numTasks .badge {
     margin: 0 !important;
 }
