@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bd99f3a2-7083-4bc5-ba02-994a4afa1da6" name="Default" comment="">
+    <list default="true" id="bd99f3a2-7083-4bc5-ba02-994a4afa1da6" name="Default" comment="PHPExcel to PHPSpreadsheet">
       <change beforePath="$PROJECT_DIR$/work/view.php" afterPath="$PROJECT_DIR$/work/view.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -156,9 +156,13 @@
       <file leaf-file-name="view.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/work/view.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="328">
-              <caret line="271" column="14" lean-forward="true" selection-start-line="271" selection-start-column="14" selection-end-line="271" selection-end-column="14" />
-              <folding />
+            <state relative-caret-position="160">
+              <caret line="141" column="40" lean-forward="false" selection-start-line="141" selection-start-column="40" selection-end-line="141" selection-end-column="40" />
+              <folding>
+                <element signature="n#style#0;n#i#0;n#a#0;n#span#0;n#div#0;n#div#0;n#li#0;n#ul#0;n#div#6;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#a#1;n#span#0;n#div#0;n#div#0;n#li#0;n#ul#0;n#div#6;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#span#0;n#div#0;n#div#0;n#li#0;n#ul#0;n#div#6;n#div#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -296,9 +300,7 @@
       <path value="$PROJECT_DIR$/vendor/phpmailer/phpmailer" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="1920" />
-    <option name="y" value="705" />
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
     <option name="width" value="1280" />
     <option name="height" value="800" />
   </component>
@@ -604,7 +606,7 @@
       <workItem from="1533646662189" duration="60000" />
       <workItem from="1537224415466" duration="165000" />
       <workItem from="1537967753376" duration="7000" />
-      <workItem from="1540328504734" duration="2773000" />
+      <workItem from="1540328504734" duration="4785000" />
     </task>
     <task id="LOCAL-00001" summary="Primitive Schedule and Task List">
       <created>1505515987449</created>
@@ -743,7 +745,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="261414000" />
+    <option name="totallyTimeSpent" value="263426000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -755,7 +757,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1920" y="705" width="1280" height="800" extended-state="0" />
+    <frame x="0" y="0" width="1280" height="800" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1257,9 +1259,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/work/view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="271" column="14" lean-forward="true" selection-start-line="271" selection-start-column="14" selection-end-line="271" selection-end-column="14" />
-          <folding />
+        <state relative-caret-position="160">
+          <caret line="141" column="40" lean-forward="false" selection-start-line="141" selection-start-column="40" selection-end-line="141" selection-end-column="40" />
+          <folding>
+            <element signature="n#style#0;n#i#0;n#a#0;n#span#0;n#div#0;n#div#0;n#li#0;n#ul#0;n#div#6;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#a#1;n#span#0;n#div#0;n#div#0;n#li#0;n#ul#0;n#div#6;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#span#0;n#div#0;n#div#0;n#li#0;n#ul#0;n#div#6;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

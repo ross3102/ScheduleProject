@@ -127,7 +127,10 @@ $numCategories = count($categories);
                     $category_name = $category["category_name"];
                     $tasks = get_tasks_by_category_id($category_id);
                     $num_tasks = count($tasks);
-                    $task_caption = "Task" . ($num_tasks != 1 ? "s": "");
+//                    if ($num_tasks == 0)
+//                        $task_caption = "";
+//                    else
+                        $task_caption = $num_tasks . " Task" . ($num_tasks != 1 ? "s": "");
                     if (count($tasks) == 0)
                         collapse($category_id, 0);
                     $category_active = $category["category_active"] && $num_tasks > 0 ? "active": ""; ?>
@@ -135,12 +138,16 @@ $numCategories = count($categories);
                         <div class="collapsible-header <?php echo $category_active ?>">
                             <div class="category-header-inner">
                                 <?php echo $category_name ?>
-                                <span class="numTasks valign-wrapper"><?php echo $num_tasks . " " . $task_caption ?>
+                                <span class="numTasks valign-wrapper"><?php echo $task_caption ?>
+                                    <a onclick="event.stopPropagation(); addTask(<?php echo $category_id ?>)">
+                                        <i style="margin: 0;" class="material-icons clickable tooltipped green-text"
+                                           data-tooltip="Add Task">add</i>
+                                    </a>
                                     <a onclick="event.stopPropagation(); editCat(<?php echo $category_id ?>, '<?php echo htmlspecialchars(addslashes($category_name)) ?>')">
                                         <i style="margin: 0;" class="material-icons clickable tooltipped blue-text"
                                            data-tooltip="Edit Category">edit</i>
                                     </a>
-                                    <i class="material-icons clickable tooltipped red-text" data-tooltip="Delete Category" onclick="
+                                    <i style="margin: 0;" class="material-icons clickable tooltipped red-text" data-tooltip="Delete Category" onclick="
                                             event.stopPropagation();
                                             confirmDeleteCategory('<?php echo htmlspecialchars(addslashes($category_name)) ?>', <?php echo $category_id ?>);"
                                     >delete</i></span>
@@ -283,6 +290,13 @@ $numCategories = count($categories);
         request.open('GET', url, true);
         request.send();
     });
+
+    function addTask(category_id) {
+        var category_select = $("#task_category");
+        category_select.val(category_id);
+        category_select.material_select();
+        $("#newTask").modal("open");
+    }
 
     // $(document).keypress(function(e) {
     //     var keycode = (e.keyCode ? e.keyCode : e.which);
