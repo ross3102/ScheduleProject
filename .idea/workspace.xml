@@ -2,13 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bd99f3a2-7083-4bc5-ba02-994a4afa1da6" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/css/shared.css" afterPath="$PROJECT_DIR$/css/shared.css" />
-      <change beforePath="$PROJECT_DIR$/schedules/build/view.php" afterPath="$PROJECT_DIR$/schedules/build/view.php" />
-      <change beforePath="$PROJECT_DIR$/schedules/run/confirm_run.php" afterPath="$PROJECT_DIR$/schedules/run/confirm_run.php" />
-      <change beforePath="$PROJECT_DIR$/schedules/run/view.php" afterPath="$PROJECT_DIR$/schedules/run/view.php" />
-      <change beforePath="$PROJECT_DIR$/schedules/view.php" afterPath="$PROJECT_DIR$/schedules/view.php" />
-      <change beforePath="$PROJECT_DIR$/util/main.php" afterPath="$PROJECT_DIR$/util/main.php" />
       <change beforePath="$PROJECT_DIR$/work/view.php" afterPath="$PROJECT_DIR$/work/view.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -120,11 +113,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="view.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="view.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/schedules/run/view.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="115" column="10" lean-forward="false" selection-start-line="115" selection-start-column="10" selection-end-line="115" selection-end-column="10" />
+            <state relative-caret-position="336">
+              <caret line="122" column="55" lean-forward="false" selection-start-line="122" selection-start-column="55" selection-end-line="122" selection-end-column="55" />
               <folding />
             </state>
           </provider>
@@ -160,11 +153,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="view.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="view.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/work/view.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="42">
-              <caret line="2" column="19" lean-forward="false" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+            <state relative-caret-position="328">
+              <caret line="271" column="14" lean-forward="true" selection-start-line="271" selection-start-column="14" selection-end-line="271" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -193,7 +186,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>clean(</find>
       <find>get_tasks</find>
       <find>get_task</find>
       <find>CB</find>
@@ -223,6 +215,7 @@
       <find>sideItem</find>
       <find>writeHea</find>
       <find>Notification</find>
+      <find>CB2</find>
     </findStrings>
     <replaceStrings>
       <replace>cc</replace>
@@ -282,10 +275,10 @@
         <option value="$PROJECT_DIR$/work/index.php" />
         <option value="$PROJECT_DIR$/schedules/run/confirm_run.php" />
         <option value="$PROJECT_DIR$/schedules/view.php" />
-        <option value="$PROJECT_DIR$/work/view.php" />
         <option value="$PROJECT_DIR$/util/main.php" />
         <option value="$PROJECT_DIR$/schedules/build/view.php" />
         <option value="$PROJECT_DIR$/schedules/run/view.php" />
+        <option value="$PROJECT_DIR$/work/view.php" />
       </list>
     </option>
   </component>
@@ -611,7 +604,7 @@
       <workItem from="1533646662189" duration="60000" />
       <workItem from="1537224415466" duration="165000" />
       <workItem from="1537967753376" duration="7000" />
-      <workItem from="1540328504734" duration="2151000" />
+      <workItem from="1540328504734" duration="2773000" />
     </task>
     <task id="LOCAL-00001" summary="Primitive Schedule and Task List">
       <created>1505515987449</created>
@@ -750,7 +743,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="260792000" />
+    <option name="totallyTimeSpent" value="261414000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1254,18 +1247,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/work/view.php">
+    <entry file="file://$PROJECT_DIR$/schedules/run/view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="19" lean-forward="false" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+        <state relative-caret-position="336">
+          <caret line="122" column="55" lean-forward="false" selection-start-line="122" selection-start-column="55" selection-end-line="122" selection-end-column="55" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/schedules/run/view.php">
+    <entry file="file://$PROJECT_DIR$/work/view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="115" column="10" lean-forward="false" selection-start-line="115" selection-start-column="10" selection-end-line="115" selection-end-column="10" />
+        <state relative-caret-position="328">
+          <caret line="271" column="14" lean-forward="true" selection-start-line="271" selection-start-column="14" selection-end-line="271" selection-end-column="14" />
           <folding />
         </state>
       </provider>

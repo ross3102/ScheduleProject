@@ -190,7 +190,7 @@ $numCategories = count($categories);
                 $task_completed = $task["task_completed"]; ?>
                 <tr onclick="editTask(<?php echo $task_id ?>, '<?php echo htmlspecialchars(addslashes($task_name)); ?>', '<?php echo $form_date ?>', <?php echo $category_id ?>);">
                     <td>
-                        <span onclick="event.stopPropagation();"><input id="CB2<?php echo $task_id ?>" data-task-id="<?php echo $task_id ?>" type="checkbox"><label for="CB2<?php echo $task_id ?>"><span class="black-text <?php echo $task_id ?>"><?php echo $task_name ?></span></label></span>
+                        <span onclick="event.stopPropagation();"><input id="CBTwo<?php echo $task_id ?>" data-task-id="<?php echo $task_id ?>" type="checkbox"><label for="CBTwo<?php echo $task_id ?>"><span class="black-text <?php echo $task_id ?>"><?php echo $task_name ?></span></label></span>
                     </td>
                     <td>
                         <?php echo $category_name ?>
@@ -266,9 +266,13 @@ $numCategories = count($categories);
         var task_completed;
         if ($(this).is(':checked')) {
             task_completed = 1;
+            $("#CB" + task_id).prop("checked", true);
+            $("#CBTwo" + task_id).prop("checked", true);
         }
         else {
             task_completed = 0;
+            $("#CB" + task_id).prop("checked", false);
+            $("#CBTwo" + task_id).prop("checked", false);
         }
         var text = $("." + task_id);
         text.toggleClass("black-text");
