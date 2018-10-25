@@ -66,7 +66,7 @@ function get_items_by_schedule_id($schedule_id) {
     $query = "select item_id, item_name, item_duration, item_desc
               from item
               where schedule_id = :schedule_id
-              order by item_index, item_id";
+              order by item_id";
     try {
         $statement = $db->prepare($query);
         $statement->bindValue(':schedule_id', $schedule_id);
@@ -179,21 +179,37 @@ function delete_item($item_id) {
     global $db;
 
     $query = "delete from item
-              where item_id = :item_id;
-              update item
-                set item_index = item_index - 1
-                where item_index > :deleted_index
-                and schedule_id = :schedule_id";
+              where item_id = :item_id;";
 
     try {
         $statement = $db->prepare($query);
         $statement->bindValue(':item_id', $item_id);
 
-        $item = get_item_by_id($item_id);
+        $statement->execute();
+        $statement->closeCursor();
+    } catch (PDOException $e) {
+        echo ($e);
+        exit();
+    }
+}
 
-        $statement->bindValue(':deleted_index', $item["item_index"]);
-        $statement->bindValue(':schedule_id', $item["schedule_id"]);
+function swap_items($id1, $id2) {
 
+    global $db;
+
+    $query = "UPDATE item, item as item2
+              SET item.item_name = item2.item_name,
+                  item.item_duration = item2.item_duration,
+                  item.item_desc = item2.item_desc,
+                  item2.item_name = item.item_name,
+                  item2.item_duration = item.item_duration,
+                  item2.item_desc = item.item_desc
+              WHERE item.item_id = :id1 AND item2.item_id = :id2";
+
+    try {
+        $statement = $db->prepare($query);
+        $statement->bindValue(':id1', $id1);
+        $statement->bindValue(':id2', $id2);
         $statement->execute();
         $statement->closeCursor();
     } catch (PDOException $e) {

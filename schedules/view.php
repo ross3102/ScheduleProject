@@ -81,18 +81,31 @@ writeHeader($SCHEDULES, $head) ?>
                                 <table class="bordered">
                                     <thead>
                                     <tr>
+                                        <th></th>
                                         <th>Name</th>
                                         <th>Duration</th>
                                         <th></th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <?php foreach ($items as $item) {
+                                    <?php
+                                    $num_items = count($items);
+
+                                    for ($i = 0; $i < $num_items; $i++) {
+                                        $item = $items[$i];
                                         $item_id = $item["item_id"];
                                         $item_name = $item["item_name"];
                                         $item_duration = $item["item_duration"];
                                         $item_desc = $item["item_desc"]; ?>
                                         <tr>
+                                            <td>
+                                                <?php if ($i != 0) { ?>
+                                                    <i data-item-id="<?php echo $item_id ?>" data-other-id="<?php echo $items[$i-1]["item_id"] ?>" class="material-icons clickable move_item">arrow_drop_up</i>
+                                                    <br>
+                                                <?php } ?>
+                                                <?php if ($i != $num_items - 1) { ?>
+                                                    <i data-item-id="<?php echo $item_id ?>" data-other-id="<?php echo $items[$i+1]["item_id"] ?>" class="material-icons clickable move_item">arrow_drop_down</i></td>
+                                                <?php } ?>
                                             <td><?php echo $item_name ?></td>
                                             <td><?php echo int_to_duration($item_duration) ?></td>
                                             <td><i class="material-icons clickable" onclick="
@@ -161,15 +174,18 @@ writeHeader($SCHEDULES, $head) ?>
     <script>
         $(document).ready(function(){
             $('.modal').modal();
-            if ("<?php echo $modal ?>" !== "") {
-                $("#<?php echo $modal ?>").modal("open");
-            }
             $('.grid').masonry({
                 itemSelector: '.grid-item',
                 columnWidth: '.grid-sizer',
                 percentPosition: true,
                 gutter: '.gutter-sizer'
             });
+        });
+
+        $(".move_item").click(function() {
+            item_id = $(this).attr("data-item-id");
+            other_id = $(this).attr("data-other-id");
+            location.href='./index.php?action=swap_items&item_id=' + item_id + "&other_id=" + other_id
         });
 
         function delItem(item_id) {

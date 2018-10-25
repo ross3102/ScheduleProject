@@ -17,7 +17,6 @@ if ($action == NULL) {
 switch ($action) {
     case 'list_schedules':
         $schedules = get_schedules_by_user_id($user["id"]);
-        $modal = filter_input(INPUT_GET, "modal");
         include "view.php";
         break;
     case 'add_schedule':
@@ -32,7 +31,7 @@ switch ($action) {
         $item_duration = duration_to_int(filter_input(INPUT_POST, "item_duration"));
         $item_desc = filter_input(INPUT_POST, "item_desc");
         add_item_to_schedule($schedule_id, $item_name, $item_duration, $item_desc);
-        header("Location: ./index.php?modal=" . $schedule_id);
+        header("Location: ./index.php");
         break;
     case 'delete_schedule':
         $schedule_id = filter_input(INPUT_GET, "schedule_id");
@@ -41,9 +40,14 @@ switch ($action) {
         break;
     case 'delete_item':
         $item_id = filter_input(INPUT_GET, "item_id");
-        $schedule_id = get_item_by_id($item_id)["schedule_id"];
         delete_item($item_id);
-        header("Location: ./index.php?modal=" . $schedule_id);
+        header("Location: ./index.php");
+        break;
+    case 'swap_items':
+        $item_id = filter_input(INPUT_GET, "item_id");
+        $other_id = filter_input(INPUT_GET, "other_id");
+        swap_items($item_id, $other_id);
+        header("Location: ./index.php");
         break;
     case 'run':
         header("Location: ./run/index.php?schedule_id=" . filter_input(INPUT_GET, "schedule_id"));
