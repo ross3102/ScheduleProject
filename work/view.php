@@ -106,7 +106,7 @@ $numCategories = count($categories);
             </div>
             <div class="modal-footer">
                 <a class="btn-flat waves-effect waves-green modal-action modal-close">Cancel</a>
-                <button class="btn-flat waves-effect waves-green">Create</button>
+                <button class="btn-flat waves-effect waves-green">Confirm</button>
             </div>
         </form>
     </div>
@@ -150,7 +150,8 @@ $numCategories = count($categories);
                                     <i style="margin: 0;" class="material-icons clickable tooltipped red-text" data-tooltip="Delete Category" onclick="
                                             event.stopPropagation();
                                             confirmDeleteCategory('<?php echo htmlspecialchars(addslashes($category_name)) ?>', <?php echo $category_id ?>);"
-                                    >delete</i></span>
+                                    >delete</i>
+                                </span>
                             </div>
                         </div>
                         <div class="collapsible-body">
