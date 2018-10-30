@@ -63,14 +63,14 @@
             }
             $("#T" + task_id).remove();
             var oc = 'removeFromSchedule(&quot;' + task_id + '&quot;, &quot;' + task_name + '&quot;, &quot;' + category_name + '&quot;, &quot;' + task_date + '&quot;)';
-            var newElement = '<tr id="T' + task_id + '" data-task-id="' + task_id + '" data-time="' + time + '" data-desc="<?php if (false) { ?>Imported from Task List. Category: ' + category_name + '. Due Date: ' + task_date + '<?php } ?>"><td><i class="material-icons" onclick="' + oc + '">chevron_right</i></td><td>' + task_name + '</td><td>' + time + '</td></tr>';
+            var newElement = '<tr id="T' + task_id + '" data-task-id="' + task_id + '" data-time="' + time + '" data-desc="<?php if (false) { ?>Imported from Task List. Category: ' + category_name + '. Due Date: ' + task_date + '<?php } ?>"><td><i class="material-icons clickable" onclick="' + oc + '">chevron_right</i></td><td>' + task_name + '</td><td>' + time + '</td></tr>';
             $("#builtScheduleBody").append(newElement);
         }
 
         function removeFromSchedule(task_id, task_name, category_name, task_date) {
             $("#T" + task_id).remove();
             var oc = 'addToSchedule(&quot;' + task_id + '&quot;, &quot;' + task_name + '&quot;, &quot;' + category_name + '&quot;, &quot;' + task_date + '&quot;)';
-            var newElement = '<tr id="T' + task_id + '"><td><i class="material-icons" onclick="' + oc + '">chevron_left</i></td><td>' + task_name + '</td><td>' + task_date + '</td><td>' + category_name + '</td></tr>';
+            var newElement = '<tr id="T' + task_id + '"><td><i class="material-icons clickable" onclick="' + oc + '">chevron_left</i></td><td>' + task_name + '</td><td>' + task_date + '</td><td>' + category_name + '</td></tr>';
             $("#taskListBody").append(newElement);
         }
 

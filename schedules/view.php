@@ -87,7 +87,7 @@ writeHeader($SCHEDULES, $head) ?>
                                         <th></th>
                                     </tr>
                                     </thead>
-                                    <tbody>
+                                    <tbody id="scheduleBody<?php echo $schedule_id ?>">
                                     <?php
                                     $num_items = count($items);
 
@@ -97,14 +97,14 @@ writeHeader($SCHEDULES, $head) ?>
                                         $item_name = $item["item_name"];
                                         $item_duration = $item["item_duration"];
                                         $item_desc = $item["item_desc"]; ?>
-                                        <tr>
+                                        <tr id="row<?php echo $item_id ?>">
                                             <td>
                                                 <?php if ($i != 0) { ?>
-                                                    <i data-item-id="<?php echo $item_id ?>" data-other-id="<?php echo $items[$i-1]["item_id"] ?>" class="material-icons clickable move_item">arrow_drop_up</i>
+                                                    <i data-schedule-id="<?php echo $schedule_id ?>" data-item-id="<?php echo $item_id ?>" data-other-id="<?php echo $items[$i-1]["item_id"] ?>" class="material-icons clickable move_item">arrow_drop_up</i>
                                                     <br>
                                                 <?php } ?>
                                                 <?php if ($i != $num_items - 1) { ?>
-                                                    <i data-item-id="<?php echo $item_id ?>" data-other-id="<?php echo $items[$i+1]["item_id"] ?>" class="material-icons clickable move_item">arrow_drop_down</i></td>
+                                                    <i data-schedule-id="<?php echo $schedule_id ?>" data-item-id="<?php echo $item_id ?>" data-other-id="<?php echo $items[$i+1]["item_id"] ?>" class="material-icons clickable move_item">arrow_drop_down</i></td>
                                                 <?php } ?>
                                             <td><?php echo $item_name ?></td>
                                             <td><?php echo int_to_duration($item_duration) ?></td>
@@ -185,7 +185,25 @@ writeHeader($SCHEDULES, $head) ?>
         $(".move_item").click(function() {
             item_id = $(this).attr("data-item-id");
             other_id = $(this).attr("data-other-id");
-            location.href='./index.php?action=swap_items&item_id=' + item_id + "&other_id=" + other_id
+
+            location.href = './index.php?action=swap_items&item_id=' + item_id + "&other_id=" + other_id;
+
+            // $.ajax({
+            //     type: "POST",
+            //     url: "./index.php",
+            //     data: 'action=swap_items&item_id=' + item_id + "&other_id=" + other_id
+            // });
+            //
+            // schedule_id = $(this).attr("data-schedule-id");
+            //
+            // firstRow = $("#row" + item_id);
+            // secondRow = $("#row" + other_id);
+            // if (item_id > other_id) {
+            //     temp = firstRow;
+            //     firstRow = secondRow;
+            //     secondRow = temp;
+            // }
+            // secondRow.parent().before(secondRow, firstRow);
         });
 
         function delItem(item_id) {
