@@ -65,7 +65,7 @@ function get_tasks_by_category_id($category_id) {
     clean();
     global $db;
 
-    $query = "select task_id, task_name, DATE_FORMAT(task_date, '%c/%e/%Y') as task_date, task_date as form_date,  task_completed
+    $query = "select task_id, task_name, DATE_FORMAT(task_date, '%c/%e/%Y') as task_date, DATE_FORMAT(task_date, '%e %M, %Y') as form_date,  task_completed
               from task_list_task
               where category_id = :category_id
               order by form_date, task_id";
