@@ -66,9 +66,9 @@ function get_tasks_by_category_id($category_id) {
     global $db;
 
     $query = "select task_id, task_name, DATE_FORMAT(task_date, '%c/%e/%Y') as task_date, DATE_FORMAT(task_date, '%e %M, %Y') as form_date,  task_completed
-              from task_list_task
+              from task_list_task t
               where category_id = :category_id
-              order by form_date, task_id";
+              order by t.task_date, task_id";
     try {
         $statement = $db->prepare($query);
         $statement->bindValue(':category_id', $category_id);
@@ -90,7 +90,7 @@ function get_task_list($user_id) {
               from task_list_task t, task_list_category c
               where t.category_id = c.category_id
               and user_id = :user_id
-              order by form_date, c.category_name, task_name";
+              order by t.task_date, c.category_name, task_name";
     try {
         $statement = $db->prepare($query);
         $statement->bindValue(':user_id', $user_id);
