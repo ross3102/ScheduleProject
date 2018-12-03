@@ -12,7 +12,7 @@ $numCategories = count($categories);
         <ul>
             <li><a href="#newCategory" class="btn waves-effect waves-light modal-trigger">New Category <i class="material-icons">library_add</i></a></li>
             <li><a href="#newTask" class="btn waves-effect waves-light modal-trigger <?php if ($numCategories==0) echo "disabled" ?>">New Task <i class="material-icons">playlist_add</i></a></li>
-<!--            <li><a onclick="deleteAll()" class="waves-effect waves-light modal-trigger">Delete All <i class="material-icons">delete_sweep</i></a></li>-->
+            <!--            <li><a onclick="deleteAll()" class="waves-effect waves-light modal-trigger">Delete All <i class="material-icons">delete_sweep</i></a></li>-->
         </ul>
     </div>
 
@@ -130,7 +130,7 @@ $numCategories = count($categories);
 //                    if ($num_tasks == 0)
 //                        $task_caption = "";
 //                    else
-                        $task_caption = $num_tasks . " Task" . ($num_tasks != 1 ? "s": "");
+                    $task_caption = $num_tasks . " Task" . ($num_tasks != 1 ? "s": "");
                     if (count($tasks) == 0)
                         collapse($category_id, 0);
                     $category_active = $category["category_active"] && $num_tasks > 0 ? "active": ""; ?>
@@ -181,11 +181,11 @@ $numCategories = count($categories);
     <div id="upcoming">
         <table class="highlight">
             <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Category</th>
-                    <th>Date</th>
-                </tr>
+            <tr>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Date</th>
+            </tr>
             </thead>
             <tbody>
             <?php foreach ($all_tasks as $task):
