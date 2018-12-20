@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bd99f3a2-7083-4bc5-ba02-994a4afa1da6" name="Default" comment="PHPExcel to PHPSpreadsheet">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="bd99f3a2-7083-4bc5-ba02-994a4afa1da6" name="Default" comment="PHPExcel to PHPSpreadsheet" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -566,9 +564,14 @@
       <workItem from="1540849564959" duration="4369000" />
       <workItem from="1540991359183" duration="17000" />
       <workItem from="1543632234815" duration="1563000" />
+<<<<<<< Updated upstream
       <workItem from="1543724145358" duration="124000" />
       <workItem from="1543880658264" duration="694000" />
       <workItem from="1544114435024" duration="13000" />
+=======
+      <workItem from="1543724145358" duration="50000" />
+      <workItem from="1545323166287" duration="1331000" />
+>>>>>>> Stashed changes
     </task>
     <task id="LOCAL-00001" summary="Primitive Schedule and Task List">
       <created>1505515987449</created>
@@ -707,7 +710,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< Updated upstream
     <option name="totallyTimeSpent" value="275148000" />
+=======
+    <option name="totallyTimeSpent" value="275698000" />
+>>>>>>> Stashed changes
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
