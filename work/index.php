@@ -53,6 +53,11 @@ switch ($action) {
         delete_category($category_id);
         header("Location: .");
         break;
+    case 'delete_task':
+        $task_id = filter_input(INPUT_GET, "task_id");
+        delete_task($task_id);
+        header("Location: .");
+        break;
     case 'complete':
         $task_id = filter_input(INPUT_GET, "task_id");
         $task_completed = filter_input(INPUT_GET, "task_completed");
