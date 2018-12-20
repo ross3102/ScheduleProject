@@ -29,7 +29,7 @@ switch ($action) {
         $category_id = filter_input(INPUT_POST, "task_category");
         $task_name = filter_input(INPUT_POST, "task_name");
         $task_date = filter_input(INPUT_POST, "task_date");
-        $task_date = date('Y-m-d', strtotime($task_date));
+        $task_date = DateTime::createFromFormat('j F, Y', $task_date);
         add_task_to_category($category_id, $task_name, $task_date->format('Y-m-d'));
         header("Location: .");
         break;
@@ -44,7 +44,7 @@ switch ($action) {
         $task_name = filter_input(INPUT_POST, "task_name");
         $category_id = filter_input(INPUT_POST, "task_category");
         $task_date = filter_input(INPUT_POST, "task_date");
-        $task_date = date('Y-m-d', strtotime($task_date));
+        $task_date = DateTime::createFromFormat('j F, Y', $task_date);
         edit_task($task_id, $task_name, $task_date->format('Y-m-d'), $category_id);
         header("Location: .");
         break;
