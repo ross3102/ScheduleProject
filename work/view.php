@@ -159,7 +159,7 @@ $numCategories = count($categories);
                                 <?php foreach ($tasks as $task):
                                     $task_id = $task["task_id"];
                                     $task_name = $task["task_name"];
-                                    $task_date = $task["task_date"];
+                                    $task_date = $task["table_date"];
                                     $form_date = $task["form_date"];
                                     $task_completed = $task["task_completed"]; ?>
                                     <li class="collection-item">
@@ -193,7 +193,7 @@ $numCategories = count($categories);
                 $category_id = $task["category_id"];
                 $category_name = get_category_by_id($category_id)["category_name"];
                 $task_name = $task["task_name"];
-                $task_date = $task["task_date"];
+                $task_date = $task["table_date"];
                 $form_date = $task["form_date"];
                 $task_completed = $task["task_completed"]; ?>
                 <tr onclick="editTask(<?php echo $task_id ?>, '<?php echo htmlspecialchars(addslashes($task_name)); ?>', '<?php echo $form_date ?>', <?php echo $category_id ?>);">
