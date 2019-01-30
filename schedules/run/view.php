@@ -97,6 +97,8 @@
             offset = -1;
         }
         itemIndex++;
+        if (itemIndex === items.length)
+            location.href="./index.php?action=confirm&schedule_id=<?php echo $schedule_id ?>";
         updateTimes(offset);
         updateTimer();
         $("tr").css("backgroundColor", "white");
