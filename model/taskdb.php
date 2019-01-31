@@ -86,7 +86,7 @@ function get_task_list($user_id) {
     clean();
     global $db;
 
-    $query = "select task_id, task_name, DATE_FORMAT(task_date, '%e %M, %Y') as form_date, DATE_FORMAT(task_date, '%c/%e/%Y') as table_date, task_completed, c.category_id, c.category_name
+    $query = "select task_id, task_name, DATE_FORMAT(task_date, '%e %M, %Y') as form_date, DATE_FORMAT(task_date, '%c/%e/%Y') as table_date, DATE_FORMAT(task_date, '%c/%e/%y') as short_date, task_completed, c.category_id, c.category_name
               from task_list_task t, task_list_category c
               where t.category_id = c.category_id
               and user_id = :user_id
