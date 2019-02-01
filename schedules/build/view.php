@@ -84,7 +84,9 @@
             newElement = $("#NewT" + task_id);
             newElement.attr("data-time", time);
             newElement.find(".time").text(time);
-            newElement.css("display", "")
+            newElement.css("display", "");
+            newElement.parent().append(newElement.clone());
+            newElement.remove();
         }
 
         function removeFromSchedule(task_id) {
