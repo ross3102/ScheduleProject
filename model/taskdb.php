@@ -86,7 +86,7 @@ function get_task_list($user_id) {
     clean();
     global $db;
 
-    $query = "select task_id, task_name, DATE_FORMAT(task_date, '%e %M, %Y') as form_date, DATE_FORMAT(task_date, '%c/%e/%Y') as table_date, DATE_FORMAT(task_date, '%c/%e/%y') as short_date, task_completed, c.category_id, c.category_name
+    $query = "select task_id, task_name, DATE_FORMAT(task_date, '%e %M, %Y') as form_date, DATE_FORMAT(task_date, '%c/%e/%Y') as table_date, DATE_FORMAT(task_date, '%c/%e/%y') as short_date, task_completed, c.category_id, c.category_name, c.category_color
               from task_list_task t, task_list_category c
               where t.category_id = c.category_id
               and user_id = :user_id
@@ -104,16 +104,17 @@ function get_task_list($user_id) {
     }
 }
 
-function add_category($user_id, $category_name) {
+function add_category($user_id, $category_name, $category_color) {
     global $db;
 
-    $query = "insert into task_list_category (user_id, category_name)
-              values (:user_id, :category_name)";
+    $query = "insert into task_list_category (user_id, category_name, category_color)
+              values (:user_id, :category_name, :category_color)";
 
     try {
         $statement = $db->prepare($query);
         $statement->bindValue(':user_id', $user_id);
         $statement->bindValue(':category_name', $category_name);
+        $statement->bindValue(':category_color', $category_color);
         $statement->execute();
         $statement->closeCursor();
     } catch (PDOException $e) {
@@ -152,6 +153,25 @@ function edit_category($category_id, $category_name) {
         $statement = $db->prepare($query);
         $statement->bindValue(':category_id', $category_id);
         $statement->bindValue(':category_name', $category_name);
+        $statement->execute();
+        $statement->closeCursor();
+    } catch (PDOException $e) {
+        echo ($e);
+        exit();
+    }
+}
+
+function change_color($category_id, $category_color) {
+    global $db;
+
+    $query = "update task_list_category
+              set category_color = :category_color
+              where category_id = :category_id";
+
+    try {
+        $statement = $db->prepare($query);
+        $statement->bindValue(':category_id', $category_id);
+        $statement->bindValue(':category_color', $category_color);
         $statement->execute();
         $statement->closeCursor();
     } catch (PDOException $e) {

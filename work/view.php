@@ -125,6 +125,7 @@ $numCategories = count($categories);
                 <?php foreach ($categories as $category) {
                     $category_id = $category["category_id"];
                     $category_name = $category["category_name"];
+                    $category_color = $category["category_color"];
                     $tasks = get_tasks_by_category_id($category_id);
                     $num_tasks = count($tasks);
 //                    if ($num_tasks == 0)
@@ -134,14 +135,19 @@ $numCategories = count($categories);
                     if (count($tasks) == 0)
                         collapse($category_id, 0);
                     $category_active = $category["category_active"] && $num_tasks > 0 ? "active": ""; ?>
+                    <input onclick="event.stopPropagation();" style="display: none" type="color" class="color_chooser" id="colorChooser<?php echo $category_id ?>" value="<?php echo $category_color ?>">
                     <li class="collapsibleItem" id="C<?php echo $category_id ?>">
                         <div class="collapsible-header <?php echo $category_active ?>">
                             <div class="category-header-inner">
-                                <?php echo $category_name ?>
+                                <div class="color<?php echo $category_id ?>" style="display: inline-block; color: <?php echo $category_color ?>"><?php echo $category_name ?></div>
                                 <span class="numTasks valign-wrapper"><?php echo $task_caption ?>
                                     <a onclick="event.stopPropagation(); addTask(<?php echo $category_id ?>)">
                                         <i style="margin: 0;" class="material-icons clickable tooltipped green-text"
                                            data-tooltip="Add Task">add</i>
+                                    </a>
+                                    <a onclick="event.stopPropagation(); $('#colorChooser<?php echo $category_id ?>').click()">
+                                        <i style="margin: 0; color: <?php echo $category_color ?>" class="material-icons clickable tooltipped color<?php echo $category_id ?>"
+                                           data-tooltip="Category Color">color_lens</i>
                                     </a>
                                     <a onclick="event.stopPropagation(); editCat(<?php echo $category_id ?>, '<?php echo htmlspecialchars(addslashes($category_name)) ?>')">
                                         <i style="margin: 0;" class="material-icons clickable tooltipped blue-text"
@@ -191,14 +197,15 @@ $numCategories = count($categories);
             <?php foreach ($all_tasks as $task):
                 $task_id = $task["task_id"];
                 $category_id = $task["category_id"];
-                $category_name = get_category_by_id($category_id)["category_name"];
+                $category_name = $task["category_name"];
+                $category_color = $task["category_color"];
                 $task_name = $task["task_name"];
                 $task_date = $task["table_date"];
                 $form_date = $task["form_date"];
                 $task_completed = $task["task_completed"]; ?>
-                <tr onclick="editTask(<?php echo $task_id ?>, '<?php echo htmlspecialchars(addslashes($task_name)); ?>', '<?php echo $form_date ?>', <?php echo $category_id ?>);">
+                <tr class="color<?php echo $category_id ?>" style="color: <?php echo $category_color ?>" onclick="editTask(<?php echo $task_id ?>, '<?php echo htmlspecialchars(addslashes($task_name)); ?>', '<?php echo $form_date ?>', <?php echo $category_id ?>);">
                     <td>
-                        <span onclick="event.stopPropagation();"><input id="CBTwo<?php echo $task_id ?>" data-task-id="<?php echo $task_id ?>" type="checkbox"><label for="CBTwo<?php echo $task_id ?>"><span class="black-text <?php echo $task_id ?>"><?php echo $task_name ?></span></label></span>
+                        <span onclick="event.stopPropagation();"><input id="CBTwo<?php echo $task_id ?>" data-task-id="<?php echo $task_id ?>" type="checkbox"><label for="CBTwo<?php echo $task_id ?>"><span class="<?php echo $task_id ?> color<?php echo $category_id ?>" style="color: <?php echo $category_color ?>"><?php echo $task_name ?></span></label></span>
                     </td>
                     <td>
                         <?php echo $category_name ?>
@@ -240,6 +247,19 @@ $numCategories = count($categories);
         Materialize.updateTextFields();
         $("#editCat").modal('open');
     }
+    
+    $(".color_chooser").change(function () {
+        var category_id = $(this).attr("id").substr("colorChooser".length);
+        var color = $(this).val().substr(1);
+
+        $(".color" + category_id).css("color", color);
+
+        var url = './index.php?action=change_color&category_id=' + category_id + '&color=' + color;
+
+        var request = new XMLHttpRequest();
+        request.open('GET', url, true);
+        request.send();
+    });
 
     $(".collapsible-header").click(function() {
         var active;
@@ -282,9 +302,6 @@ $numCategories = count($categories);
             $("#CB" + task_id).prop("checked", false);
             $("#CBTwo" + task_id).prop("checked", false);
         }
-        var text = $("." + task_id);
-        text.toggleClass("black-text");
-        text.toggleClass("grey-text");
         var url = './index.php?action=complete&task_id=' + task_id + '&task_completed=' + task_completed;
 
         var request = new XMLHttpRequest();

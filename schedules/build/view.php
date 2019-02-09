@@ -20,8 +20,7 @@
                         $task_name = $task["task_name"];
                         $task_id = $task["task_id"];
                         $category_name = $task["category_name"];
-                        $task_date = $task["short_date"];
-                        $task_complete = $task["task_completed"]; ?>
+                        $task_date = $task["short_date"]; ?>
                         <tr id="NewT<?php echo $task_id ?>" style="display: none"
                             data-task-id="<?php echo $task_id ?>"
                             data-time=""
@@ -47,7 +46,6 @@
                         <th>Task Name</th>
                         <th>Task Date</th>
                         <th>Category</th>
-                        <th></th>
                     </tr>
                     </thead>
                     <tbody id="taskListBody">
@@ -55,16 +53,15 @@
                             $task_name = $task["task_name"];
                             $task_id = $task["task_id"];
                             $category_name = $task["category_name"];
-                            $task_date = $task["short_date"];
-                            $task_complete = $task["task_completed"]; ?>
+                            $category_color = $task["category_color"];
+                            $task_date = $task["short_date"]; ?>
                             <tr id="T<?php echo $task_id ?>">
                                 <td>
                                     <i class="material-icons clickable tooltipped" data-tooltip="Add to Schedule" onclick="addToSchedule('<?php echo $task_id ?>')">chevron_left</i>
                                 </td>
-                                <td><?php echo $task_name ?></td>
-                                <td><?php echo $task_date ?></td>
-                                <td><?php echo $category_name ?></td>
-                                <td><?php if ($task_complete) { ?><i class="material-icons green-text">check</i><?php } ?></td>
+                                <td style="color: <?php echo $category_color ?>"><?php echo $task_name ?></td>
+                                <td style="color: <?php echo $category_color ?>"><?php echo $task_date ?></td>
+                                <td style="color: <?php echo $category_color ?>"><?php echo $category_name ?></td>
                             </tr>
                         <?php } ?>
                     </tbody>
@@ -81,7 +78,7 @@
                     return;
             }
             $("#T" + task_id).css("display", "none");
-            newElement = $("#NewT" + task_id);
+            var newElement = $("#NewT" + task_id);
             newElement.attr("data-time", time);
             newElement.find(".time").text(time);
             newElement.css("display", "");

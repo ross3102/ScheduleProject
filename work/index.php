@@ -53,10 +53,10 @@ switch ($action) {
         delete_category($category_id);
         header("Location: .");
         break;
-    case 'delete_task':
-        $task_id = filter_input(INPUT_GET, "task_id");
-        delete_task($task_id);
-        header("Location: .");
+    case 'change_color':
+        $category_id = filter_input(INPUT_GET, "category_id");
+        $color = filter_input(INPUT_GET, "color");
+        change_color($category_id, "#" . $color);
         break;
     case 'complete':
         $task_id = filter_input(INPUT_GET, "task_id");
