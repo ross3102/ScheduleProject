@@ -248,7 +248,7 @@ $numCategories = count($categories);
         $("#editCat").modal('open');
     }
     
-    $(".color_chooser").change(function () {
+    $(".color_chooser").on('blur', function () {
         var category_id = $(this).attr("id").substr("colorChooser".length);
         var color = $(this).val().substr(1);
 

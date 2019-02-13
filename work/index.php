@@ -22,7 +22,7 @@ switch ($action) {
         break;
     case 'add_category':
         $category_name = filter_input(INPUT_POST, "category_name");
-        add_category($user["id"], $category_name);
+        add_category($user["id"], $category_name, "#000000");
         header("Location: .");
         break;
     case 'add_task':
