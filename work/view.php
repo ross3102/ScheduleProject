@@ -204,8 +204,9 @@ $numCategories = count($categories);
                 $task_name = $task["task_name"];
                 $task_date = $task["table_date"];
                 $form_date = $task["form_date"];
-                $task_completed = $task["task_completed"]; ?>
-                <tr class="color<?php echo $category_id ?>" style="color: <?php echo $category_color ?>; <?php if ($task_date != $prev_date) echo 'border-top: 1px solid lightgray'?>" onclick="editTask(<?php echo $task_id ?>, '<?php echo htmlspecialchars(addslashes($task_name)); ?>', '<?php echo $form_date ?>', <?php echo $category_id ?>);">
+                $task_completed = $task["task_completed"];
+                $is_new_date = $task_date != $prev_date ?>
+                <tr class="color<?php echo $category_id ?>" style="color: <?php echo $category_color ?>; <?php if ($is_new_date) echo 'border-top: 1px solid lightgray'?>" onclick="editTask(<?php echo $task_id ?>, '<?php echo htmlspecialchars(addslashes($task_name)); ?>', '<?php echo $form_date ?>', <?php echo $category_id ?>);">
                     <td>
                         <span onclick="event.stopPropagation();"><input id="CBTwo<?php echo $task_id ?>" data-task-id="<?php echo $task_id ?>" type="checkbox"><label for="CBTwo<?php echo $task_id ?>"><span class="<?php echo $task_id ?> color<?php echo $category_id ?>" style="color: <?php echo $category_color ?>"><?php echo $task_name ?></span></label></span>
                     </td>

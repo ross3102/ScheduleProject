@@ -47,6 +47,7 @@ function verify_logged() {
 
 $TASK_LIST = "task_list";
 $SCHEDULES = "schedules";
+$CALENDAR = "calendar";
 
 function pad($num, $target) {
     $num = array_map('intval', str_split($num));
@@ -75,7 +76,7 @@ function int_to_duration($item_duration) {
 }
 
 function writeHeader($currentPage, $head='') {
-    global $web_root, $app_title, $user, $auth, $TASK_LIST, $SCHEDULES;
+    global $web_root, $app_title, $user, $auth, $TASK_LIST, $SCHEDULES, $CALENDAR;
     echo '
     <html>
     <head>
@@ -107,6 +108,11 @@ function writeHeader($currentPage, $head='') {
                             <i class="material-icons left">view_list</i> Task List
                         </a>
                     </li>
+                    <li id="page_' . $CALENDAR . '">
+                        <a href="/' . $web_root . 'calendar">
+                            <i class="material-icons left">today</i> View Calendar
+                        </a>
+                    </li>
                     <li id="page_' . $SCHEDULES . '">
                         <a href="/' . $web_root . 'schedules">
                             <i class="material-icons left">timer</i> Manage Schedules
@@ -125,12 +131,12 @@ function writeHeader($currentPage, $head='') {
                     <li><a href="/' . $web_root . 'work">
                         <i class="material-icons">view_list</i> Task List
                     </a></li>
+                    <li><a href="/' . $web_root . 'calendar">
+                        <i class="material-icons">today</i> View Calendar
+                    </a></li>
                     <li><a href="/' . $web_root . 'schedules">
                         <i class="material-icons">timer</i> Manage Schedules
                     </a></li>
-                    <!--<li><a href="/ . $web_root . calendar">
-                        <i class="material-icons">today</i> Calendar
-                    </a></li> --->
                     <li>
                         <a class="dropdown-button" data-hover="true" data-beloworigin="true" data-activates="account-dropdown-small">
                             <i class="material-icons">person</i>
