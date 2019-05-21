@@ -10,8 +10,9 @@ th {
     text-align: center;
 }
 
-tr {
-    min-height: 100px !important;
+.day {
+    padding: 0;
+    min-height: 100px;
 }
 
 td {
@@ -19,7 +20,8 @@ border: 1px solid black;
 vertical-align: top !important;
 width: 14.2857142857%;
 }
-td div {
+
+td .task {
     padding: 5px;
     margin: 1px;
     font-size: .75em;
@@ -70,14 +72,14 @@ $numCategories = count($categories);
         </thead>
         <tbody>
             <tr>
-                <td>
+                <td><div class="day">
                     <?php
                         $month_lengths = array(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31);
                         if ($year_num % 4 == 0 && $year_num % 100 != 0)
                             $month_lengths[1] = 29;
                         $cur_date = 1;
                         for ($i=0; $i < $weekday; $i++) {
-                            echo "</td><td>";
+                            echo "</div></td><td><div class='day'>";
                         }
                         echo $cur_date;
                         foreach ($all_tasks as $task):
@@ -95,35 +97,36 @@ $numCategories = count($categories);
                             $task_completed = $task["task_completed"];
                             if ($date_month == $month_num && $date_year == $year_num) {
                                 while ($cur_date < $date_day) {
-                                    echo "</td>";
+                                    echo "</div></td>";
                                     $cur_date++; $weekday++;
                                     if ($weekday == 7) {
                                         $weekday = 0;
                                         echo "</tr><tr>";
                                     }
                                     if ($cur_date == date('d') && $date_month == date('m') && $date_year == date('Y'))
-                                        echo "<td id='today'>" . $cur_date;
+                                        echo "<td id='today'><div class='day'>" . $cur_date;
                                     else
-                                        echo "<td>" . $cur_date;
+                                        echo "<td><div class='day'>" . $cur_date;
                                 }
                                 ?>
-                                <div style="color: white; background-color: <?php echo $category_color ?>"><?php echo $task_name ?></div>
+                                <div class="task" style="color: white; background-color: <?php echo $category_color ?>"><?php echo $task_name ?></div>
                             <?php } endforeach;
 
                             while ($cur_date < $month_lengths[$month_num - 1]) {
-                                echo "</td>";
+                                echo "</div></td>";
                                 $cur_date++;
                                 $weekday++;
                                 if ($weekday == 7) {
                                     $weekday = 0;
                                     echo "</tr><tr>";
                                 }
-                                echo "<td>" . $cur_date;
+                                echo "<td><div class='day'>" . $cur_date;
                             }
                             while ($weekday < 6) {
-                                echo "</td><td>";
+                                echo "</div></td><td><div class='day'>";
                                 $weekday++;
                             } ?>
+                    </div>
                 </td>
             </tr>
         </tbody>
