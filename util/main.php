@@ -1,7 +1,6 @@
 <?php
 
 include dirname(__FILE__) . "/../model/userdb.php";
-require_once dirname(__FILE__) . "/../vendor/autoload.php";
 
 $db_name = getenv('db_name');
 if ($db_name == null)
@@ -20,8 +19,7 @@ try {
     $db = new PDO($dsn, $username, $password, $options);
 } catch (PDOException $e) {
     error_log("Unable to connect to database: " . $e->getMessage(), 0);
-
-    echo ("Unable to connect to database.");
+    echo ("Unable to connect to database: " . $e->getMessage());
     exit;
 }
 
@@ -81,11 +79,11 @@ function writeHeader($currentPage, $head='') {
     <html>
     <head>
         <title>BCA Task Manager</title>
-        <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
         <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link type="text/css" rel="stylesheet" href="/' . $web_root . 'css/shared.css">
         <script src="/' . $web_root . 'js/jq.min.js" type="text/javascript"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js" type="text/javascript"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
         ' . $head . '
     </head>
     <body>
@@ -101,7 +99,7 @@ function writeHeader($currentPage, $head='') {
             <div class="nav-wrapper">
                 <a href="/' . $web_root . 'work" class="brand-logo">' . $app_title . '</a>' .
                 ($auth->isLogged() ? '
-                <a data-activates="sidenav" class="button-collapse"><i class="material-icons clickable">menu</i></a>
+                <a data-target="slide-out" class="sidenav-trigger"><i class="material-icons clickable">menu</i></a>
                 <ul id="nav_links" class="right hide-on-med-and-down">
                     <li id="page_' . $TASK_LIST . '">
                         <a href="/' . $web_root . 'work">
@@ -119,7 +117,7 @@ function writeHeader($currentPage, $head='') {
                         </a>
                     </li>
                     <li>
-                    <a class="dropdown-button" data-hover="true" data-beloworigin="true" data-activates="account-dropdown-big">
+                    <a class="dropdown-trigger" data-target="account-dropdown-big">
                         <i class="material-icons left">person</i> Hello, ' . $user["user_first_name"] . '<i class="material-icons right">arrow_drop_down</i>
                     </a>
                     </li>
@@ -127,7 +125,7 @@ function writeHeader($currentPage, $head='') {
                 <script>
                     $("#page_' . $currentPage . '").addClass("active")
                 </script>
-                <ul class="side-nav" id="sidenav">
+                <ul class="sidenav" id="slide-out">
                     <li><a href="/' . $web_root . 'work">
                         <i class="material-icons">view_list</i> Task List
                     </a></li>
@@ -138,7 +136,7 @@ function writeHeader($currentPage, $head='') {
                         <i class="material-icons">timer</i> Manage Schedules
                     </a></li>
                     <li>
-                        <a class="dropdown-button" data-hover="true" data-beloworigin="true" data-activates="account-dropdown-small">
+                        <a class="dropdown-trigger" data-target="account-dropdown-small">
                             <i class="material-icons">person</i>
                             Hello, ' . $user["user_first_name"] . '
                             <i class="material-icons right">arrow_drop_down</i>
@@ -180,12 +178,15 @@ function writeFooter() {
     </body>
     <script>
         $(document).ready(function() {
-            $(".tooltipped").attr({
-                "data-delay": 50,
-                "data-position": "top"
+            $(".tooltipped").tooltip({
+                "enterDelay": 200,
+                "position": "top"
             });
-            $(".button-collapse").sideNav();
-            $(".dropdown-button").dropdown();
+            $(".sidenav").sidenav();
+            $(".dropdown-trigger").dropdown({
+                hover: true,
+                coverTrigger: false
+            });
         });
     </script>
     </html>';

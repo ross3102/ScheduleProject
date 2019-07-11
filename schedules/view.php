@@ -215,11 +215,15 @@ writeHeader($SCHEDULES, $head) ?>
         }
 
         function confirmDeleteItem(item_name, item_id, schedule_name) {
-            Materialize.toast('<span>Delete ' + item_name + ' from ' + schedule_name + '?</span><button class="btn-flat toast-action" onclick="delItem(' + item_id + ')">Confirm</button>', 10000);
+            M.toast({
+                html: '<span>Delete ' + item_name + ' from ' + schedule_name + '?</span><button class="btn-flat toast-action" onclick="delItem(' + item_id + ')">Confirm</button>',
+                displayLength: 10000});
         }
 
         function confirmDeleteSchedule(schedule_name, schedule_id) {
-            Materialize.toast('<span>Delete schedule: ' + schedule_name + '?<span><button class="btn-flat toast-action" onclick="delSchedule(' + schedule_id + ')">Confirm</button>', 10000);
+            M.toast({
+                html: '<span>Delete schedule: ' + schedule_name + '?<span><button class="btn-flat toast-action" onclick="delSchedule(' + schedule_id + ')">Confirm</button>',
+                displayLength: 10000});
         }
     </script>
 

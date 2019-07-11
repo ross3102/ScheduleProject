@@ -76,7 +76,7 @@
             updateTimer();
             interval = setInterval(wait, 1000)
         } else {
-            Materialize.toast('Enter an amount in the format HH:MM:SS or H:MM:SS', 4000)
+            M.toast({html: 'Enter an amount in the format HH:MM:SS or H:MM:SS'});
         }
 
     }

@@ -10,8 +10,8 @@ $numCategories = count($categories);
             <i class="large material-icons">add</i>
         </a>
         <ul>
-            <li><a href="#newCategory" class="btn waves-effect waves-light modal-trigger">New Category <i class="material-icons">library_add</i></a></li>
-            <li><a href="#newTask" class="btn waves-effect waves-light modal-trigger <?php if ($numCategories==0) echo "disabled" ?>">New Task <i class="material-icons">playlist_add</i></a></li>
+            <li><a href="#newCategory" class="modal-trigger">New Category <i class="material-icons">library_add</i></a></li>
+            <li><a href="#newTask" class="modal-trigger <?php if ($numCategories==0) echo "disabled" ?>">New Task <i class="material-icons">playlist_add</i></a></li>
             <!--            <li><a onclick="deleteAll()" class="waves-effect waves-light modal-trigger">Delete All <i class="material-icons">delete_sweep</i></a></li>-->
         </ul>
     </div>
@@ -68,7 +68,7 @@ $numCategories = count($categories);
                         <label for="task_category">Category</label>
                     </div>
                     <div class="input-field col s12 m4">
-                        <input class="datepicker" id=datepicker type="date" name="task_date" required>
+                        <input class="datepicker" id=datepicker type="text" name="task_date" required>
                         <label for="datepicker">Due Date</label>
                     </div>
                 </div>
@@ -99,7 +99,7 @@ $numCategories = count($categories);
                         <label for="edit_task_category">Category</label>
                     </div>
                     <div class="input-field col s12 m4">
-                        <input class="datepicker" id="edit_task_date" type="date" name="task_date" required>
+                        <input class="datepicker" id="edit_task_date" type="text" name="task_date" required>
                         <label for="edit_task_date">Due Date</label>
                     </div>
                 </div>
@@ -113,7 +113,7 @@ $numCategories = count($categories);
 
     <div class="row">
         <ul class="tabs tabs-fixed-width">
-            <li class="tab col s6"><a href="#task-list-view">Task List</a></li>
+            <li class="tab col s6 active"><a href="#task-list-view">Task List</a></li>
             <li class="tab col s6"><a href="#upcoming">Upcoming</a></li>
         </ul>
     </div>
@@ -121,7 +121,7 @@ $numCategories = count($categories);
     <div id="task-list-view">
 
         <?php if (count($categories) > 0) { ?>
-            <ul class="collapsible popout" data-collapsible="expandable">
+            <ul class="collapsible popout">
                 <?php foreach ($categories as $category) {
                     $category_id = $category["category_id"];
                     $category_name = $category["category_name"];
@@ -136,8 +136,8 @@ $numCategories = count($categories);
                         collapse($category_id, 0);
                     $category_active = $category["category_active"] && $num_tasks > 0 ? "active": ""; ?>
                     <input onclick="event.stopPropagation();" style="display: none" type="color" class="color_chooser" id="colorChooser<?php echo $category_id ?>" value="<?php echo $category_color ?>">
-                    <li class="collapsibleItem" id="C<?php echo $category_id ?>">
-                        <div class="collapsible-header <?php echo $category_active ?>">
+                    <li class="collapsibleItem <?php echo $category_active ?>" id="C<?php echo $category_id ?>">
+                        <div class="collapsible-header">
                             <div class="category-header-inner">
                                 <div class="color<?php echo $category_id ?>" style="display: inline-block; color: <?php echo $category_color ?>"><?php echo $category_name ?></div>
                                 <span class="numTasks valign-wrapper"><?php echo $task_caption ?>
@@ -174,7 +174,9 @@ $numCategories = count($categories);
                                             &nbsp;
                                             <i class="material-icons clickable tooltipped blue-text" onclick="editTask(<?php echo $task_id ?>, '<?php echo htmlspecialchars(addslashes($task_name)); ?>', '<?php echo $form_date ?>', <?php echo $category_id ?>);" data-tooltip="Edit Task">edit</i>
                                         </span>
-                                        <input id="CB<?php echo $task_id ?>" data-task-id="<?php echo $task_id ?>" type="checkbox"><label for="CB<?php echo $task_id ?>"><span class="black-text <?php echo $task_id ?>"><?php echo $task_name ?></span></label>
+                                        <label>
+                                            <input id="CB<?php echo $task_id ?>" data-task-id="<?php echo $task_id ?>" type="checkbox"><span class="black-text <?php echo $task_id ?>"><?php echo $task_name ?></span>
+                                        </label>
                                     </li>
                                 <?php endforeach; ?>
                             </ul>
@@ -208,7 +210,7 @@ $numCategories = count($categories);
                 $is_new_date = $task_date != $prev_date ?>
                 <tr class="color<?php echo $category_id ?>" style="color: <?php echo $category_color ?>; <?php if ($is_new_date) echo 'border-top: 1px solid lightgray'?>" onclick="editTask(<?php echo $task_id ?>, '<?php echo htmlspecialchars(addslashes($task_name)); ?>', '<?php echo $form_date ?>', <?php echo $category_id ?>);">
                     <td>
-                        <span onclick="event.stopPropagation();"><input id="CBTwo<?php echo $task_id ?>" data-task-id="<?php echo $task_id ?>" type="checkbox"><label for="CBTwo<?php echo $task_id ?>"><span class="<?php echo $task_id ?> color<?php echo $category_id ?>" style="color: <?php echo $category_color ?>"><?php echo $task_name ?></span></label></span>
+                        <span onclick="event.stopPropagation();"><label><input id="CBTwo<?php echo $task_id ?>" data-task-id="<?php echo $task_id ?>" type="checkbox"><span class="<?php echo $task_id ?> color<?php echo $category_id ?>" style="color: <?php echo $category_color ?>"><?php echo $task_name ?></span></label></span>
                     </td>
                     <td>
                         <?php echo $category_name ?>
@@ -225,29 +227,37 @@ $numCategories = count($categories);
 
 <script>
     $(document).ready(function() {
-        $("select").material_select();
-        $(".datepicker").pickadate();
-        $(".picker").appendTo('body');
+        $(".datepicker").datepicker({
+            container: 'body',
+            format: "d mmmm, yyyy"
+        });
+        $(".fixed-action-btn").floatingActionButton({
+            hoverEnabled: false,
+            toolbarEnabled: true
+        });
         $(".modal").modal({
             dismissible: false
         });
+        $(".tabs").tabs();
         $(".charCount").characterCounter();
+        $(".collapsible").collapsible({accordion: false});
+        $("select").formSelect();
     });
 
     function editTask(task_id, task_name, task_date, category_id) {
         $("#edit_task_id").val(task_id);
         $("#edit_task_name").val(task_name);
         $("#edit_task_category").val(category_id);
-        $('select').material_select();
+        $('select').formSelect();
         $("#edit_task_date").val(task_date);
-        Materialize.updateTextFields();
+        M.updateTextFields();
         $("#editTask").modal('open');
     }
 
     function editCat(category_id, category_name) {
         $("#edit_category_id").val(category_id);
         $("#edit_category_name").val(category_name);
-        Materialize.updateTextFields();
+        M.updateTextFields();
         $("#editCat").modal('open');
     }
     
@@ -269,11 +279,11 @@ $numCategories = count($categories);
         var collapsibleItem = $(this).parent();
         if (collapsibleItem.find(".collection-item")[0] == null) {
             event.stopPropagation();
-            Materialize.toast("This category is empty!", 2000);
+            M.toast({html: "This category is empty!"});
             active = 0
         }
         else {
-            if ($(this).hasClass("active")) active = 0;
+            if (collapsibleItem.hasClass("active")) active = 0;
             else active = 1;
         }
         var category_id = collapsibleItem.attr("id").slice(1);
@@ -288,7 +298,10 @@ $numCategories = count($categories);
     }
 
     function confirmDeleteCategory(category_name, category_id) {
-        Materialize.toast('<span>Delete category: ' + category_name + '?<span><button class="btn-flat toast-action" onclick="delCategory(' + category_id + ')">Confirm</button>', 10000);
+        M.toast({
+            html: '<span>Delete category: ' + category_name + '?<span><button class="btn-flat toast-action" onclick="delCategory(' + category_id + ')">Confirm</button>',
+            displayLength: 10000
+        });
     }
 
     $("input[type=checkbox]").change(function() {
@@ -315,7 +328,7 @@ $numCategories = count($categories);
     function addTask(category_id) {
         var category_select = $("#task_category");
         category_select.val(category_id);
-        category_select.material_select();
+        category_select.formSelect();
         $("#newTask").modal("open");
     }
 

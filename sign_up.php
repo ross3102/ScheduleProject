@@ -1,7 +1,7 @@
 <?php
 writeHeader("");
 ?>
-<div class="container row">
+<div class="container">
     <div class="col s12 l8 offset-l2 z-depth-3" style="margin-top: 20px; padding: 0 50px 20px;">
         <h2 class="title">Sign Up</h2>
         <div class="row">
@@ -53,7 +53,7 @@ writeHeader("");
                 complete: function(data) {
                     var json = JSON.parse(JSON.stringify(data));
                     var message = json["responseJSON"]["message"];
-                    Materialize.toast(message, 2000);
+                    M.toast({html: message});
                     if (!json["responseJSON"]["error"]) {
                         setTimeout(2000);
                         location.href = "activate";

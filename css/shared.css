@@ -70,17 +70,30 @@ blockquote {
 
 
 /* Make form stuff blue */
-.picker__date-display { background-color: #42a5f5; }
-.picker__day.picker__day--today { color: #42a5f5; }
-.picker__day--selected, .picker__day--selected:hover, .picker--focused .picker__day--selected { background-color: #42a5f5;}
-.picker__close { color: #42a5f5 !important;}
-.picker__today { color: #42a5f5 !important;}
-.clockpicker-tick:hover { background: #42a5f5 !important; }
-.clockpicker-canvas line { stroke: #42a5f5 !important; }
-.clockpicker-canvas-bearing { fill: #42a5f5 !important; }
-.clockpicker-canvas-bg { fill: #42a5f5 !important; }
+.datepicker-date-display { background-color: #42a5f5; }
+
+.datepicker-day-button:focus {
+    color: white !important;
+    background-color: rgba(66, 165, 245, 0.5);
+}
+
+.datepicker-done,
+.select-dropdown li>span,
+.is-today:not(.is-selected) { color: #42a5f5 !important; }
+
+td.is-selected,
+.month-prev:active,
+.month-prev:focus,
+.month-next:active,
+.month-next:focus {
+    background-color: #42a5f5 !important;
+}
+
+.datepicker-cancel { color: red !important;}
+
 
 .input-field input:focus + label,
+.input-field textarea:focus + label,
 form .dropdown-content li * {
     color: #42a5f5 !important;
 }
@@ -91,7 +104,7 @@ form .dropdown-content li * {
     box-shadow: 0 1px 0 0 #42a5f5 !important;
 }
 
-input[type="checkbox"]:checked+label:before {
+input[type="checkbox"]:checked+span:not(.lever):before {
     border-right: 2px solid #42a5f5;
     border-bottom: 2px solid #42a5f5;
 }

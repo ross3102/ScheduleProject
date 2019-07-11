@@ -32,7 +32,7 @@
                             <td><?php echo $task_name ?></td>
                             <td class="time"></td>
                         </tr>
-                    <? } ?>
+                    <?php } ?>
                     </tbody>
                 </table>
             </div>
@@ -71,7 +71,7 @@
 
     <script>
         function addToSchedule(task_id) {
-            var time;
+            var time = "";
             while (!(/\d{1,2}:\d{2}:\d{2}/.test(time))) {
                 time = prompt("Enter a duration in the form HH:MM:SS or H:MM:SS");
                 if (time == null)

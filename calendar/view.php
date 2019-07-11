@@ -136,7 +136,7 @@ $numCategories = count($categories);
 <script>
     $(document).ready(function() {
         $("select").val(<?php echo $month_num ?>);
-        $("select").material_select();
+        $("select").formSelect();
     });
 
     $("#month").change(function() {

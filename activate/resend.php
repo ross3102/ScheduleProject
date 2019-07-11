@@ -30,7 +30,7 @@ writeHeader("");
                 complete: function(data) {
                     var json = JSON.parse(JSON.stringify(data));
                     var message = json["responseJSON"]["message"];
-                    Materialize.toast(message, 3000);
+                    M.toast({html: message});
                 }
             });
         }
