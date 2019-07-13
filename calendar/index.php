@@ -28,6 +28,11 @@ switch ($action) {
         $all_tasks = get_task_list($user["id"]);
         include "view.php";
         break;
+    case 'show_hide_category':
+        $category_id = filter_input(INPUT_GET, "category_id");
+        $show = filter_input(INPUT_GET, "show");
+        show_hide($category_id, $show);
+        break;
 //    case 'add_category':
 //        $category_name = filter_input(INPUT_POST, "category_name");
 //        add_category($user["id"], $category_name, "#000000");

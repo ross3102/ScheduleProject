@@ -103,7 +103,7 @@ $numCategories = count($categories);
                                         $weekday = 0;
                                         echo "</tr><tr>";
                                     }
-                                    if ($cur_date == date('d') && $date_month == date('m') && $date_year == date('Y'))
+                                    if ($cur_date == date('d') && $month_num == date('m') && $year_num == date('Y'))
                                         echo "<td id='today'><div class='day'>" . $cur_date;
                                     else
                                         echo "<td><div class='day'>" . $cur_date;
@@ -120,11 +120,14 @@ $numCategories = count($categories);
                                     $weekday = 0;
                                     echo "</tr><tr>";
                                 }
-                                echo "<td><div class='day'>" . $cur_date;
+                                if ($cur_date == date('d') && $month_num == date('m') && $year_num == date('Y'))
+                                    echo "<td id='today'><div class='day'>" . $cur_date;
+                                else
+                                    echo "<td><div class='day'>" . $cur_date;
                             }
                             while ($weekday < 6) {
                                 echo "</div></td><td><div class='day'>";
-                                $weekday++;
+                                $weekday++;  
                             } ?>
                     </div>
                 </td>

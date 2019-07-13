@@ -86,7 +86,7 @@ function get_task_list($user_id) {
     clean();
     global $db;
 
-    $query = "select task_id, task_name, DATE_FORMAT(task_date, '%e %M, %Y') as form_date, DATE_FORMAT(task_date, '%c/%e/%Y') as table_date, DATE_FORMAT(task_date, '%c/%e/%y') as short_date, task_completed, c.category_id, c.category_name, c.category_color
+    $query = "select task_id, task_name, DATE_FORMAT(task_date, '%e %M, %Y') as form_date, DATE_FORMAT(task_date, '%c/%e/%Y') as table_date, DATE_FORMAT(task_date, '%c/%e/%y') as short_date, task_completed, c.category_id, c.category_name, c.category_color, show_calendar
               from task_list_task t, task_list_category c
               where t.category_id = c.category_id
               and user_id = :user_id
@@ -267,6 +267,25 @@ function collapse($category_id, $category_active) {
     try {
         $statement = $db->prepare($query);
         $statement->bindValue(':category_active', $category_active);
+        $statement->bindValue(':category_id', $category_id);
+        $statement->execute();
+        $statement->closeCursor();
+    } catch (PDOException $e) {
+        echo ($e);
+        exit();
+    }
+}
+
+function show_hide($category_id, $show) {
+    global $db;
+
+    $query = "update task_list_category
+              set show_calendar = :show_calendar
+              where category_id = :category_id";
+
+    try {
+        $statement = $db->prepare($query);
+        $statement->bindValue(':show_hide', $show);
         $statement->bindValue(':category_id', $category_id);
         $statement->execute();
         $statement->closeCursor();
