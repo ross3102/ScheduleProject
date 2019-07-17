@@ -82,6 +82,8 @@ function writeHeader($currentPage, $head='') {
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
         <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link type="text/css" rel="stylesheet" href="/' . $web_root . 'css/shared.css">
+        <link rel="shortcut icon" href="/' . $web_root . 'favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/' . $web_root . 'favicon.ico" type="image/x-icon">
         <script src="/' . $web_root . 'js/jq.min.js" type="text/javascript"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
         ' . $head . '
@@ -153,7 +155,7 @@ function writeHeader($currentPage, $head='') {
 }
 
 function writeFooter() {
-    global $app_title;
+    global $app_title, $web_root;
     echo '
     </div>
     </div>
@@ -183,7 +185,7 @@ function writeFooter() {
                 "position": "top"
             });
             $(".sidenav").sidenav();
-            $(".dropdown-trigger").dropdown({
+            $("nav .dropdown-trigger").dropdown({
                 hover: true,
                 coverTrigger: false
             });

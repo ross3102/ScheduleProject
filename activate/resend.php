@@ -1,7 +1,7 @@
 <?php
 writeHeader("");
 ?>
-    <div class="container row">
+    <div class="container">
         <div class="col s12 l6 offset-l3 z-depth-3" style="margin-top: 20px; padding: 0 50px 20px;">
             <h2 class="title">Resend Verification</h2>
             <div class="row">
