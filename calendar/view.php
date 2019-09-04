@@ -72,16 +72,25 @@ $numCategories = count($categories);
         </thead>
         <tbody>
             <tr>
-                <td><div class="day">
                     <?php
                         $month_lengths = array(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31);
                         if ($year_num % 4 == 0 && $year_num % 100 != 0)
                             $month_lengths[1] = 29;
                         $cur_date = 1;
                         for ($i=0; $i < $weekday; $i++) {
-                            echo "</div></td><td><div class='day'>";
+                            $pre_month_num = ($month_num + 10) % 12 + 1;
+                            $pre_year_num = $month_num == 1 ? $year_num - 1: $year_num;
+                            $pre_day_num = $month_lengths[$pre_month_num - 1] - $weekday + $i + 1;
+                            if ($pre_day_num == date('d') && $pre_month_num == date('m') && $pre_year_num == date('Y'))
+                                echo "<td id='today'><div class='day'>";
+                            else
+                                echo "<td><div class='day'>";
+                            echo "<div class='grey-text'>" . $pre_day_num . "</div></div></td>";
                         }
-                        echo $cur_date;
+                        if ($cur_date == date('d') && $month_num == date('m') && $year_num == date('Y'))
+                            echo "<td id='today'><div class='day'>" . $cur_date;
+                        else
+                            echo "<td><div class='day'>" . $cur_date;
                         foreach ($all_tasks as $task):
                             $task_id = $task["task_id"];
                             $category_id = $task["category_id"];
@@ -89,12 +98,10 @@ $numCategories = count($categories);
                             $category_color = $task["category_color"];
                             $task_name = $task["task_name"];
                             $task_date = $task["table_date"];
-                            $form_date = $task["form_date"];
                             $split_date = explode("/", $task_date);
                             $date_month = $split_date["0"];
                             $date_day = $split_date["1"];
                             $date_year = $split_date["2"];
-                            $task_completed = $task["task_completed"];
                             if ($date_month == $month_num && $date_year == $year_num) {
                                 while ($cur_date < $date_day) {
                                     echo "</div></td>";
@@ -125,9 +132,10 @@ $numCategories = count($categories);
                                 else
                                     echo "<td><div class='day'>" . $cur_date;
                             }
-                            while ($weekday < 6) {
-                                echo "</div></td><td><div class='day'>";
-                                $weekday++;  
+                            $i = 0;
+                            while ($weekday + $i < 6) {
+                                echo "</div></td><td><div class='day'><div class='grey-text'>" . ($i + 1);
+                                $i++;
                             } ?>
                     </div>
                 </td>
