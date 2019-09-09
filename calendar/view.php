@@ -4,6 +4,7 @@ $head = '
 
 .container {
     padding: 10px;
+    width: 95%;
 }
 
 th {
@@ -16,15 +17,22 @@ th {
 }
 
 td {
-border: 1px solid black;
-vertical-align: top !important;
-width: 14.2857142857%;
+    border: 1px solid black;
+    vertical-align: top !important;
+    width: 14.2857142857%;
 }
 
 td .task {
     padding: 5px;
     margin: 1px;
-    font-size: .75em;
+    font-size: .7em;
+}
+td:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+#today:hover {
+    background-color: rgba(0, 0, 255, 0.1)
 }
 
 #today {
