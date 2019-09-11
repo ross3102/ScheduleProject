@@ -127,11 +127,17 @@
             var scheduleName = prompt("Enter a name for your new schedule");
             if (scheduleName == null || scheduleName === "") return;
             var scheduleDesc = prompt("Describe your new schedule");
-            var sched = $("#builtScheduleBody").find("tr:visible").map(function() {
-                return $(this).attr("data-task-name") + "-" + $(this).attr("data-time");
+
+            var rows = $("#builtScheduleBody").find("tr:visible");
+            var names = rows.map(function() {
+                return $(this).attr("data-task-name");
             });
-            sched = JSON.stringify(sched);
-            location.href = "./index.php?action=confirm_build_schedule&tasks=" + sched + "&schedule_name=" + scheduleName + "&schedule_desc=" + scheduleDesc;
+            var times = rows.map(function() {
+                return $(this).attr("data-time");
+            });
+            names = JSON.stringify(names);
+            times = JSON.stringify(times);
+            location.href = "./index.php?action=confirm_build_schedule&names=" + names + "&times=" + times + "&schedule_name=" + scheduleName + "&schedule_desc=" + scheduleDesc;
         }
 
     </script>
