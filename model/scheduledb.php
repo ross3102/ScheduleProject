@@ -63,7 +63,7 @@ function get_schedules_by_user_id($user_id) {
 function get_items_by_schedule_id($schedule_id) {
     global $db;
 
-    $query = "select item_id, item_name, item_duration, item_desc
+    $query = "select item_id, item_name, item_duration
               from item
               where schedule_id = :schedule_id
               order by item_id";
@@ -136,18 +136,17 @@ function add_schedule($user_id, $schedule_name, $schedule_desc) {
     }
 }
 
-function add_item_to_schedule($schedule_id, $item_name, $item_duration, $item_desc) {
+function add_item_to_schedule($schedule_id, $item_name, $item_duration) {
     global $db;
 
-    $query = "insert into item (schedule_id, item_name, item_duration, item_desc)
-              values (:schedule_id, :item_name, :item_duration, :item_desc)";
+    $query = "insert into item (schedule_id, item_name, item_duration)
+              values (:schedule_id, :item_name, :item_duration)";
 
     try {
         $statement = $db->prepare($query);
         $statement->bindValue(':schedule_id', $schedule_id);
         $statement->bindValue(':item_name', $item_name);
         $statement->bindValue(':item_duration', $item_duration);
-        $statement->bindValue(':item_desc', $item_desc);
         $statement->execute();
         $statement->closeCursor();
     } catch (PDOException $e) {
@@ -200,10 +199,8 @@ function swap_items($id1, $id2) {
     $query = "UPDATE item, item as item2
               SET item.item_name = item2.item_name,
                   item.item_duration = item2.item_duration,
-                  item.item_desc = item2.item_desc,
                   item2.item_name = item.item_name,
-                  item2.item_duration = item.item_duration,
-                  item2.item_desc = item.item_desc
+                  item2.item_duration = item.item_duration
               WHERE item.item_id = :id1 AND item2.item_id = :id2";
 
     try {

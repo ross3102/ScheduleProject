@@ -29,8 +29,7 @@ switch ($action) {
         $schedule_id = filter_input(INPUT_POST, "schedule_id");
         $item_name = filter_input(INPUT_POST, "item_name");
         $item_duration = duration_to_int(filter_input(INPUT_POST, "item_duration"));
-        $item_desc = filter_input(INPUT_POST, "item_desc");
-        add_item_to_schedule($schedule_id, $item_name, $item_duration, $item_desc);
+        add_item_to_schedule($schedule_id, $item_name, $item_duration);
         header("Location: ./index.php");
         break;
     case 'delete_schedule':
