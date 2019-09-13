@@ -22,13 +22,11 @@ switch ($action) {
         break;
     case 'confirm_build_schedule':
         // TODO ids parameter too long for get request
-        $names = get_object_vars(json_decode(filter_input(INPUT_GET, "names")));
-        $times = get_object_vars(json_decode(filter_input(INPUT_GET, "times")));
+        $names = array_values(get_object_vars(json_decode(filter_input(INPUT_GET, "names"))));
+        $times = array_values(get_object_vars(json_decode(filter_input(INPUT_GET, "times"))));
         $schedule_name = filter_input(INPUT_GET, "schedule_name");
         $schedule_desc = filter_input(INPUT_GET, "schedule_desc");
         $schedule_id = add_schedule($user_id, $schedule_name, $schedule_desc);
-        print_r($names);
-        echo count($names);
         for ($t = 0; $t < count($names) - 2; $t++) {
             add_item_to_schedule($schedule_id, $names[$t], duration_to_int($times[$t]));
         }
