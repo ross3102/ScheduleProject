@@ -137,7 +137,7 @@
             });
             names = JSON.stringify(names);
             times = JSON.stringify(times);
-            location.href = "./index.php?action=confirm_build_schedule&names=" + names + "&times=" + times + "&schedule_name=" + scheduleName + "&schedule_desc=" + scheduleDesc;
+            location.href = "./index.php?action=confirm_build_schedule&names=" + encodeURIComponent(names) + "&times=" + times + "&schedule_name=" + encodeURIComponent(scheduleName) + "&schedule_desc=" + encodeURIComponent(scheduleDesc);
         }
 
     </script>
