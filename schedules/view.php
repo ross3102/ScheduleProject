@@ -96,14 +96,14 @@ writeHeader($SCHEDULES, $head) ?>
                                         $item_id = $item["item_id"];
                                         $item_name = $item["item_name"];
                                         $item_duration = $item["item_duration"]; ?>
-                                        <tr id="row<?php echo $item_id ?>">
-                                            <td>
+                                        <tr data-item-id="<?php echo $item_id ?>">
+                                            <td class="buttons">
                                                 <?php if ($i != 0) { ?>
-                                                    <i data-schedule-id="<?php echo $schedule_id ?>" data-item-id="<?php echo $item_id ?>" data-other-id="<?php echo $items[$i-1]["item_id"] ?>" class="material-icons clickable move_item">arrow_drop_up</i>
+                                                    <i data-direction="up" class="material-icons clickable move_item">arrow_drop_up</i>
                                                     <br>
-                                                <?php } ?>
-                                                <?php if ($i != $num_items - 1) { ?>
-                                                    <i data-schedule-id="<?php echo $schedule_id ?>" data-item-id="<?php echo $item_id ?>" data-other-id="<?php echo $items[$i+1]["item_id"] ?>" class="material-icons clickable move_item">arrow_drop_down</i></td>
+                                                <?php } if ($i != $num_items - 1) { ?>
+                                                    <i data-direction="down" class="material-icons clickable move_item">arrow_drop_down</i>
+                                            </td>
                                                 <?php } ?>
                                             <td><?php echo $item_name ?></td>
                                             <td><?php echo int_to_duration($item_duration) ?></td>
@@ -160,28 +160,38 @@ writeHeader($SCHEDULES, $head) ?>
             });
         });
 
-        $(".move_item").click(function() {
-            item_id = $(this).attr("data-item-id");
-            other_id = $(this).attr("data-other-id");
+        $(document).on("click", ".move_item", function() {
+            var firstRow = $(this).parent().parent();
+            var item_id = firstRow.attr("data-item-id");
+            var direction = $(this).attr("data-direction");
 
-            location.href = './index.php?action=swap_items&item_id=' + item_id + "&other_id=" + other_id;
+            // Figure out which row to switch with
+            var secondRow;
+            if (direction === "up")
+                secondRow = firstRow.prev();
+            else
+                secondRow = firstRow.next();
 
-            // $.ajax({
-            //     type: "POST",
-            //     url: "./index.php",
-            //     data: 'action=swap_items&item_id=' + item_id + "&other_id=" + other_id
-            // });
-            //
-            // schedule_id = $(this).attr("data-schedule-id");
-            //
-            // firstRow = $("#row" + item_id);
-            // secondRow = $("#row" + other_id);
-            // if (item_id > other_id) {
-            //     temp = firstRow;
-            //     firstRow = secondRow;
-            //     secondRow = temp;
-            // }
-            // secondRow.parent().before(secondRow, firstRow);
+            var other_id = secondRow.attr("data-item-id");
+
+            // Swap items in database
+            $.ajax({
+                type: "POST",
+                url: "./index.php?action=swap_items&item_id=" + item_id + "&other_id=" + other_id
+            });
+
+
+
+            // Switch arrows in rows
+            var temp = $(this).parent().html();
+            $(this).parent().html(secondRow.find(".buttons").html());
+            secondRow.find(".buttons").html(temp);
+
+            // Switch positions of rows
+            temp = firstRow.html();
+            firstRow.html(secondRow.html());
+            secondRow.html(temp);
+
         });
 
         function delItem(item_id) {
