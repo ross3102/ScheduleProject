@@ -23,6 +23,7 @@ try {
     exit;
 }
 
+require_once dirname(__FILE__) . '/../vendor/autoload.php';
 include(dirname(__FILE__) . "/../js/PHPAuth-master/Config.php");
 include(dirname(__FILE__) . "/../js/PHPAuth-master/Auth.php");
 
