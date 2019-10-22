@@ -13,10 +13,10 @@ writeHeader("");
                 <input placeholder="" type="password" name="password" id="password">
                 <label for="password">Password</label>
             </div>
+            <div class="center-align">
+                <button type="submit" class="waves-effect waves-light btn-large blue lighten-1">Log In</button>
+            </div>
         </form>
-        <div class="center-align">
-            <a onclick="logIn()" class="waves-effect waves-light btn-large blue lighten-1">Log In</a>
-        </div>
         <p>Don't have an account? <a href="./index.php?action=show_sign_up">Sign Up</a></p>
     </div>
 </div>
