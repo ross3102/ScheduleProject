@@ -4,7 +4,7 @@ writeHeader("");
 <div class="container">
     <div class="col s12 l6 offset-l3 z-depth-3" style="margin-top: 20px; padding: 0 50px 20px;">
         <h2 class="title">Log In</h2>
-        <div class="row">
+        <form class="row" onsubmit="event.preventDefault(); logIn()">
             <div class="input-field col s12">
                 <input placeholder="" type="text" name="username" id="username">
                 <label for="username">Username or Email</label>
@@ -13,7 +13,7 @@ writeHeader("");
                 <input placeholder="" type="password" name="password" id="password">
                 <label for="password">Password</label>
             </div>
-        </div>
+        </form>
         <div class="center-align">
             <a onclick="logIn()" class="waves-effect waves-light btn-large blue lighten-1">Log In</a>
         </div>
