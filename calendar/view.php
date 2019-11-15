@@ -26,6 +26,7 @@ td .task {
     padding: 5px;
     margin: 1px;
     font-size: .7em;
+    border-radius: 5px;
 }
 td:hover {
     background-color: rgba(0, 0, 0, 0.05);
