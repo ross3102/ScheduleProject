@@ -157,13 +157,13 @@ $numCategories = count($categories);
     $(document).ready(function() {
         $("select").val(<?php echo $month_num ?>);
         $("select").formSelect();
-        $(".task").each(function(task) {
-            var bgColor = task.css("background-color");
+        $(".task").each(function(index) {
+            var bgColor = $(this).css("background-color");
             var nThreshold = 105;
             var components = getRGBComponents(bgColor);
             var bgDelta = (components.R * 0.299) + (components.G * 0.587) + (components.B * 0.114);
 
-            task.css("color", ((255 - bgDelta) < nThreshold) ? "#000000" : "#ffffff");
+            $(this).css("color", ((255 - bgDelta) < nThreshold) ? "#000000" : "#ffffff");
         });
     });
 
