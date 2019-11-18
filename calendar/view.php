@@ -125,7 +125,7 @@ $numCategories = count($categories);
                                         echo "<td><div class='day'>" . $cur_date;
                                 }
                                 ?>
-                                <div class="task" style="background-color: <?php echo $category_color ?>"><?php echo $task_name ?></div>
+                                <div class="task hoverable" style="cursor: pointer; background-color: <?php echo $category_color ?>"><?php echo $task_name ?></div>
                             <?php } endforeach;
 
                             while ($cur_date < $month_lengths[$month_num - 1]) {
