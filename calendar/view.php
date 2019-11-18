@@ -157,7 +157,7 @@ $numCategories = count($categories);
     $(document).ready(function() {
         $("select").val(<?php echo $month_num ?>);
         $("select").formSelect();
-        $(".task").forEach(function(task) {
+        $(".task").each(function(task) {
             var bgColor = task.css("background-color");
             var nThreshold = 105;
             var components = getRGBComponents(bgColor);
